@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="grid-2" style="align-items:start;grid-template-columns:280px 1fr;gap:24px;">
+        <div class="card card-pad" style="text-align:center;">
+          <div class="avatar" style="width:76px;height:76px;font-size:22px;margin:0 auto 14px;">AS</div>
+          <h3 style="font-size:16px;margin-bottom:2px;">Aditi Sharma</h3>
+          <p style="font-size:13px;margin-bottom:14px;">Finance Department</p>
+          <div class="progress" style="margin-bottom:6px;"><span style="width:75%"></span></div>
+          <p style="font-size:12px;margin:0;">Profile 75% complete</p>
+          <button class="btn btn-outline btn-block btn-sm" style="margin-top:14px;">Upload photo</button>
+        </div>
+
+        <form id="profileForm">
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Basic details</h3>
+            <div class="row-2">
+              <div class="field"><label>Full name</label><input type="text" id="f_name" value="Aditi Sharma"></div>
+              <div class="field"><label>Department</label><input type="text" id="f_department" value="Finance"></div>
+            </div>
+            <div class="row-2">
+              <div class="field"><label>Designation</label><input type="text" id="f_designation" value="Section Officer"></div>
+              <div class="field"><label>Region</label><input type="text" id="f_region" value="North Zone"></div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Qualifications</h3>
+            <div class="field"><label>Qualifications</label><textarea id="f_qualifications">M.A. Public Administration, Delhi University</textarea></div>
+          </div>
+
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Work experience</h3>
+            <div class="field"><label>Current role &amp; years of service</label><textarea id="f_experience">Section Officer, Finance Department — 6 years of service, previously posted in the Revenue Department (2 years).</textarea></div>
+          </div>
+
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Skills</h3>
+            <div class="field">
+              <div class="tagbox" id="skillsBox">
+                <span class="pill">Budgeting <button type="button" data-remove>×</button></span>
+                <span class="pill">MS Excel <button type="button" data-remove>×</button></span>
+                <span class="pill">Public Speaking <button type="button" data-remove>×</button></span>
+                <input type="text" placeholder="Type a skill and press Enter" id="skillInput">
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Interests</h3>
+            <div class="field">
+              <div class="tagbox" id="interestBox">
+                <span class="pill">Policy research <button type="button" data-remove>×</button></span>
+                <span class="pill">Digital governance <button type="button" data-remove>×</button></span>
+                <input type="text" placeholder="Type an interest and press Enter">
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <h3 style="font-size:15px;margin:0;">Certificates</h3>
+              <button type="button" class="btn btn-outline btn-sm">+ Add certificate</button>
+            </div>
+            <ul class="list-plain">
+              <li class="resource-row">
+                <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h2a1.7 1.7 0 0 1 0 3.4h-2V16M13 8v8M13 8h2a2 2 0 0 1 0 8h-2M17 8h2"/></svg></div>
+                <div class="r-body"><h4>Cyber Hygiene Foundation</h4><span>Issued 2 Sep 2026 · Saksham Platform</span></div>
+                <a href="#" class="btn btn-ghost btn-sm">View</a>
+              </li>
+            </ul>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+  function wireTagbox(boxId, inputEl) {
+    const box = document.getElementById(boxId) || inputEl.closest(".tagbox");
+    box.addEventListener("click", (e) => { if (e.target.matches("[data-remove]")) e.target.closest(".pill").remove(); });
+  }
+  wireTagbox("skillsBox");
+  document.querySelectorAll(".tagbox input").forEach(inp => {
+    inp.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && inp.value.trim()) {
+        e.preventDefault();
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        pill.innerHTML = `${inp.value.trim()} <button type="button" data-remove>×</button>`;
+        inp.closest(".tagbox").insertBefore(pill, inp);
+        inp.value = "";
+      }
+    });
+    inp.closest(".tagbox").addEventListener("click", (e) => { if (e.target.matches("[data-remove]")) e.target.closest(".pill").remove(); });
+  });
+
+  function pillValues(boxId) {
+    return [...document.getElementById(boxId).querySelectorAll(".pill")].map(p => p.firstChild.textContent.trim());
+  }
+
+  document.getElementById("profileForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const payload = {
+      name: document.getElementById("f_name").value,
+      department: document.getElementById("f_department").value,
+      designation: document.getElementById("f_designation").value,
+      region: document.getElementById("f_region").value,
+      qualifications: document.getElementById("f_qualifications").value,
+      experience: document.getElementById("f_experience").value,
+      skills: pillValues("skillsBox"),
+      interests: pillValues("interestBox")
+    };
+    await loadWithFallback(() => Api.saveProfile(payload), null);
+    toast("Profile saved");
+  });
+
+  (async function () {
+    const profile = await initDashboardShell({ role: "trainee", active: "profile.html", title: "My Profile", crumb: "Trainee workspace" });
+    if (profile && !profile._demo) {
+      if (profile.name) document.getElementById("f_name").value = profile.name;
+      if (profile.department) document.getElementById("f_department").value = profile.department;
+      if (profile.designation) document.getElementById("f_designation").value = profile.designation;
+      if (profile.region) document.getElementById("f_region").value = profile.region;
+      if (profile.qualifications) document.getElementById("f_qualifications").value = profile.qualifications;
+      if (profile.experience) document.getElementById("f_experience").value = profile.experience;
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="card card-pad" style="margin-bottom:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <input type="search" id="searchBox" placeholder="Search courses by title or subject" style="max-width:320px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <select id="categoryFilter">
+            <option value="">All categories</option>
+            <option>Governance</option>
+            <option>Digital Skills</option>
+            <option>Policy</option>
+            <option>Emergency Response</option>
+          </select>
+          <select id="statusFilter">
+            <option value="">All courses</option>
+            <option value="enrolled">My enrollments</option>
+            <option value="available">Not yet enrolled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-3" id="courseGrid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="courseModal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle" style="margin:0;">Course</h3><button id="closeModal">×</button></div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+  initDashboardShell({ role: "trainee", active: "courses.html", title: "Courses", crumb: "Trainee workspace" });
+
+  let ALL_COURSES = [];
+
+  function cardHTML(c) {
+    return `
+      <div class="course-card">
+        <div class="course-thumb">${c.title.split(" ").map(w=>w[0]).slice(0,2).join("")}</div>
+        <div class="course-body">
+          <h4>${c.title}</h4>
+          <div class="course-meta"><span>${c.category}</span><span>·</span><span>${c.level}</span></div>
+          <div class="course-meta"><span>Trainer: ${c.trainer}</span></div>
+          ${c.enrolled ? `<div class="progress"><span style="width:${c.progress}%"></span></div><div class="course-meta"><span>${c.progress}% complete</span></div>` : ""}
+          <div style="display:flex;gap:8px;margin-top:6px;">
+            <button class="btn ${c.enrolled ? "btn-outline" : "btn-primary"} btn-sm" data-view="${c.id}">${c.enrolled ? "Continue" : "View details"}</button>
+            ${!c.enrolled ? `<button class="btn btn-teal btn-sm" data-enroll="${c.id}">Enroll</button>` : ""}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function render() {
+    const q = searchBox.value.toLowerCase();
+    const cat = categoryFilter.value;
+    const status = statusFilter.value;
+    const list = ALL_COURSES.filter(c => {
+      if (q && !c.title.toLowerCase().includes(q) && !c.category.toLowerCase().includes(q)) return false;
+      if (cat && c.category !== cat) return false;
+      if (status === "enrolled" && !c.enrolled) return false;
+      if (status === "available" && c.enrolled) return false;
+      return true;
+    });
+    courseGrid.innerHTML = list.length ? list.map(cardHTML).join("") :
+      `<div class="empty-state" style="grid-column:1/-1;"><div class="icon">🔍</div>No courses match your filters.</div>`;
+  }
+
+  [searchBox, categoryFilter, statusFilter].forEach(el => el.addEventListener("input", render));
+
+  courseGrid.addEventListener("click", (e) => {
+    const enrollId = e.target.dataset.enroll;
+    const viewId = e.target.dataset.view;
+    if (enrollId) {
+      const c = ALL_COURSES.find(x => x.id === enrollId);
+      loadWithFallback(() => Api.enrollCourse(enrollId), null).then(() => {
+        c.enrolled = true; c.progress = 0;
+        toast(`Enrolled in ${c.title}`);
+        render();
+      });
+    }
+    if (viewId) window.location.href = `course-detail.html?id=${viewId}`;
+  });
+
+  (async function () {
+    ALL_COURSES = await loadWithFallback(Api.getCourses, MockDB.courses);
+    render();
+  })();
+</script>
+</body>
+</html>

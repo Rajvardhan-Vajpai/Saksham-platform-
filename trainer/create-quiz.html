@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Questionnaire — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="grid-2" style="grid-template-columns:1fr 340px;align-items:start;">
+        <div>
+          <div class="card card-pad" style="margin-bottom:20px;">
+            <h3 style="font-size:15px;">Questionnaire details</h3>
+            <div class="row-2">
+              <div class="field"><label>Title</label><input type="text" id="quizTitle" placeholder="e.g. Module 3 Quiz"></div>
+              <div class="field"><label>Subject / course</label>
+                <select id="quizSubject">
+                  <option>Public Financial Management</option>
+                  <option>Cyber Hygiene Foundation</option>
+                  <option>Advanced MS Excel</option>
+                </select>
+              </div>
+            </div>
+            <div class="row-2">
+              <div class="field"><label>Deadline</label><input type="datetime-local" id="quizDeadline"></div>
+              <div class="field"><label>Duration (minutes)</label><input type="number" value="15"></div>
+            </div>
+          </div>
+
+          <div class="section-head"><h2 style="font-size:16px;">Questions (<span id="qCount">0</span>)</h2><button class="btn btn-outline btn-sm" id="addQBtn">+ Add question</button></div>
+          <div id="qList" style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;"></div>
+
+          <button class="btn btn-primary" id="publishBtn">Publish questionnaire</button>
+        </div>
+
+        <div>
+          <div class="card card-pad">
+            <h4 style="font-size:13px;color:var(--navy-800);margin-bottom:10px;">Tips</h4>
+            <ul style="font-size:12.5px;color:var(--ink-soft);padding-left:18px;">
+              <li>Keep questions subject-specific and unambiguous.</li>
+              <li>Mark exactly one correct option per question.</li>
+              <li>Set a realistic deadline — trainees are notified automatically.</li>
+              <li>You can edit questions any time before the deadline.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<template id="qTemplate">
+  <div class="card card-pad q-block">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <strong style="color:var(--navy-800);font-size:13.5px;" class="q-num">Question</strong>
+      <button type="button" class="btn btn-ghost btn-sm remove-q">Remove</button>
+    </div>
+    <div class="field"><textarea placeholder="Question text" class="q-text" style="min-height:60px;"></textarea></div>
+    <div class="row-2">
+      <div class="field"><label>Option A</label><input type="text" class="opt"></div>
+      <div class="field"><label>Option B</label><input type="text" class="opt"></div>
+      <div class="field"><label>Option C</label><input type="text" class="opt"></div>
+      <div class="field"><label>Option D</label><input type="text" class="opt"></div>
+    </div>
+    <div class="field">
+      <label>Correct option</label>
+      <select class="correct-opt"><option value="0">Option A</option><option value="1">Option B</option><option value="2">Option C</option><option value="3">Option D</option></select>
+    </div>
+  </div>
+</template>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+  initDashboardShell({ role: "trainer", active: "create-quiz.html", title: "Create Questionnaire", crumb: "Trainer workspace", userName: "R. Mehta" });
+
+  function addQuestion() {
+    const tpl = document.getElementById("qTemplate").content.cloneNode(true);
+    qList.appendChild(tpl);
+    renumber();
+  }
+  function renumber() {
+    document.querySelectorAll(".q-block").forEach((el, i) => el.querySelector(".q-num").textContent = `Question ${i + 1}`);
+    qCount.textContent = document.querySelectorAll(".q-block").length;
+  }
+  addQBtn.addEventListener("click", addQuestion);
+  qList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove-q")) { e.target.closest(".q-block").remove(); renumber(); }
+  });
+
+  publishBtn.addEventListener("click", async () => {
+    const title = quizTitle.value.trim();
+    if (!title) { toast("Give the questionnaire a title first"); return; }
+    if (!document.querySelectorAll(".q-block").length) { toast("Add at least one question"); return; }
+    // Shape matches POST /assessments in API_DOCUMENTATION.md.
+    const questions = [...document.querySelectorAll(".q-block")].map(b => ({
+      question: b.querySelector(".q-text").value,
+      options: [...b.querySelectorAll(".opt")].map(o => o.value),
+      correctAnswer: Number(b.querySelector(".correct-opt").value),
+      marks: 1,
+      difficulty: "medium"
+    }));
+    try {
+      const courses = await Api.getCourses();
+      const course = (Array.isArray(courses) ? courses : []).find(c => c.title === quizSubject.value);
+      await Api.createAssessment({
+        courseId: course ? (course._id || course.id) : undefined,
+        title,
+        description: "",
+        duration: 15,
+        deadline: quizDeadline.value,
+        passingScore: 50,
+        questions
+      });
+      toast("Questionnaire published — trainees have been notified");
+    } catch (e) {
+      console.warn("Backend not reachable, questionnaire not actually saved:", e.message);
+      toast("Backend not reachable — this is demo mode, nothing was saved");
+    }
+  });
+
+  addQuestion();
+</script>
+</body>
+</html>
