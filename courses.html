@@ -37,8 +37,8 @@
       </div>
     </div>
     <nav class="main-nav" aria-label="Primary">
-      <a href="index.html" class="active">Home</a>
-      <a href="#courses">Courses</a>
+      <a href="index.html">Home</a>
+      <a href="courses.html" class="active">Courses</a>
       <a href="#about">About</a>
       <a href="support.html">Help</a>
     </nav>
@@ -50,30 +50,10 @@
 </header>
 <div class="tricolor-rule"></div>
 
-<div class="ticker-wrap" id="ticker"></div>
+
 
 <main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">MISSION SAKSHAM · CAPACITY BUILDING PROGRAMME</div>
-        <h1>Learn, get certified, and grow with your department.</h1>
-        <p class="lead">One platform for course enrollment, competency-based assessments, and shared learning resources — built for trainees, trainers and administrators alike.</p>
-        <div class="hero-actions">
-          <a href="signup.html" class="btn btn-primary">Create your account</a>
-          <a href="#courses" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3);">Browse courses</a>
-        </div>
-      </div>
-      <div class="card card-pad" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);">
-        <h3 style="color:#fff;font-size:15px;">Three roles, one platform</h3>
-        <ul style="color:#C9D6E7;font-size:13.5px;margin-top:10px;">
-          <li><strong style="color:#fff;">Trainees</strong> enroll in courses, build a profile, and attempt assessments.</li>
-          <li><strong style="color:#fff;">Trainers</strong> publish materials, set questionnaires, and track performance.</li>
-          <li><strong style="color:#fff;">Admins</strong> approve accounts and oversee the whole programme.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  
 
   <div class="stat-strip">
     <div class="container">
@@ -136,23 +116,11 @@
         </div>
       </div>
       <div class="grid-3" id="courseGrid" style="margin-bottom:30px;"></div>
-      <div style="text-align:center;">
-        <a href="courses.html" class="btn btn-outline">View all courses</a>
-      </div>
+      
     </div>
   </section>
 
-  <section class="section" style="background:#F3EFE6;" id="announcements">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Announcements &amp; achievements</h2>
-          <p>Published by the programme administrator.</p>
-        </div>
-      </div>
-      <div class="grid-3" id="noticeGrid"></div>
-    </div>
-  </section>
+  
 </main>
 
 <footer class="site-footer" id="contact">
@@ -167,7 +135,7 @@
       </div>
       <div>
         <h5>Platform</h5>
-        <ul><li><a href="signup.html">Register</a></li><li><a href="login.html">Log in</a></li><li><a href="#courses">Courses</a></li></ul>
+        <ul><li><a href="signup.html">Register</a></li><li><a href="login.html">Log in</a></li><li><a href="courses.html" class="active">Courses</a></li></ul>
       </div>
       <div>
         <h5>Support</h5>
@@ -189,33 +157,12 @@
 <script src="assets/js/api.js"></script>
 <script src="assets/js/layout.js"></script>
 <script>
-  renderTicker("ticker", MockDB.ticker);
-
   (async function () {
-    const stats = await loadWithFallback(Api.getStats, MockDB.stats);
-    document.getElementById("statGrid").innerHTML = `
-      <div class="stat-item"><div class="stat-num">${stats.learners}</div><div class="stat-label">Registered learners</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.courses}</div><div class="stat-label">Courses available</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.trainers}</div><div class="stat-label">Active trainers</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.certificates}</div><div class="stat-label">Certificates issued</div></div>`;
-
-    const items = await loadWithFallback(Api.getAnnouncements, MockDB.announcements);
-    const tagClass = t => t === "Achievement" ? "tag-achieve" : (t === "New content" ? "tag-new" : "tag-info");
-    document.getElementById("noticeGrid").innerHTML = items.map(n => `
-      <div class="notice-card">
-        <div class="notice-date"><div class="d">${n.date.split(" ")[0]}</div><div class="m">${n.date.split(" ")[1]}</div></div>
-        <div class="notice-body">
-          <span class="tag ${tagClass(n.tag)}">${n.tag}</span>
-          <h4 style="margin-top:6px;">${n.title}</h4>
-          <p>${n.body}</p>
-        </div>
-      </div>`).join("");
-
     try {
       const courseRes = await fetch("dataset/courses.json?t=" + new Date().getTime());
       if (courseRes.ok) {
         const allCourses = await courseRes.json();
-        const coursesToShow = allCourses.slice(0, 6);
+        const coursesToShow = allCourses;
         document.getElementById("courseGrid").innerHTML = coursesToShow.map(c => `
           <div class="role-card" style="display:flex; flex-direction:column;">
             <h4 style="margin:0 0 10px 0;">${c.title}</h4>
