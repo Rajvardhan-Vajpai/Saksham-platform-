@@ -1,11 +1,11 @@
-﻿const routes = { trainee: "trainee/dashboard.html", trainer: "trainer/dashboard.html", admin: "admin/dashboard.html" };
+const routes = { trainee: "trainee/profile.html", trainer: "trainer/dashboard.html", admin: "admin/dashboard.html" };
   const statusBox = document.getElementById("statusBox");
 
   async function redirectSignedInUser() {
     statusBox.innerHTML = `<div class="alert alert-info">Signing you in…</div>`;
     try {
       const profile = await Api.getProfile(); // fails if this Clerk user hasn't been synced yet
-      window.location.href = routes[profile.role] || "trainee/dashboard.html";
+      window.location.href = routes[profile.role] || "trainee/profile.html";
     } catch (e) {
       // Not synced yet (first login) or backend unreachable — default new sign-ins to trainee.
       try {
@@ -30,5 +30,5 @@
     if (window.Clerk.user) redirectSignedInUser();
     AuthGuard.addListener(({ user }) => { if (user) redirectSignedInUser(); });
   })().catch(() => {
-    statusBox.innerHTML = `<div class="alert alert-error">Couldn't load the sign-in widget (offline, or Clerk isn't reachable). <a href="trainee/dashboard.html">Continue in demo mode →</a></div>`;
+    statusBox.innerHTML = `<div class="alert alert-error">Couldn't load the sign-in widget (offline, or Clerk isn't reachable). <a href="trainee/profile.html">Continue in demo mode →</a></div>`;
   });

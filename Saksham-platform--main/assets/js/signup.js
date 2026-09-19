@@ -1,4 +1,4 @@
-﻿const routes = { trainee: "trainee/dashboard.html", trainer: "trainer/dashboard.html" };
+const routes = { trainee: "trainee/profile.html", trainer: "trainer/dashboard.html" };
   let chosenRole = "trainee";
   const statusBox = document.getElementById("statusBox");
 

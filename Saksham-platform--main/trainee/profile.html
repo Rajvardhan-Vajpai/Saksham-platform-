@@ -123,7 +123,7 @@
                   <div class="contrib-stat-label">Contributions in 2026</div>
                 </div>
                 <div class="contrib-stat">
-                  <div class="contrib-stat-val" id="currentStreakVal" style="color:var(--navy-800);">7 days</div>
+                  <div class="contrib-stat-val" id="currentStreakVal" style="color:var(--saffron-dark);">7 days</div>
                   <div class="contrib-stat-label">Current Streak</div>
                 </div>
                 <div class="contrib-stat">
@@ -144,7 +144,7 @@
                 </div>
                 <div class="contrib-grid-wrap">
                   <div class="contrib-month-labels" id="contribMonthLabels">
-                    <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+                    <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
                   </div>
                   <div class="contrib-cells-grid" id="contribCellsGrid">
                     <!-- Dynamic 52x7 cells injected via trainee-profile.js -->
@@ -154,7 +154,7 @@
             </div>
 
             <div class="contrib-footer">
-              <span>Activity synchronized with trainee video lectures &amp; quizzes</span>
+              <span>Activity synchronized with trainee video lectures, courses &amp; quizzes</span>
               <div class="contrib-legend">
                 <span>Less</span>
                 <span class="contrib-cell lvl-0"></span>
@@ -190,9 +190,9 @@
                 <svg viewBox="0 0 200 115">
                   <defs>
                     <linearGradient id="sakshamGaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#0F766E"/>
-                      <stop offset="60%" stop-color="#E8590C"/>
-                      <stop offset="100%" stop-color="#C4470A"/>
+                      <stop offset="0%" stop-color="#138808"/>
+                      <stop offset="60%" stop-color="#FF9933"/>
+                      <stop offset="100%" stop-color="#E07C16"/>
                     </linearGradient>
                   </defs>
                   <!-- Background semi-circle track -->
@@ -223,11 +223,82 @@
             </div>
 
           </div>
+
+          <!-- Time Spent Learning Widget — Premium Design -->
+          <div class="time-spent-card">
+            <!-- Dark gradient header banner -->
+            <div class="time-spent-banner">
+              <div class="time-spent-banner-bg"></div>
+              <div class="time-spent-banner-content">
+                <div class="time-spent-banner-left">
+                  <div class="time-spent-icon-ring">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="time-spent-title">Time Spent Learning</h3>
+                    <p class="time-spent-subtitle">Hours invested on the platform</p>
+                  </div>
+                </div>
+                <div class="time-spent-banner-right">
+                  <div class="time-spent-hero-val" id="heroTotalHours">12.5</div>
+                  <div class="time-spent-hero-lbl">hours this week</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Body -->
+            <div class="time-spent-body">
+              <!-- Toggle + Chart -->
+              <div class="time-chart-toolbar">
+                <div class="time-toggle-group">
+                  <button type="button" class="time-toggle active" id="toggleWeekly" data-period="weekly">This Week</button>
+                  <button type="button" class="time-toggle" id="toggleMonthly" data-period="monthly">This Month</button>
+                </div>
+                <div class="time-chart-range" id="timeChartRange">Sep 13 – Sep 19, 2026</div>
+              </div>
+
+              <!-- Chart with guide lines -->
+              <div class="time-chart-area">
+                <div class="time-chart-guides" id="timeChartGuides">
+                  <!-- Guide lines injected via JS -->
+                </div>
+                <div class="time-chart-container" id="timeChartContainer">
+                  <!-- Bars injected via JS -->
+                </div>
+              </div>
+
+              <!-- Summary Stats Row -->
+              <div class="time-stats-row">
+                <div class="time-stat-card">
+                  <div class="time-stat-icon" style="background:linear-gradient(135deg,#E8EEF5 0%,#D5E2F0 100%);color:var(--navy-800);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <div class="time-stat-val" id="totalHoursVal">12.5 hrs</div>
+                  <div class="time-stat-lbl">Total Hours</div>
+                </div>
+                <div class="time-stat-card">
+                  <div class="time-stat-icon" style="background:linear-gradient(135deg,#EAF7EA 0%,#CEF0CE 100%);color:var(--india-green);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                  </div>
+                  <div class="time-stat-val" id="dailyAvgVal">1.8 hrs</div>
+                  <div class="time-stat-lbl">Daily Avg</div>
+                </div>
+                <div class="time-stat-card">
+                  <div class="time-stat-icon" style="background:linear-gradient(135deg,#FFF3E6 0%,#FFE5CC 100%);color:var(--saffron-dark);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <div class="time-stat-val" id="mostActiveDayVal">Wed</div>
+                  <div class="time-stat-lbl">Peak Day</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
 
-      <!-- Bottom Section: Achievements with 3 Badges (Beginner, Novice, Master matching prototype sketch) -->
+      <!-- Bottom Section: Achievements with 3 Badges (Beginner, Elite, Master matching prototype sketch) -->
       <div class="achievements-section-card">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:6px;">
           <div>
@@ -252,16 +323,16 @@
             <span class="badge-status-pill unlocked">✓ Unlocked</span>
           </div>
 
-          <!-- Badge 2: Novice (matching prototype sketch: "novice") -->
+          <!-- Badge 2: Elite (matching prototype sketch: "elite") -->
           <div class="achievement-badge-card">
-            <div class="badge-medal-circle novice">
+            <div class="badge-medal-circle elite">
               <span class="badge-star-icon">★</span>
             </div>
             <div class="badge-stars-row">
               <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h4 class="badge-title">Novice</h4>
+            <h4 class="badge-title">Elite</h4>
             <p class="badge-desc">Active in multiple competencies, maintained a consistent streak, and achieved &gt;80% on assessment.</p>
             <span class="badge-status-pill unlocked">✓ Unlocked</span>
           </div>
@@ -291,7 +362,7 @@
           </div>
           <ul class="list-plain">
             <li class="resource-row">
-              <div class="r-icon" style="background:#FDECE0;color:var(--saffron-dark);">
+              <div class="r-icon" style="background:var(--saffron-light);color:var(--saffron-dark);">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h2a1.7 1.7 0 0 1 0 3.4h-2V16M13 8v8M13 8h2a2 2 0 0 1 0 8h-2M17 8h2"/></svg>
               </div>
               <div class="r-body">
@@ -376,7 +447,7 @@
       <h3 style="margin:0;font-size:16px;color:var(--navy-800);">Certificate of Completion</h3>
       <button type="button" id="closeCertModal" aria-label="Close modal">×</button>
     </div>
-    <div style="border:4px double var(--gold);padding:24px;background:#FCFAF7;text-align:center;border-radius:8px;margin-bottom:18px;">
+    <div style="border:4px double var(--saffron);padding:24px;background:var(--off-white-warm);text-align:center;border-radius:8px;margin-bottom:18px;">
       <div class="brand-emblem" style="margin:0 auto 10px;width:50px;height:50px;font-size:16px;">SK</div>
       <h4 style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;">Government of India · Saksham Platform</h4>
       <h2 style="font-size:22px;color:var(--navy-800);margin-bottom:4px;">Certificate of Completion</h2>

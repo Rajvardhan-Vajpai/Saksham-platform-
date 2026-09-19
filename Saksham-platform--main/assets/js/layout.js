@@ -56,7 +56,6 @@ function toast(msg) {
 /* ---- Dashboard shell: sidebar + topbar, shared across trainee/trainer/admin ---- */
 const NAV_BY_ROLE = {
   trainee: [
-    { href: "dashboard.html", icon: "dashboard", label: "Dashboard" },
     { href: "profile.html", icon: "profile", label: "My Profile" },
     { href: "courses.html", icon: "courses", label: "Courses" },
     { href: "assessment.html", icon: "assess", label: "Assessments" }

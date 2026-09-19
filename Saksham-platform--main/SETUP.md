@@ -34,7 +34,7 @@ handles SPA-style routing a bit better if you extend this later.
 ## 3. Test the flow
 1. Visit `http://localhost:3000` → **Sign up**.
 2. Pick **Trainee**, complete Clerk's sign-up form. You should land on
-   `trainee/dashboard.html` — open your browser's dev tools Network tab
+   `trainee/profile.html` — open your browser's dev tools Network tab
    and confirm `/api/users/sync` and `/api/users/me` returned 200, not
    a CORS error or 404.
 3. Sign up a second account as **Trainer**. It should show the

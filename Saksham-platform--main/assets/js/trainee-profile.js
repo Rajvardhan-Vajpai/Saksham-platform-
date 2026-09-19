@@ -260,28 +260,28 @@
     });
   }
 
-  /* ---------- 3. GitHub-Style Contribution Heatmap Generator ---------- */
+  /* ---------- 3. GitHub-Style Contribution Heatmap Generator (Unified Less to More Scale) ---------- */
   function initContributionHeatmap() {
     const gridEl = document.getElementById("contribCellsGrid");
     const tooltipEl = document.getElementById("heatmapTooltip");
     if (!gridEl) return;
 
-    // We will generate 52 weeks x 7 days = 364 cells leading up to today (Sep 19, 2026)
+    // 52 weeks x 7 days = 364 cells leading up to today (Sep 19, 2026)
     const weeks = 52;
     const daysPerWeek = 7;
     const totalDays = weeks * daysPerWeek;
     const endDate = new Date(2026, 8, 19); // Sep 19, 2026
 
-    // Sample activity pool for realism
-    const activityTypes = [
+    // Unified learning activity pool
+    const activities = [
       "Watched video lecture: Module 3 — Budget Cycle Explained",
+      "Completed course module: Cyber Hygiene Fundamentals",
       "Completed quiz: Public Financial Management",
-      "Watched video lecture: Cyber Hygiene Fundamentals",
-      "Passed assessment: Cyber Hygiene Foundation (Score: 92%)",
-      "Submitted feedback for Governance Module",
-      "Watched video lecture: Advanced Excel Reporting Tips",
-      "Downloaded reference guide: Financial Procurement Rules",
-      "Completed practical exercise: Budget Reconciliation"
+      "Passed assessment: Cyber Hygiene Foundation",
+      "Watched practical tutorial: Advanced Excel Reporting",
+      "Read compliance document: Financial Procurement Rules",
+      "Completed practical exercise: Budget Reconciliation",
+      "Passed evaluation: Public Procurement & GeM Rules"
     ];
 
     const cells = [];
@@ -289,51 +289,48 @@
     let currentStreak = 7;
     let longestStreak = 19;
 
-    // Pseudo-random deterministic distribution based on day index
     for (let i = totalDays - 1; i >= 0; i--) {
       const d = new Date(endDate);
       d.setDate(endDate.getDate() - i);
 
-      // Higher activity on weekdays, lower on weekends
-      const dayOfWeek = d.getDay(); // 0 = Sun, 6 = Sat
+      const dayOfWeek = d.getDay();
       const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
 
-      // Seed-like pseudo pattern
-      const pseudoVal = (Math.sin(i * 12.9898 + 78.233) * 43758.5453) % 1;
-      const r = Math.abs(pseudoVal);
+      // Deterministic pseudo-random seed
+      const p1 = Math.abs((Math.sin(i * 12.9898 + 78.233) * 43758.5453) % 1);
 
       let level = 0;
       let count = 0;
 
-      // Recent 14 days have an active streak (level 1 to 4)
+      // Activity distribution matching prototype
       if (i < 14) {
-        if (i < 7) {
-          level = Math.floor(r * 3) + 2; // Level 2-4
-          count = level * 2;
-        } else {
-          level = Math.floor(r * 2) + 1;
-          count = level;
-        }
-      } else if (!isWeekend && r > 0.42) {
-        if (r > 0.88) {
-          level = 4;
-          count = 4 + Math.floor(r * 3);
-        } else if (r > 0.72) {
-          level = 3;
-          count = 3;
-        } else if (r > 0.56) {
-          level = 2;
-          count = 2;
-        } else {
-          level = 1;
-          count = 1;
-        }
-      } else if (isWeekend && r > 0.80) {
-        level = 1;
+        count = i < 7 ? Math.floor(p1 * 3) + 2 : Math.floor(p1 * 2) + 1;
+      } else if (!isWeekend && p1 > 0.44) {
+        count = p1 > 0.88 ? 4 : p1 > 0.74 ? 3 : p1 > 0.58 ? 2 : 1;
+      } else if (isWeekend && p1 > 0.80) {
         count = 1;
       }
 
+      // Single progression mapping: Less (0) -> 1 -> 2 -> 3 -> 4 (More)
+      if (count >= 4) {
+        level = 4;
+      } else if (count === 3) {
+        level = 3;
+      } else if (count === 2) {
+        level = 2;
+      } else if (count === 1) {
+        level = 1;
+      } else {
+        level = 0;
+      }
+
       totalContribs += count;
+
+      const levelColors = ["#8C9BAE", "#42A873", "#2E9E66", "#FA924F", "#EA580C"];
+      const typeColor = levelColors[level];
+
+      const act = activities[i % activities.length];
+      const detail = count === 0 ? "No activity recorded" : count === 1 ? `1 activity: ${act}` : `${count} activities: ${act} & more`;
 
       const dateStr = d.toLocaleDateString("en-US", {
         weekday: "short",
@@ -342,26 +339,19 @@
         year: "numeric"
       });
 
-      let detail = "No learning activity recorded";
-      if (count === 1) {
-        detail = `1 activity: ${activityTypes[i % activityTypes.length]}`;
-      } else if (count > 1) {
-        detail = `${count} activities: ${activityTypes[i % activityTypes.length]} & more`;
-      }
-
       cells.push({
         date: dateStr,
         count: count,
         level: level,
-        detail: detail
+        detail: detail,
+        typeColor: typeColor
       });
     }
 
-    // Render cells into the grid
     gridEl.innerHTML = cells
       .map(
         (c) =>
-          `<div class="contrib-cell lvl-${c.level}" data-date="${c.date}" data-count="${c.count}" data-detail="${c.detail}"></div>`
+          `<div class="contrib-cell lvl-${c.level}" data-date="${c.date}" data-count="${c.count}" data-detail="${c.detail}" data-color="${c.typeColor}"></div>`
       )
       .join("");
 
@@ -381,8 +371,9 @@
         const date = cell.getAttribute("data-date");
         const count = cell.getAttribute("data-count");
         const detail = cell.getAttribute("data-detail");
+        const color = cell.getAttribute("data-color") || "#FA924F";
 
-        tooltipEl.innerHTML = `<strong>${count} contribution${count === "1" ? "" : "s"}</strong> on ${date}<br><span style="color:#93C5FD;">${detail}</span>`;
+        tooltipEl.innerHTML = `<strong>${count} contribution${count === "1" ? "" : "s"}</strong> on ${date}<br><span style="color:${color};font-weight:600;">● ${detail}</span>`;
         tooltipEl.style.display = "block";
 
         const rect = cell.getBoundingClientRect();
@@ -495,6 +486,100 @@
     });
   }
 
+  /* ---------- 7. Time Spent Learning Bar Chart ---------- */
+  const WEEKLY_DATA = [
+    { label: "Mon", hours: 2.5 },
+    { label: "Tue", hours: 1.0 },
+    { label: "Wed", hours: 3.2 },
+    { label: "Thu", hours: 1.8 },
+    { label: "Fri", hours: 2.0 },
+    { label: "Sat", hours: 0.5 },
+    { label: "Sun", hours: 1.5 }
+  ];
+
+  const MONTHLY_DATA = [
+    { label: "Week 1", hours: 8.5 },
+    { label: "Week 2", hours: 12.0 },
+    { label: "Week 3", hours: 10.2 },
+    { label: "Week 4", hours: 14.8 }
+  ];
+
+  function renderTimeChart(data) {
+    const container = document.getElementById("timeChartContainer");
+    if (!container) return;
+
+    const maxHours = Math.max(...data.map(d => d.hours), 0.1);
+    const maxBarHeight = 110; // px
+
+    // Find the day/week with max hours
+    const maxIndex = data.indexOf(data.reduce((a, b) => a.hours >= b.hours ? a : b));
+
+    container.innerHTML = data.map((d, i) => {
+      const barHeight = Math.max((d.hours / maxHours) * maxBarHeight, 4);
+      const isHighlight = i === maxIndex;
+      return `
+        <div class="time-bar-wrapper">
+          <div class="time-bar-tooltip">${d.hours} hrs</div>
+          <div class="time-bar ${isHighlight ? 'highlight' : ''}" style="height:0px;" data-target-height="${barHeight}"></div>
+          <span class="time-bar-label">${d.label}</span>
+        </div>`;
+    }).join("");
+
+    // Animate bars in
+    requestAnimationFrame(() => {
+      container.querySelectorAll(".time-bar").forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.height = bar.getAttribute("data-target-height") + "px";
+        }, i * 80);
+      });
+    });
+
+    // Update stats
+    const totalHours = data.reduce((sum, d) => sum + d.hours, 0);
+    const avgHours = totalHours / data.length;
+    const mostActiveItem = data.reduce((a, b) => a.hours >= b.hours ? a : b);
+
+    const totalEl = document.getElementById("totalHoursVal");
+    const avgEl = document.getElementById("dailyAvgVal");
+    const activeEl = document.getElementById("mostActiveDayVal");
+    const totalLblEl = totalEl?.closest(".time-stat-item")?.querySelector(".time-stat-lbl");
+
+    if (totalEl) totalEl.textContent = `${totalHours.toFixed(1)} hrs`;
+    if (avgEl) avgEl.textContent = `${avgHours.toFixed(1)} hrs`;
+    if (activeEl) activeEl.textContent = mostActiveItem.label;
+
+    // Update label based on period
+    if (totalLblEl) {
+      totalLblEl.textContent = data.length <= 7 ? "Total This Week" : "Total This Month";
+    }
+  }
+
+  function initTimeSpentWidget() {
+    const weeklyBtn = document.getElementById("toggleWeekly");
+    const monthlyBtn = document.getElementById("toggleMonthly");
+
+    function setActive(activeBtn) {
+      [weeklyBtn, monthlyBtn].forEach(b => { if (b) b.classList.remove("active"); });
+      if (activeBtn) activeBtn.classList.add("active");
+    }
+
+    if (weeklyBtn) {
+      weeklyBtn.addEventListener("click", () => {
+        setActive(weeklyBtn);
+        renderTimeChart(WEEKLY_DATA);
+      });
+    }
+    if (monthlyBtn) {
+      monthlyBtn.addEventListener("click", () => {
+        setActive(monthlyBtn);
+        renderTimeChart(MONTHLY_DATA);
+      });
+    }
+
+    // Default: show weekly
+    renderTimeChart(WEEKLY_DATA);
+  }
+
   /* ---------- Initialization on Load ---------- */
   (async function () {
     // Initialize Dashboard Shell (nav, topbar, auth)
@@ -519,5 +604,6 @@
     updateDisplayView();
     initContributionHeatmap();
     await initCoursesAndGauge();
+    initTimeSpentWidget();
   })();
 })();

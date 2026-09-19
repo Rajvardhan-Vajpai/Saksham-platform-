@@ -1,4 +1,4 @@
-﻿/* ---- Support page specific styles ---- */
+/* ---- Support page specific styles ---- */
 .support-hero {
   background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
   color: #fff;
@@ -63,9 +63,9 @@
   justify-content: center;
   margin: 0 auto 16px;
 }
-.channel-icon.email { background: #FDECE0; color: var(--saffron-dark); }
-.channel-icon.phone { background: #E6F4F2; color: var(--teal-dark); }
-.channel-icon.office { background: #E6ECF4; color: var(--navy-800); }
+.channel-icon.email { background: var(--saffron-light); color: var(--saffron-dark); }
+.channel-icon.phone { background: var(--india-green-light); color: var(--india-green-dark); }
+.channel-icon.office { background: var(--navy-100); color: var(--navy-800); }
 .channel-card h3 { font-size: 16px; margin-bottom: 6px; }
 .channel-card p { font-size: 13.5px; margin: 0; }
 .channel-card a.channel-link {

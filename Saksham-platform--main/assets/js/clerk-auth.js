@@ -99,7 +99,7 @@ const AuthGuard = {
       });
       const profile = await Api.getProfile();
       if (profile.role && profile.role !== expectedRole) {
-        window.location.href = `../${profile.role}/dashboard.html`;
+        window.location.href = profile.role === "trainee" ? "../trainee/profile.html" : `../${profile.role}/dashboard.html`;
         return null;
       }
       if (profile.role === "trainer" && profile.status === "PENDING") {
