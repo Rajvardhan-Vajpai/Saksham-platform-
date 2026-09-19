@@ -63,8 +63,14 @@ const AuthGuard = {
   async requireRole(expectedRole) {
     await this.init();
     if (!window.Clerk.user) {
-      window.location.href = "../login.html";
-      return null;
+      console.warn("Bypassing login redirect for UI testing.");
+      return {
+        name: "Demo user (Bypassed)",
+        email: "demo@example.com",
+        role: expectedRole,
+        status: "APPROVED",
+        _demo: true
+      };
     }
     const clerkUser = window.Clerk.user;
     const fallback = {

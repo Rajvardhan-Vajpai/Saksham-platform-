@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a href="index.html" class="brand" style="text-decoration:none;">
+    <div class="brand-emblem">SK</div>
+    <div class="brand-text"><div class="brand-name">Saksham</div><div class="brand-sub">National Training &amp; Competency Platform</div></div>
+  </a>
+  <a href="index.html" class="btn btn-ghost btn-sm">← Back to home</a>
+</div></header>
+<div class="tricolor-rule"></div>
+
+<div class="auth-shell">
+  <div class="auth-card" style="max-width:440px;">
+
+    <div id="roleStep">
+      <h1>Create your account</h1>
+      <p class="sub">Trainer accounts are reviewed by an administrator before they're activated.</p>
+      <div class="field">
+        <label>I am signing up as</label>
+        <div class="role-select">
+          <label><input type="radio" name="role" value="trainee" checked><span>Trainee</span></label>
+          <label><input type="radio" name="role" value="trainer"><span>Trainer</span></label>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block" id="continueBtn">Continue</button>
+      <p class="auth-foot">Already registered? <a href="login.html">Log in</a></p>
+    </div>
+
+    <div id="clerkStep" style="display:none;">
+      <div id="statusBox"></div>
+      <div id="clerk-signup"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="../js/clerk-auth.js"></script>
+<script src="../js/api.js"></script>
+<script>
+  // Define where users should be redirected after signing up based on their role
+  const dashboardRoutes = { 
+    trainee: "../trainee/dashboard.html", 
+    trainer: "../trainer/dashboard.html" 
+  };
+  
+  let chosenRole = "trainee"; // Default role is trainee
+  const signupStatusBox = document.getElementById("statusBox");
+  const continueButton = document.getElementById("continueBtn");
+  const roleSelectionStep = document.getElementById("roleStep");
+  const clerkSignupStep = document.getElementById("clerkStep");
+
+  // When the user clicks "Continue" after selecting their role
+  continueButton.addEventListener("click", async () => {
+    // 1. Get the role they selected from the radio buttons
+    chosenRole = document.querySelector('input[name="role"]:checked').value;
+    
+    // 2. Hide the role selection screen and show the Clerk signup widget
+    roleSelectionStep.style.display = "none";
+    clerkSignupStep.style.display = "block";
+    
+    try {
+      // 3. Initialize the Clerk signup widget
+      await AuthGuard.mountSignUp(document.getElementById("clerk-signup"), {
+        routing: "hash",
+        afterSignUpUrl: window.location.href, // Reload this page after successful signup
+        signInUrl: "login.html" // Where to go if they click "Already have an account"
+      });
+      
+      // If they are somehow already signed in, finish the process immediately
+      if (window.Clerk.user) {
+        finishSignup();
+      }
+      
+      // Listen for the event where they successfully create their account
+      AuthGuard.addListener(({ user }) => { 
+        if (user) finishSignup(); 
+      });
+      
+    } catch (authError) {
+      signupStatusBox.innerHTML = `<div class="alert alert-error">Couldn't load sign-up (offline, or Clerk isn't reachable).</div>`;
+    }
+  });
+
+  /**
+   * Called after the user has successfully created an account via Clerk.
+   * This function syncs their new account to our backend database.
+   */
+  async function finishSignup() {
+    signupStatusBox.innerHTML = `<div class="alert alert-info">Setting up your account…</div>`;
+    
+    // Get their name (fallback to "User" if not provided) and email from Clerk
+    const userName = window.Clerk.user.fullName || window.Clerk.user.username || "User";
+    const userEmail = window.Clerk.user.primaryEmailAddress?.emailAddress;
+    
+    try {
+      // Send their details to our backend to create their profile record
+      await Api.syncUser({ name: userName, email: userEmail, role: chosenRole });
+      
+      // Show different success messages depending on their role
+      if (chosenRole === "trainer") {
+        clerkSignupStep.innerHTML = `
+          <div class="alert alert-success">Thanks, ${userName}. Your trainer account is pending admin approval — you'll get access once it's reviewed.</div>
+          <a href="login.html" class="btn btn-outline btn-block">Back to log in</a>`;
+      } else {
+        clerkSignupStep.innerHTML = `
+          <div class="alert alert-success">You're all set, ${userName}.</div>
+          <a href="${dashboardRoutes.trainee}" class="btn btn-primary btn-block">Go to your dashboard</a>`;
+      }
+      
+    } catch (syncError) {
+      // If the backend is offline, we'll offer a demo mode fallback
+      clerkSignupStep.innerHTML = `
+        <div class="alert alert-info">Account created, but the backend wasn't reachable to finish setup. Start it and log in again — or explore with sample data for now.</div>
+        <a href="${dashboardRoutes[chosenRole]}" class="btn btn-outline btn-block">Continue in demo mode</a>`;
+    }
+  }
+</script>
+</body>
+</html>

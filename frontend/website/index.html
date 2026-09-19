@@ -6,26 +6,11 @@
 <title>Saksham — National Training &amp; Competency Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 
-<div class="util-bar">
-  <div class="container">
-    <div>
-      <a href="#main">Skip to Main Content</a>
-      <!-- <a href="#">Screen Reader Access</a> -->
-      <a href="#" id="langToggle">हिंदी</a>
-    </div>
-    <div>
-      <a href="#" id="fontMinus">A-</a>
-      <a href="#" id="fontReset">A</a>
-      <a href="#" id="fontPlus">A+</a>
-      <a href="#" id="contrastToggle">High Contrast</a>
-    </div>
-  </div>
-</div>
 
 <header class="site-header">
   <div class="container">
@@ -37,12 +22,13 @@
       </div>
     </div>
     <nav class="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="courses.html" class="active">Courses</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="#courses">Courses</a>
       <a href="#about">About</a>
       <a href="support.html">Help</a>
     </nav>
     <div class="header-actions">
+      <a href="#" id="langToggle" class="btn btn-outline btn-sm" style="border: none; margin-right: 8px;">हिंदी</a>
       <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
       <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
     </div>
@@ -50,10 +36,30 @@
 </header>
 <div class="tricolor-rule"></div>
 
-
+<div class="ticker-wrap" id="ticker"></div>
 
 <main id="main">
-  
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">MISSION SAKSHAM · CAPACITY BUILDING PROGRAMME</div>
+        <h1>Learn, get certified, and grow with your department.</h1>
+        <p class="lead">One platform for course enrollment, competency-based assessments, and shared learning resources — built for trainees, trainers and administrators alike.</p>
+        <div class="hero-actions">
+          <a href="signup.html" class="btn btn-primary">Create your account</a>
+          <a href="#courses" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3);">Browse courses</a>
+        </div>
+      </div>
+      <div class="card card-pad" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);">
+        <h3 style="color:#fff;font-size:15px;">Three roles, one platform</h3>
+        <ul style="color:#C9D6E7;font-size:13.5px;margin-top:10px;">
+          <li><strong style="color:#fff;">Trainees</strong> enroll in courses, build a profile, and attempt assessments.</li>
+          <li><strong style="color:#fff;">Trainers</strong> publish materials, set questionnaires, and track performance.</li>
+          <li><strong style="color:#fff;">Admins</strong> approve accounts and oversee the whole programme.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <div class="stat-strip">
     <div class="container">
@@ -116,11 +122,23 @@
         </div>
       </div>
       <div class="grid-3" id="courseGrid" style="margin-bottom:30px;"></div>
-      
+      <div style="text-align:center;">
+        <a href="courses.html" class="btn btn-outline">View all courses</a>
+      </div>
     </div>
   </section>
 
-  
+  <section class="section" style="background:#F3EFE6;" id="announcements">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Announcements &amp; achievements</h2>
+          <p>Published by the programme administrator.</p>
+        </div>
+      </div>
+      <div class="grid-3" id="noticeGrid"></div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer" id="contact">
@@ -135,7 +153,7 @@
       </div>
       <div>
         <h5>Platform</h5>
-        <ul><li><a href="signup.html">Register</a></li><li><a href="login.html">Log in</a></li><li><a href="courses.html" class="active">Courses</a></li></ul>
+        <ul><li><a href="signup.html">Register</a></li><li><a href="login.html">Log in</a></li><li><a href="#courses">Courses</a></li></ul>
       </div>
       <div>
         <h5>Support</h5>
@@ -153,29 +171,64 @@
   </div>
 </footer>
 
-<script src="assets/js/mock-data.js"></script>
-<script src="assets/js/api.js"></script>
-<script src="assets/js/layout.js"></script>
+<script src="../js/mock-data.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
 <script>
+  // Render the news ticker at the top of the page using fallback data
+  renderTicker("ticker", MockDB.ticker);
+
+  // An asynchronous function that runs immediately to load dynamic page content
   (async function () {
+    
+    // 1. Load Statistics
+    // Attempt to get live stats from the API, otherwise use our mock data
+    const stats = await loadWithFallback(Api.getStats, MockDB.stats);
+    document.getElementById("statGrid").innerHTML = `
+      <div class="stat-item"><div class="stat-num">${stats.learners}</div><div class="stat-label">Registered learners</div></div>
+      <div class="stat-item"><div class="stat-num">${stats.courses}</div><div class="stat-label">Courses available</div></div>
+      <div class="stat-item"><div class="stat-num">${stats.trainers}</div><div class="stat-label">Active trainers</div></div>
+      <div class="stat-item"><div class="stat-num">${stats.certificates}</div><div class="stat-label">Certificates issued</div></div>`;
+
+    // 2. Load Announcements
+    // Fetch announcements, applying specific CSS classes based on the announcement type
+    const items = await loadWithFallback(Api.getAnnouncements, MockDB.announcements);
+    const getTagClass = (tagType) => tagType === "Achievement" ? "tag-achieve" : (tagType === "New content" ? "tag-new" : "tag-info");
+    
+    document.getElementById("noticeGrid").innerHTML = items.map(notice => `
+      <div class="notice-card">
+        <div class="notice-date"><div class="d">${notice.date.split(" ")[0]}</div><div class="m">${notice.date.split(" ")[1]}</div></div>
+        <div class="notice-body">
+          <span class="tag ${getTagClass(notice.tag)}">${notice.tag}</span>
+          <h4 style="margin-top:6px;">${notice.title}</h4>
+          <p>${notice.body}</p>
+        </div>
+      </div>`).join("");
+
+    // 3. Load Courses
     try {
-      const courseRes = await fetch("dataset/courses.json?t=" + new Date().getTime());
+      // We append a timestamp to the URL to prevent the browser from caching old course data
+      const courseRes = await fetch("../dataset/courses.json?t=" + new Date().getTime());
+      
       if (courseRes.ok) {
         const allCourses = await courseRes.json();
-        const coursesToShow = allCourses;
-        document.getElementById("courseGrid").innerHTML = coursesToShow.map(c => `
+        // For the homepage, we only want to display a preview of the first 6 courses
+        const coursesToShow = allCourses.slice(0, 6);
+        
+        document.getElementById("courseGrid").innerHTML = coursesToShow.map(course => `
           <div class="role-card" style="display:flex; flex-direction:column;">
-            <h4 style="margin:0 0 10px 0;">${c.title}</h4>
-            <div style="margin-bottom:10px;"><span class="tag tag-info">${c.category}</span></div>
-            <p style="font-size:13.5px; flex-grow:1; color:#555;">${c.description.substring(0, 100)}...</p>
+            <h4 style="margin:0 0 10px 0;">${course.title}</h4>
+            <div style="margin-bottom:10px;"><span class="tag tag-info">${course.category}</span></div>
+            <p style="font-size:13.5px; flex-grow:1; color:#555;">${course.description.substring(0, 100)}...</p>
             <div style="font-size:12px; color:#888; margin-top:15px; border-top:1px solid #eee; padding-top:10px;">
-              <strong>Difficulty:</strong> ${c.difficulty} &nbsp;|&nbsp; <strong>Duration:</strong> ${c.duration_weeks} weeks
+              <strong>Difficulty:</strong> ${course.difficulty} &nbsp;|&nbsp; <strong>Duration:</strong> ${course.duration_weeks} weeks
             </div>
           </div>
         `).join("");
       }
     } catch (err) {
       console.error("Error loading courses:", err);
+      // Display a friendly fallback message if the courses fail to load (e.g. if the user opens the file directly without a server)
       document.getElementById("courseGrid").innerHTML = `
         <div style="grid-column: 1 / -1; padding: 20px; background: #fff3f3; color: #d32f2f; border: 1px solid #ffcdd2; border-radius: 8px; text-align: center;">
           <h4 style="margin-top: 0;">Unable to load courses</h4>
@@ -195,43 +248,6 @@
 	});
 </script>
 <script>
-/* ---- Utility Bar: Font Size Controls ---- */
-(function () {
-  const sizes = [14, 16, 18]; // small, default, large (px)
-  let sizeIdx = 1; // start at default
-
-  function applySize() {
-    document.documentElement.style.fontSize = sizes[sizeIdx] + "px";
-  }
-
-  document.getElementById("fontMinus").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (sizeIdx > 0) sizeIdx--;
-    applySize();
-  });
-  document.getElementById("fontReset").addEventListener("click", function (e) {
-    e.preventDefault();
-    sizeIdx = 1;
-    applySize();
-  });
-  document.getElementById("fontPlus").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (sizeIdx < sizes.length - 1) sizeIdx++;
-    applySize();
-  });
-})();
-
-/* ---- Utility Bar: High Contrast Toggle ---- */
-(function () {
-  const btn = document.getElementById("contrastToggle");
-  let active = false;
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    active = !active;
-    document.body.classList.toggle("high-contrast", active);
-    btn.textContent = active ? "Normal View" : "High Contrast";
-  });
-})();
 
 /* ---- Utility Bar: Hindi / English Language Toggle ---- */
 (function () {

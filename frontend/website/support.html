@@ -7,7 +7,7 @@
 <meta name="description" content="Get help with the Saksham platform. Browse FAQs, submit a support request, or contact the programme team.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <style>
 /* ---- Support page specific styles ---- */
 .support-hero {
@@ -239,6 +239,7 @@
     <a href="support.html" class="active">Help</a>
   </nav>
   <div class="header-actions">
+    <a href="#" id="langToggle" class="btn btn-outline btn-sm" style="border: none; margin-right: 8px;">हिंदी</a>
     <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
     <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
   </div>
@@ -478,38 +479,55 @@
 </footer>
 
 <script>
-/* ---- FAQ Search / Filter ---- */
-(function () {
-  const input = document.getElementById("faqSearch");
-  const items = document.querySelectorAll(".faq-item");
+  /* ==========================================================================
+     FAQ Search / Filter
+     ========================================================================== */
+  (function initFAQSearch() {
+    const searchInput = document.getElementById("faqSearch");
+    const faqItems = document.querySelectorAll(".faq-item");
 
-  input.addEventListener("input", function () {
-    const q = this.value.toLowerCase().trim();
-    items.forEach(function (item) {
-      const text = item.textContent.toLowerCase();
-      item.style.display = q === "" || text.includes(q) ? "" : "none";
+    // Listen for any text typed into the search bar
+    searchInput.addEventListener("input", function () {
+      // Get the search query in lowercase and trim any extra spaces
+      const query = this.value.toLowerCase().trim();
+      
+      // Loop through all FAQ items and hide/show them based on the search query
+      faqItems.forEach(function (item) {
+        const itemText = item.textContent.toLowerCase();
+        
+        // If the query is empty or the item text contains the query, show it
+        if (query === "" || itemText.includes(query)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
     });
-  });
-})();
+  })();
 
-/* ---- Contact Form Submit ---- */
-(function () {
-  const form = document.getElementById("supportForm");
-  const success = document.getElementById("formSuccess");
+  /* ==========================================================================
+     Contact Form Submission Logic
+     ========================================================================== */
+  (function initContactForm() {
+    const contactForm = document.getElementById("supportForm");
+    const successMessage = document.getElementById("formSuccess");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    // Simulate submission (replace with real API call when backend supports it)
-    const btn = document.getElementById("submitBtn");
-    btn.disabled = true;
-    btn.textContent = "Submitting…";
+    // Listen for the form submission
+    contactForm.addEventListener("submit", function (event) {
+      // Prevent the default page reload
+      event.preventDefault();
+      
+      const submitButton = document.getElementById("submitBtn");
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting…";
 
-    setTimeout(function () {
-      form.style.display = "none";
-      success.style.display = "block";
-    }, 800);
-  });
-})();
+      // Simulate a network request to submit the form (we'll connect a real API later)
+      setTimeout(function () {
+        contactForm.style.display = "none";
+        successMessage.style.display = "block";
+      }, 800);
+    });
+  })();
 </script>
 </body>
 </html>
