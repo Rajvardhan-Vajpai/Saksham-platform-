@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -15,80 +15,383 @@
     <div class="app-topbar" id="topbar"></div>
     <div class="app-content">
 
-      <div class="grid-2" style="align-items:start;grid-template-columns:280px 1fr;gap:24px;">
-        <div class="card card-pad" style="text-align:center;">
-          <div class="avatar" style="width:76px;height:76px;font-size:22px;margin:0 auto 14px;">AS</div>
-          <h3 style="font-size:16px;margin-bottom:2px;">Aditi Sharma</h3>
-          <p style="font-size:13px;margin-bottom:14px;">Finance Department</p>
-          <div class="progress" style="margin-bottom:6px;"><span style="width:75%"></span></div>
-          <p style="font-size:12px;margin:0;">Profile 75% complete</p>
-          <button class="btn btn-outline btn-block btn-sm" style="margin-top:14px;">Upload photo</button>
+      <!-- Main 2-Column Grid matching Prototype -->
+      <div class="grid-2" style="align-items:start;grid-template-columns:300px 1fr;gap:24px;">
+        
+        <!-- Left Column: Profile Photo + Edit Profile Option + Basic Info -->
+        <div>
+          <!-- Profile Card -->
+          <div class="card card-pad" style="text-align:center;margin-bottom:20px;">
+            <!-- Profile Photo with Edit Pencil Button -->
+            <div class="profile-avatar-container">
+              <div class="profile-avatar-img" id="profileAvatarView" title="Profile Photo">
+                AS
+              </div>
+              <button type="button" class="avatar-pencil-btn" id="pencilPhotoBtn" title="Edit profile photo" aria-label="Edit profile photo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                </svg>
+              </button>
+              <input type="file" id="avatarFileInput" accept="image/*" style="display:none;">
+            </div>
+
+            <h3 id="profileNameDisplay" style="font-size:17px;margin-bottom:2px;">Aditi Sharma</h3>
+            <p id="profileRoleDisplay" style="font-size:13px;margin-bottom:14px;color:var(--ink-soft);">Section Officer · Finance Department</p>
+
+            <!-- Option of Edit Profile below profile photo as specified in prompt -->
+            <button type="button" class="btn btn-outline btn-block btn-sm" id="openEditProfileBtn" style="margin-bottom:14px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Edit Profile
+            </button>
+
+            <!-- Profile Completeness Indicator -->
+            <div class="progress" style="margin-bottom:6px;"><span id="profileProgressFill" style="width:85%"></span></div>
+            <p id="profileProgressText" style="font-size:12px;margin:0;color:var(--ink-soft);">Profile 85% complete</p>
+          </div>
+
+          <!-- Basic Info about User Card (matching prototype sketch: "Basic infor. about user") -->
+          <div class="card card-pad">
+            <h3 style="font-size:15px;margin:0 0 14px;color:var(--navy-800);">Basic Information</h3>
+            
+            <div class="info-list">
+              <div class="info-row">
+                <span class="info-label">Full Name</span>
+                <span class="info-val" id="viewName">Aditi Sharma</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Trainee ID</span>
+                <span class="info-val" id="viewId">U1042</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Email</span>
+                <span class="info-val" id="viewEmail">aditi.sharma@gov.in</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Department</span>
+                <span class="info-val" id="viewDept">Finance Department</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Designation</span>
+                <span class="info-val" id="viewDesignation">Section Officer</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Region / Cadre</span>
+                <span class="info-val" id="viewRegion">North Zone</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Qualifications</span>
+                <span class="info-val" id="viewQual">M.A. Public Administration, Delhi University</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Work Experience</span>
+                <span class="info-val" id="viewExp">Section Officer, Finance Department — 6 years of service, previously posted in the Revenue Department (2 years).</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Skills</span>
+                <div class="pills-container" id="viewSkills">
+                  <span class="pill">Budgeting</span>
+                  <span class="pill">MS Excel</span>
+                  <span class="pill">Public Speaking</span>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Interests</span>
+                <div class="pills-container" id="viewInterests">
+                  <span class="pill">Policy research</span>
+                  <span class="pill">Digital governance</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <form id="profileForm">
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <h3 style="font-size:15px;">Basic details</h3>
-            <div class="row-2">
-              <div class="field"><label>Full name</label><input type="text" id="f_name" value="Aditi Sharma"></div>
-              <div class="field"><label>Department</label><input type="text" id="f_department" value="Finance"></div>
+        <!-- Right Column: Contribution Graph + Courses & Completion Gauge -->
+        <div>
+          <!-- Top Right: Contribution graph like github (matching prototype sketch) -->
+          <div class="contrib-card">
+            <div class="contrib-header">
+              <div class="contrib-title-block">
+                <h3>Learning Activity &amp; Contributions</h3>
+                <p>Recorded video sessions, course completions, and assessment attempts</p>
+              </div>
+              <div class="contrib-stats">
+                <div class="contrib-stat">
+                  <div class="contrib-stat-val" id="totalContribVal">184</div>
+                  <div class="contrib-stat-label">Contributions in 2026</div>
+                </div>
+                <div class="contrib-stat">
+                  <div class="contrib-stat-val" id="currentStreakVal" style="color:var(--navy-800);">7 days</div>
+                  <div class="contrib-stat-label">Current Streak</div>
+                </div>
+                <div class="contrib-stat">
+                  <div class="contrib-stat-val" id="longestStreakVal">19 days</div>
+                  <div class="contrib-stat-label">Longest Streak</div>
+                </div>
+              </div>
             </div>
-            <div class="row-2">
-              <div class="field"><label>Designation</label><input type="text" id="f_designation" value="Section Officer"></div>
-              <div class="field"><label>Region</label><input type="text" id="f_region" value="North Zone"></div>
+
+            <!-- Heatmap Container -->
+            <div class="contrib-graph-wrapper">
+              <div class="heatmap-tooltip" id="heatmapTooltip"></div>
+              <div class="contrib-calendar">
+                <div class="contrib-day-labels">
+                  <span>Mon</span>
+                  <span>Wed</span>
+                  <span>Fri</span>
+                </div>
+                <div class="contrib-grid-wrap">
+                  <div class="contrib-month-labels" id="contribMonthLabels">
+                    <span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+                  </div>
+                  <div class="contrib-cells-grid" id="contribCellsGrid">
+                    <!-- Dynamic 52x7 cells injected via trainee-profile.js -->
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <h3 style="font-size:15px;">Qualifications</h3>
-            <div class="field"><label>Qualifications</label><textarea id="f_qualifications">M.A. Public Administration, Delhi University</textarea></div>
-          </div>
-
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <h3 style="font-size:15px;">Work experience</h3>
-            <div class="field"><label>Current role &amp; years of service</label><textarea id="f_experience">Section Officer, Finance Department — 6 years of service, previously posted in the Revenue Department (2 years).</textarea></div>
-          </div>
-
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <h3 style="font-size:15px;">Skills</h3>
-            <div class="field">
-              <div class="tagbox" id="skillsBox">
-                <span class="pill">Budgeting <button type="button" data-remove>×</button></span>
-                <span class="pill">MS Excel <button type="button" data-remove>×</button></span>
-                <span class="pill">Public Speaking <button type="button" data-remove>×</button></span>
-                <input type="text" placeholder="Type a skill and press Enter" id="skillInput">
+            <div class="contrib-footer">
+              <span>Activity synchronized with trainee video lectures &amp; quizzes</span>
+              <div class="contrib-legend">
+                <span>Less</span>
+                <span class="contrib-cell lvl-0"></span>
+                <span class="contrib-cell lvl-1"></span>
+                <span class="contrib-cell lvl-2"></span>
+                <span class="contrib-cell lvl-3"></span>
+                <span class="contrib-cell lvl-4"></span>
+                <span>More</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <h3 style="font-size:15px;">Interests</h3>
-            <div class="field">
-              <div class="tagbox" id="interestBox">
-                <span class="pill">Policy research <button type="button" data-remove>×</button></span>
-                <span class="pill">Digital governance <button type="button" data-remove>×</button></span>
-                <input type="text" placeholder="Type an interest and press Enter">
+          <!-- Middle Right: Courses Enrolled In + Course Completed Gauge (matching prototype sketch) -->
+          <div class="grid-2" style="grid-template-columns:1.2fr 0.8fr;gap:20px;">
+            
+            <!-- Courses enrolled in -->
+            <div class="card card-pad">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+                <h3 style="font-size:15px;margin:0;color:var(--navy-800);">Courses enrolled in</h3>
+                <a href="courses.html" class="btn btn-ghost btn-sm" style="font-size:12px;">Browse more →</a>
+              </div>
+              <div id="enrolledCoursesList">
+                <!-- Injected dynamically via JS -->
               </div>
             </div>
-          </div>
 
-          <div class="card card-pad" style="margin-bottom:20px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-              <h3 style="font-size:15px;margin:0;">Certificates</h3>
-              <button type="button" class="btn btn-outline btn-sm">+ Add certificate</button>
+            <!-- Course completed (how much) with Semi-Circle Gauge (matching prototype sketch: 50% arc gauge) -->
+            <div class="gauge-card">
+              <h3 style="font-size:15px;margin:0 0 2px;color:var(--navy-800);">Course completed</h3>
+              <p style="font-size:12px;color:var(--ink-soft);margin:0 0 10px;">Overall completion rate</p>
+
+              <div class="gauge-visual">
+                <svg viewBox="0 0 200 115">
+                  <defs>
+                    <linearGradient id="sakshamGaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#0F766E"/>
+                      <stop offset="60%" stop-color="#E8590C"/>
+                      <stop offset="100%" stop-color="#C4470A"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Background semi-circle track -->
+                  <path class="gauge-meter-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+                  <!-- Filled progress semi-circle track (radius=80, half circumference = pi*80 ≈ 251.32) -->
+                  <path class="gauge-meter-fill" id="gaugeMeterFill" d="M 20 100 A 80 80 0 0 1 180 100" stroke-dasharray="251.32" stroke-dashoffset="125.66" />
+                </svg>
+                <div class="gauge-center-text">
+                  <div class="gauge-pct-val" id="gaugePctText">50%</div>
+                  <div class="gauge-pct-lbl">Completed</div>
+                </div>
+              </div>
+
+              <div class="gauge-stats-row">
+                <div class="gauge-stat-item">
+                  <div class="num" id="gaugeCompletedCount">1</div>
+                  <div class="lbl">Finished</div>
+                </div>
+                <div class="gauge-stat-item">
+                  <div class="num" id="gaugeInProgressCount">2</div>
+                  <div class="lbl">In Progress</div>
+                </div>
+                <div class="gauge-stat-item">
+                  <div class="num" id="gaugeTotalCount">3</div>
+                  <div class="lbl">Enrolled</div>
+                </div>
+              </div>
             </div>
-            <ul class="list-plain">
-              <li class="resource-row">
-                <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h2a1.7 1.7 0 0 1 0 3.4h-2V16M13 8v8M13 8h2a2 2 0 0 1 0 8h-2M17 8h2"/></svg></div>
-                <div class="r-body"><h4>Cyber Hygiene Foundation</h4><span>Issued 2 Sep 2026 · Saksham Platform</span></div>
-                <a href="#" class="btn btn-ghost btn-sm">View</a>
-              </li>
-            </ul>
-          </div>
 
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
+          </div>
+        </div>
+
       </div>
 
+      <!-- Bottom Section: Achievements with 3 Badges (Beginner, Novice, Master matching prototype sketch) -->
+      <div class="achievements-section-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:6px;">
+          <div>
+            <h2 style="font-size:18px;margin:0 0 3px;color:var(--navy-800);">Achievements &amp; Competency Badges</h2>
+            <p style="font-size:13px;color:var(--ink-soft);margin:0;">Milestones achieved through consistent learning and verified assessments</p>
+          </div>
+          <span class="tag tag-achieve" style="font-size:12px;padding:4px 12px;" id="unlockedBadgesSummary">2 of 3 Badges Unlocked</span>
+        </div>
+
+        <div class="achievements-grid">
+          
+          <!-- Badge 1: Beginner (matching prototype sketch: "Begginer") -->
+          <div class="achievement-badge-card">
+            <div class="badge-medal-circle beginner">
+              <span class="badge-star-icon">★</span>
+            </div>
+            <div class="badge-stars-row">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4 class="badge-title">Beginner</h4>
+            <p class="badge-desc">Completed trainee onboarding, enrolled in active tracks, and finished the first foundation course.</p>
+            <span class="badge-status-pill unlocked">✓ Unlocked</span>
+          </div>
+
+          <!-- Badge 2: Novice (matching prototype sketch: "novice") -->
+          <div class="achievement-badge-card">
+            <div class="badge-medal-circle novice">
+              <span class="badge-star-icon">★</span>
+            </div>
+            <div class="badge-stars-row">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4 class="badge-title">Novice</h4>
+            <p class="badge-desc">Active in multiple competencies, maintained a consistent streak, and achieved &gt;80% on assessment.</p>
+            <span class="badge-status-pill unlocked">✓ Unlocked</span>
+          </div>
+
+          <!-- Badge 3: Master (matching prototype sketch: "Master") -->
+          <div class="achievement-badge-card">
+            <div class="badge-medal-circle master">
+              <span class="badge-star-icon">★</span>
+            </div>
+            <div class="badge-stars-row">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4 class="badge-title">Master</h4>
+            <p class="badge-desc">Complete all advanced modules in Financial Management &amp; Reporting and clear the capstone evaluation.</p>
+            <span class="badge-status-pill in-progress">In Progress (50%)</span>
+          </div>
+
+        </div>
+
+        <!-- Earned Certificates subsection -->
+        <div style="margin-top:28px;padding-top:22px;border-top:1px solid #F1F3F6;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <h3 style="font-size:15px;margin:0;color:var(--navy-800);">Earned Certificates</h3>
+            <span style="font-size:12px;color:var(--ink-soft);">1 Verified Certificate</span>
+          </div>
+          <ul class="list-plain">
+            <li class="resource-row">
+              <div class="r-icon" style="background:#FDECE0;color:var(--saffron-dark);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h2a1.7 1.7 0 0 1 0 3.4h-2V16M13 8v8M13 8h2a2 2 0 0 1 0 8h-2M17 8h2"/></svg>
+              </div>
+              <div class="r-body">
+                <h4 style="font-size:14px;">Cyber Hygiene Foundation</h4>
+                <span>Issued 2 Sep 2026 · Saksham National Platform · ID: SK-2026-CH-1042</span>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" id="viewCertificateBtn">View Certificate</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Edit Profile -->
+<div class="modal-overlay" id="editProfileModal">
+  <div class="modal" style="max-width:580px;">
+    <div class="modal-head">
+      <h3 style="margin:0;font-size:17px;color:var(--navy-800);">Edit Trainee Profile</h3>
+      <button type="button" id="closeEditModal" aria-label="Close modal">×</button>
+    </div>
+    <form id="profileEditForm">
+      <div class="row-2">
+        <div class="field">
+          <label for="f_name">Full name</label>
+          <input type="text" id="f_name" value="Aditi Sharma" required>
+        </div>
+        <div class="field">
+          <label for="f_department">Department</label>
+          <input type="text" id="f_department" value="Finance">
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="f_designation">Designation</label>
+          <input type="text" id="f_designation" value="Section Officer">
+        </div>
+        <div class="field">
+          <label for="f_region">Region / Cadre</label>
+          <input type="text" id="f_region" value="North Zone">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f_qualifications">Qualifications</label>
+        <textarea id="f_qualifications" rows="2">M.A. Public Administration, Delhi University</textarea>
+      </div>
+      <div class="field">
+        <label for="f_experience">Work experience &amp; current role</label>
+        <textarea id="f_experience" rows="3">Section Officer, Finance Department — 6 years of service, previously posted in the Revenue Department (2 years).</textarea>
+      </div>
+      <div class="field">
+        <label>Skills (Press Enter to add)</label>
+        <div class="tagbox" id="skillsBox">
+          <span class="pill">Budgeting <button type="button" data-remove>×</button></span>
+          <span class="pill">MS Excel <button type="button" data-remove>×</button></span>
+          <span class="pill">Public Speaking <button type="button" data-remove>×</button></span>
+          <input type="text" placeholder="Add skill..." id="skillInput">
+        </div>
+      </div>
+      <div class="field">
+        <label>Interests (Press Enter to add)</label>
+        <div class="tagbox" id="interestBox">
+          <span class="pill">Policy research <button type="button" data-remove>×</button></span>
+          <span class="pill">Digital governance <button type="button" data-remove>×</button></span>
+          <input type="text" placeholder="Add interest..." id="interestInput">
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+        <button type="button" class="btn btn-ghost btn-sm" id="cancelEditBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Certificate Preview -->
+<div class="modal-overlay" id="certificateModal">
+  <div class="modal" style="max-width:620px;">
+    <div class="modal-head">
+      <h3 style="margin:0;font-size:16px;color:var(--navy-800);">Certificate of Completion</h3>
+      <button type="button" id="closeCertModal" aria-label="Close modal">×</button>
+    </div>
+    <div style="border:4px double var(--gold);padding:24px;background:#FCFAF7;text-align:center;border-radius:8px;margin-bottom:18px;">
+      <div class="brand-emblem" style="margin:0 auto 10px;width:50px;height:50px;font-size:16px;">SK</div>
+      <h4 style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;">Government of India · Saksham Platform</h4>
+      <h2 style="font-size:22px;color:var(--navy-800);margin-bottom:4px;">Certificate of Completion</h2>
+      <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px;">This is to certify that</p>
+      <h3 style="font-size:20px;color:var(--saffron-dark);margin-bottom:10px;" id="certRecipientName">Aditi Sharma</h3>
+      <p style="font-size:13.5px;color:var(--ink);max-width:480px;margin:0 auto 16px;">has successfully completed the comprehensive training course and assessment for</p>
+      <h4 style="font-size:16px;color:var(--navy-800);margin-bottom:16px;">Cyber Hygiene Foundation</h4>
+      <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px;max-width:420px;margin:0 auto;">
+        <span>Issued: 2 September 2026</span>
+        <span>Credential ID: SK-2026-CH-1042</span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;">
+      <button type="button" class="btn btn-ghost btn-sm" id="closeCertBtn2">Close</button>
+      <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">Print / Download PDF</button>
     </div>
   </div>
 </div>

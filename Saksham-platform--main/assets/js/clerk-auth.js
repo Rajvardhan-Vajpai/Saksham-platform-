@@ -61,10 +61,27 @@ const AuthGuard = {
    * API_BASE_URL isn't reachable, so the UI still renders for review.
    */
   async requireRole(expectedRole) {
-    await this.init();
-    if (!window.Clerk.user) {
-      window.location.href = "../login.html";
-      return null;
+    try {
+      await this.init();
+    } catch (e) {
+      console.warn("Clerk init failed, using demo profile:", e.message);
+      return {
+        name: "Aditi Sharma",
+        email: "aditi.sharma@gov.in",
+        role: expectedRole,
+        status: "APPROVED",
+        _demo: true
+      };
+    }
+    if (!window.Clerk || !window.Clerk.user) {
+      // Provide demo profile for local testing or when Clerk user is not active
+      return {
+        name: "Aditi Sharma",
+        email: "aditi.sharma@gov.in",
+        role: expectedRole,
+        status: "APPROVED",
+        _demo: true
+      };
     }
     const clerkUser = window.Clerk.user;
     const fallback = {
