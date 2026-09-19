@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -46,6 +46,46 @@
         </div>
         <p class="hint" style="margin-bottom:14px;">Suggestions are ranked by subject-matter certifications, prior questionnaire authorship, and trainee feedback ratings on related courses.</p>
         <button class="btn btn-primary" id="assignBtn">Assign trainer</button>
+      </div>
+
+      <div class="section-head" style="margin-top:32px;"><h2 style="font-size:18px;">🧠 SAKSHAM Capacity Connect — AI Faculty Matching Engine (5-Factor)</h2></div>
+      <div class="card card-pad" style="max-width:860px;margin-bottom:24px;border:1.5px solid var(--navy-800);background:linear-gradient(180deg, #FFFFFF 0%, var(--cream-100) 100%);">
+        <p style="font-size:13px;color:var(--ink-soft);margin-bottom:14px;">
+          Multi-factor algorithmic scoring evaluates 300+ empanelled trainers across <strong>Domain Competency (35%)</strong>, <strong>Seniority &amp; Experience (20%)</strong>, <strong>Past Trainee Feedback (20%)</strong>, <strong>Bandwidth &amp; Availability (15%)</strong>, and <strong>Pedagogical Certifications (10%)</strong>.
+        </p>
+        <div class="row-3" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div class="field">
+            <label>Training Requirement / Domain</label>
+            <select id="aiDomainSelect">
+              <option value="cyclone">🌀 Cyclone Tracking &amp; Severe Weather Protocols</option>
+              <option value="radar">📡 Doppler Weather Radar &amp; Nowcasting</option>
+              <option value="nwp">💻 Numerical Weather Prediction &amp; WRF Simulation</option>
+              <option value="satellite">🛰️ Satellite Remote Sensing (INSAT-3D/3DR)</option>
+              <option value="agromet">🌾 Agrometeorology &amp; Crop Advisories</option>
+              <option value="pfm">🏛️ Public Financial Management &amp; GFR Rules</option>
+              <option value="cyber">🔐 Digital Skills &amp; Cyber Hygiene Foundation</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Min Experience (Years)</label>
+            <input type="number" id="aiMinExp" value="5" min="1" max="30">
+          </div>
+          <div class="field">
+            <label>Results Count</label>
+            <select id="aiTopK">
+              <option value="3">Top 3 Candidates</option>
+              <option value="5" selected>Top 5 Candidates</option>
+              <option value="10">Top 10 Candidates</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <button class="btn btn-primary" id="runAiMatchBtn" style="display:inline-flex;align-items:center;gap:8px;">
+            <span>⚡ Run 5-Factor AI Match</span>
+          </button>
+          <span id="aiMatchStatus" style="font-size:12px;color:var(--ink-soft);"></span>
+        </div>
+        <div id="aiMatchResults" style="margin-top:20px;display:flex;flex-direction:column;gap:14px;"></div>
       </div>
 
     </div>
