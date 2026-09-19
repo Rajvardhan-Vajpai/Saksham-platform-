@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div id="quizView">
+        <div class="alert alert-info" style="max-width:640px;">Public Financial Management — Module 3 Quiz. Answer all questions and submit before the timer runs out.</div>
+
+        <div class="mcq-shell">
+          <div class="card card-pad mcq-question">
+            <h3 id="qIndex">Question 1 of 5</h3>
+            <p id="qText" style="color:var(--ink);font-size:15px;"></p>
+            <div class="mcq-options" id="qOptions"></div>
+            <div style="display:flex;justify-content:space-between;margin-top:24px;">
+              <button class="btn btn-ghost" id="prevBtn">← Previous</button>
+              <button class="btn btn-primary" id="nextBtn">Next →</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="timer" id="timer">10:00</div>
+            <div class="card card-pad">
+              <h4 style="font-size:13px;color:var(--navy-800);margin-bottom:12px;">Question navigator</h4>
+              <div class="qnav" id="qNav"></div>
+              <button class="btn btn-teal btn-block" style="margin-top:18px;" id="submitBtn">Submit assessment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultView" style="display:none;max-width:520px;">
+        <div class="card card-pad" style="text-align:center;">
+          <div style="font-size:34px;">🎉</div>
+          <h2>Assessment submitted</h2>
+          <p>You scored <strong id="scoreText" style="color:var(--navy-800);"></strong> on this quiz.</p>
+          <div class="progress" style="margin:14px 0;"><span id="scoreBar" style="width:0%"></span></div>
+          <a href="dashboard.html" class="btn btn-primary" style="margin-top:10px;">Back to dashboard</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/trainee-assessment.js"></script>
+</body>
+</html>

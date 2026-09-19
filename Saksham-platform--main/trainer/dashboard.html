@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trainer Dashboard — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="card card-pad" style="background:var(--navy-800);border:none;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
+        <div>
+          <h2 style="color:#fff;font-size:19px;">Welcome back, R. Mehta</h2>
+          <p style="color:#C9D6E7;margin:0;">You're teaching 2 courses to 128 trainees this quarter.</p>
+        </div>
+        <a href="create-quiz.html" class="btn btn-primary">+ New questionnaire</a>
+      </div>
+
+      <div class="grid-4" style="margin-bottom:28px;">
+        <div class="kpi"><div class="kpi-num">128</div><div class="kpi-label">Trainees enrolled</div></div>
+        <div class="kpi"><div class="kpi-num">72%</div><div class="kpi-label">Average score</div></div>
+        <div class="kpi"><div class="kpi-num">9</div><div class="kpi-label">Library materials</div></div>
+        <div class="kpi"><div class="kpi-num">2</div><div class="kpi-label">Questionnaires open</div></div>
+      </div>
+
+      <div class="section-head"><h2 style="font-size:18px;">Score distribution — active quizzes</h2></div>
+      <div class="card card-pad" style="margin-bottom:28px;">
+        <div class="bar-chart">
+          <div class="bar-col"><div class="bar" style="height:30%;background:#DDE4EE;"></div><span>0–40%</span></div>
+          <div class="bar-col"><div class="bar" style="height:50%;background:#B9CBE0;"></div><span>40–60%</span></div>
+          <div class="bar-col"><div class="bar" style="height:90%;"></div><span>60–80%</span></div>
+          <div class="bar-col"><div class="bar" style="height:65%;"></div><span>80–100%</span></div>
+        </div>
+      </div>
+
+      <div class="section-head"><h2 style="font-size:18px;">Trainee participation</h2><a href="library.html">Manage library →</a></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trainee</th><th>Department</th><th>Course</th><th>Progress</th><th>Score</th></tr></thead>
+          <tbody id="traineeTable"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/trainer-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,1475 @@
+[
+  {
+    "id": "trainee_001",
+    "role": "trainee",
+    "name": "Natalie Kennedy",
+    "email": "tperez@example.com",
+    "status": "approved",
+    "age": 26,
+    "qualification": "BCA",
+    "work_experience": [],
+    "interests": [
+      "Leadership Training",
+      "Project Management",
+      "SQL & Databases"
+    ],
+    "skills": [
+      "Data Analysis",
+      "Java",
+      "React",
+      "Cloud (AWS/Azure)",
+      "Python"
+    ],
+    "certificates": [
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2022
+      },
+      {
+        "title": "Communication Skills Certification",
+        "year": 2026
+      }
+    ],
+    "joined_at": "2025-10-27T03:59:28.861345"
+  },
+  {
+    "id": "trainee_002",
+    "role": "trainee",
+    "name": "Kimberly Winters",
+    "email": "vpeterson@example.org",
+    "status": "approved",
+    "age": 29,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Lewis-Garcia",
+        "title": "Architect",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Communication Skills",
+      "Java Programming",
+      "Machine Learning"
+    ],
+    "skills": [
+      "Data Analysis",
+      "Public Speaking",
+      "SQL",
+      "Git",
+      "Machine Learning",
+      "Networking"
+    ],
+    "certificates": [
+      {
+        "title": "Java Programming Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-05-16T03:59:28.861562"
+  },
+  {
+    "id": "trainee_003",
+    "role": "trainee",
+    "name": "Ricky Reid",
+    "email": "fhenry@example.net",
+    "status": "approved",
+    "age": 25,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Holt and Sons",
+        "title": "Higher education careers adviser",
+        "years": 1
+      }
+    ],
+    "interests": [
+      "Java Programming",
+      "Project Management",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Cloud (AWS/Azure)",
+      "Leadership",
+      "SQL"
+    ],
+    "certificates": [
+      {
+        "title": "Machine Learning Certification",
+        "year": 2025
+      },
+      {
+        "title": "SQL & Databases Certification",
+        "year": 2026
+      }
+    ],
+    "joined_at": "2025-11-24T03:59:28.861724"
+  },
+  {
+    "id": "trainee_004",
+    "role": "trainee",
+    "name": "Deborah Keith",
+    "email": "austin65@example.org",
+    "status": "pending",
+    "age": 31,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Duran and Sons",
+        "title": "Physiotherapist",
+        "years": 4
+      }
+    ],
+    "interests": [
+      "Digital Marketing",
+      "Leadership Training",
+      "Machine Learning",
+      "Data Structures",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Communication",
+      "React",
+      "Leadership"
+    ],
+    "certificates": [
+      {
+        "title": "Communication Skills Certification",
+        "year": 2020
+      },
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2025-09-30T03:59:28.861878"
+  },
+  {
+    "id": "trainee_005",
+    "role": "trainee",
+    "name": "Wayne Ward",
+    "email": "wellscharles@example.com",
+    "status": "pending",
+    "age": 41,
+    "qualification": "BCA",
+    "work_experience": [
+      {
+        "company": "Castillo, Joseph and James",
+        "title": "Occupational hygienist",
+        "years": 5
+      },
+      {
+        "company": "Moses, Bowman and Smith",
+        "title": "Journalist, broadcasting",
+        "years": 1
+      }
+    ],
+    "interests": [
+      "Communication Skills",
+      "Machine Learning",
+      "Python Programming",
+      "Leadership Training",
+      "Java Programming"
+    ],
+    "skills": [
+      "Excel",
+      "Cloud (AWS/Azure)",
+      "React",
+      "Leadership"
+    ],
+    "certificates": [
+      {
+        "title": "Digital Marketing Certification",
+        "year": 2022
+      },
+      {
+        "title": "Machine Learning Certification",
+        "year": 2023
+      }
+    ],
+    "joined_at": "2025-06-08T03:59:28.862279"
+  },
+  {
+    "id": "trainee_006",
+    "role": "trainee",
+    "name": "Randall Rice",
+    "email": "grahamjulie@example.org",
+    "status": "approved",
+    "age": 44,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Lara-Robinson",
+        "title": "Designer, furniture",
+        "years": 4
+      },
+      {
+        "company": "Nguyen-Hampton",
+        "title": "Corporate treasurer",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Python Programming",
+      "Agile & Scrum",
+      "Data Structures",
+      "DevOps Fundamentals"
+    ],
+    "skills": [
+      "Networking",
+      "Git",
+      "Public Speaking",
+      "Communication",
+      "Machine Learning",
+      "Project Management"
+    ],
+    "certificates": [],
+    "joined_at": "2025-08-25T03:59:28.862588"
+  },
+  {
+    "id": "trainee_007",
+    "role": "trainee",
+    "name": "Austin Reid",
+    "email": "robert08@example.org",
+    "status": "pending",
+    "age": 27,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Brown, Burke and Wood",
+        "title": "Psychologist, clinical",
+        "years": 6
+      }
+    ],
+    "interests": [
+      "DevOps Fundamentals",
+      "SQL & Databases",
+      "Machine Learning"
+    ],
+    "skills": [
+      "Machine Learning",
+      "Project Management",
+      "SQL"
+    ],
+    "certificates": [
+      {
+        "title": "Data Structures Certification",
+        "year": 2019
+      },
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2024
+      },
+      {
+        "title": "DevOps Fundamentals Certification",
+        "year": 2023
+      }
+    ],
+    "joined_at": "2025-12-26T03:59:28.862809"
+  },
+  {
+    "id": "trainee_008",
+    "role": "trainee",
+    "name": "Tracy Anderson",
+    "email": "williamsdeborah@example.net",
+    "status": "approved",
+    "age": 25,
+    "qualification": "Diploma in IT",
+    "work_experience": [],
+    "interests": [
+      "Business Analytics",
+      "Networking Essentials",
+      "DevOps Fundamentals",
+      "Project Management"
+    ],
+    "skills": [
+      "Networking",
+      "Machine Learning",
+      "Excel"
+    ],
+    "certificates": [
+      {
+        "title": "Python Programming Certification",
+        "year": 2024
+      }
+    ],
+    "joined_at": "2025-04-22T03:59:28.862955"
+  },
+  {
+    "id": "trainee_009",
+    "role": "trainee",
+    "name": "Thomas Garcia",
+    "email": "wyattrichards@example.com",
+    "status": "approved",
+    "age": 20,
+    "qualification": "MCA",
+    "work_experience": [],
+    "interests": [
+      "Python Programming",
+      "Java Programming",
+      "Networking Essentials",
+      "DevOps Fundamentals",
+      "Leadership Training"
+    ],
+    "skills": [
+      "Cloud (AWS/Azure)",
+      "React",
+      "Public Speaking",
+      "Data Analysis",
+      "Project Management"
+    ],
+    "certificates": [
+      {
+        "title": "Machine Learning Certification",
+        "year": 2024
+      },
+      {
+        "title": "Python Programming Certification",
+        "year": 2021
+      },
+      {
+        "title": "Python Programming Certification",
+        "year": 2023
+      }
+    ],
+    "joined_at": "2026-04-10T03:59:28.863136"
+  },
+  {
+    "id": "trainee_010",
+    "role": "trainee",
+    "name": "Nicole Powers",
+    "email": "jennifer09@example.org",
+    "status": "approved",
+    "age": 28,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Walsh Inc",
+        "title": "Estate manager/land agent",
+        "years": 5
+      }
+    ],
+    "interests": [
+      "Python Programming",
+      "Data Structures",
+      "Leadership Training",
+      "Cloud Computing (AWS)"
+    ],
+    "skills": [
+      "Cloud (AWS/Azure)",
+      "React",
+      "SQL"
+    ],
+    "certificates": [],
+    "joined_at": "2026-01-01T03:59:28.863316"
+  },
+  {
+    "id": "trainee_011",
+    "role": "trainee",
+    "name": "Gregg Brown",
+    "email": "tmiller@example.com",
+    "status": "pending",
+    "age": 20,
+    "qualification": "MCA",
+    "work_experience": [
+      {
+        "company": "Gill, Whitaker and Sanders",
+        "title": "Geophysicist/field seismologist",
+        "years": 6
+      },
+      {
+        "company": "Long, Villa and Smith",
+        "title": "Special effects artist",
+        "years": 1
+      }
+    ],
+    "interests": [
+      "Networking Essentials",
+      "UI/UX Design",
+      "Business Analytics",
+      "Cloud Computing (AWS)"
+    ],
+    "skills": [
+      "Python",
+      "SQL",
+      "Project Management"
+    ],
+    "certificates": [
+      {
+        "title": "Project Management Certification",
+        "year": 2023
+      }
+    ],
+    "joined_at": "2025-07-12T03:59:28.863668"
+  },
+  {
+    "id": "trainee_012",
+    "role": "trainee",
+    "name": "Vincent Randall",
+    "email": "alvaradochristopher@example.net",
+    "status": "approved",
+    "age": 21,
+    "qualification": "Ph.D. Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Excel Advanced",
+      "Python Programming",
+      "Business Analytics",
+      "Communication Skills",
+      "Machine Learning"
+    ],
+    "skills": [
+      "Networking",
+      "Public Speaking",
+      "Docker"
+    ],
+    "certificates": [
+      {
+        "title": "Leadership Training Certification",
+        "year": 2021
+      }
+    ],
+    "joined_at": "2025-01-31T03:59:28.863818"
+  },
+  {
+    "id": "trainee_013",
+    "role": "trainee",
+    "name": "Joshua Brown",
+    "email": "brent65@example.com",
+    "status": "approved",
+    "age": 41,
+    "qualification": "B.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Obrien-Williams",
+        "title": "Chief Technology Officer",
+        "years": 8
+      }
+    ],
+    "interests": [
+      "Web Development",
+      "Business Analytics",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Data Analysis",
+      "Communication",
+      "React",
+      "Docker"
+    ],
+    "certificates": [
+      {
+        "title": "Machine Learning Certification",
+        "year": 2025
+      },
+      {
+        "title": "Excel Advanced Certification",
+        "year": 2021
+      }
+    ],
+    "joined_at": "2025-02-16T03:59:28.864002"
+  },
+  {
+    "id": "trainee_014",
+    "role": "trainee",
+    "name": "Dr. Michael Peters",
+    "email": "katiedelgado@example.net",
+    "status": "pending",
+    "age": 33,
+    "qualification": "Diploma in IT",
+    "work_experience": [],
+    "interests": [
+      "SQL & Databases",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Java",
+      "React",
+      "Project Management",
+      "SQL",
+      "Cloud (AWS/Azure)"
+    ],
+    "certificates": [
+      {
+        "title": "Project Management Certification",
+        "year": 2020
+      },
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2025
+      },
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2025-03-09T03:59:28.864150"
+  },
+  {
+    "id": "trainee_015",
+    "role": "trainee",
+    "name": "Albert Huff",
+    "email": "ucole@example.org",
+    "status": "approved",
+    "age": 43,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Communication Skills",
+      "Networking Essentials",
+      "Python Programming",
+      "Business Analytics"
+    ],
+    "skills": [
+      "Public Speaking",
+      "Cloud (AWS/Azure)",
+      "Excel",
+      "Leadership"
+    ],
+    "certificates": [
+      {
+        "title": "Cloud Computing (AWS) Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2025-10-02T03:59:28.864315"
+  },
+  {
+    "id": "trainee_016",
+    "role": "trainee",
+    "name": "Stacey Cook",
+    "email": "nwallace@example.net",
+    "status": "pending",
+    "age": 24,
+    "qualification": "MCA",
+    "work_experience": [
+      {
+        "company": "Myers, Simmons and Miranda",
+        "title": "Research scientist (physical sciences)",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Machine Learning",
+      "Web Development",
+      "Excel Advanced"
+    ],
+    "skills": [
+      "Networking",
+      "Project Management",
+      "Leadership",
+      "Public Speaking",
+      "Communication",
+      "Machine Learning"
+    ],
+    "certificates": [],
+    "joined_at": "2025-02-20T03:59:28.864561"
+  },
+  {
+    "id": "trainee_017",
+    "role": "trainee",
+    "name": "Travis Smith",
+    "email": "anthony06@example.org",
+    "status": "approved",
+    "age": 39,
+    "qualification": "MCA",
+    "work_experience": [
+      {
+        "company": "Wyatt, Hughes and Cummings",
+        "title": "Paediatric nurse",
+        "years": 3
+      }
+    ],
+    "interests": [
+      "Digital Marketing",
+      "Cybersecurity Basics",
+      "Communication Skills",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Networking",
+      "React",
+      "Public Speaking"
+    ],
+    "certificates": [
+      {
+        "title": "Networking Essentials Certification",
+        "year": 2022
+      },
+      {
+        "title": "Agile & Scrum Certification",
+        "year": 2026
+      },
+      {
+        "title": "SQL & Databases Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2026-02-04T03:59:28.864786"
+  },
+  {
+    "id": "trainee_018",
+    "role": "trainee",
+    "name": "Lisa Shelton",
+    "email": "jasmine17@example.org",
+    "status": "approved",
+    "age": 23,
+    "qualification": "Ph.D. Computer Science",
+    "work_experience": [
+      {
+        "company": "Martinez PLC",
+        "title": "Education administrator",
+        "years": 8
+      },
+      {
+        "company": "Braun-Curry",
+        "title": "Futures trader",
+        "years": 8
+      }
+    ],
+    "interests": [
+      "Java Programming",
+      "Excel Advanced",
+      "UI/UX Design",
+      "Digital Marketing",
+      "Python Programming"
+    ],
+    "skills": [
+      "Cloud (AWS/Azure)",
+      "SQL",
+      "Excel",
+      "Docker"
+    ],
+    "certificates": [
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2024
+      },
+      {
+        "title": "Digital Marketing Certification",
+        "year": 2022
+      },
+      {
+        "title": "DevOps Fundamentals Certification",
+        "year": 2024
+      }
+    ],
+    "joined_at": "2025-11-18T03:59:28.865022"
+  },
+  {
+    "id": "trainee_019",
+    "role": "trainee",
+    "name": "Tiffany Rodriguez",
+    "email": "oortiz@example.com",
+    "status": "pending",
+    "age": 21,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Kidd PLC",
+        "title": "Naval architect",
+        "years": 1
+      }
+    ],
+    "interests": [
+      "Python Programming",
+      "Java Programming",
+      "Machine Learning",
+      "Business Analytics"
+    ],
+    "skills": [
+      "Communication",
+      "Git",
+      "Leadership",
+      "SQL",
+      "Data Analysis"
+    ],
+    "certificates": [],
+    "joined_at": "2025-04-28T03:59:28.865212"
+  },
+  {
+    "id": "trainee_020",
+    "role": "trainee",
+    "name": "Thomas Conley",
+    "email": "castillokelsey@example.net",
+    "status": "pending",
+    "age": 23,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Frank, Santos and Olson",
+        "title": "Patent attorney",
+        "years": 1
+      },
+      {
+        "company": "Espinoza-Prince",
+        "title": "Biomedical engineer",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Cybersecurity Basics",
+      "Communication Skills"
+    ],
+    "skills": [
+      "Machine Learning",
+      "Public Speaking",
+      "Leadership",
+      "Git",
+      "Cloud (AWS/Azure)",
+      "React"
+    ],
+    "certificates": [
+      {
+        "title": "Cloud Computing (AWS) Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2025-09-24T03:59:28.865565"
+  },
+  {
+    "id": "trainee_021",
+    "role": "trainee",
+    "name": "Kimberly Chung",
+    "email": "hmartin@example.com",
+    "status": "approved",
+    "age": 35,
+    "qualification": "Ph.D. Computer Science",
+    "work_experience": [
+      {
+        "company": "Phillips, Martinez and Hill",
+        "title": "Holiday representative",
+        "years": 3
+      }
+    ],
+    "interests": [
+      "Leadership Training",
+      "Networking Essentials",
+      "Java Programming",
+      "Business Analytics"
+    ],
+    "skills": [
+      "Machine Learning",
+      "Excel",
+      "Public Speaking",
+      "React",
+      "Java"
+    ],
+    "certificates": [
+      {
+        "title": "Digital Marketing Certification",
+        "year": 2020
+      }
+    ],
+    "joined_at": "2025-02-11T03:59:28.865825"
+  },
+  {
+    "id": "trainee_022",
+    "role": "trainee",
+    "name": "Misty Dillon",
+    "email": "kevin31@example.com",
+    "status": "pending",
+    "age": 37,
+    "qualification": "B.Com",
+    "work_experience": [
+      {
+        "company": "Martinez-May",
+        "title": "Analytical chemist",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Python Programming",
+      "Data Structures",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Communication",
+      "Machine Learning",
+      "Excel"
+    ],
+    "certificates": [
+      {
+        "title": "Data Structures Certification",
+        "year": 2023
+      },
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2019
+      },
+      {
+        "title": "Digital Marketing Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-06-28T03:59:28.866023"
+  },
+  {
+    "id": "trainee_023",
+    "role": "trainee",
+    "name": "Leah Ochoa",
+    "email": "jonathangray@example.org",
+    "status": "pending",
+    "age": 42,
+    "qualification": "MBA",
+    "work_experience": [],
+    "interests": [
+      "Web Development",
+      "Python Programming",
+      "Java Programming"
+    ],
+    "skills": [
+      "Data Analysis",
+      "Git",
+      "Cloud (AWS/Azure)",
+      "Java",
+      "Excel"
+    ],
+    "certificates": [
+      {
+        "title": "Communication Skills Certification",
+        "year": 2022
+      },
+      {
+        "title": "Excel Advanced Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-07-20T03:59:28.866191"
+  },
+  {
+    "id": "trainee_024",
+    "role": "trainee",
+    "name": "Jason Lewis",
+    "email": "alisonwilliams@example.com",
+    "status": "approved",
+    "age": 22,
+    "qualification": "Ph.D. Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Leadership Training",
+      "Cloud Computing (AWS)",
+      "Excel Advanced",
+      "UI/UX Design"
+    ],
+    "skills": [
+      "Data Analysis",
+      "React",
+      "Docker",
+      "Cloud (AWS/Azure)"
+    ],
+    "certificates": [
+      {
+        "title": "Excel Advanced Certification",
+        "year": 2025
+      }
+    ],
+    "joined_at": "2026-02-08T03:59:28.866348"
+  },
+  {
+    "id": "trainee_025",
+    "role": "trainee",
+    "name": "Brandon Murphy",
+    "email": "novakwayne@example.com",
+    "status": "approved",
+    "age": 37,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Hampton-Marsh",
+        "title": "Therapist, sports",
+        "years": 4
+      }
+    ],
+    "interests": [
+      "Communication Skills",
+      "Excel Advanced",
+      "Data Structures",
+      "Java Programming",
+      "Cybersecurity Basics"
+    ],
+    "skills": [
+      "React",
+      "Communication",
+      "Networking",
+      "Python",
+      "Leadership"
+    ],
+    "certificates": [
+      {
+        "title": "Business Analytics Certification",
+        "year": 2026
+      },
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2025
+      },
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-12-08T03:59:28.866581"
+  },
+  {
+    "id": "trainee_026",
+    "role": "trainee",
+    "name": "Susan Patterson",
+    "email": "englishjoseph@example.net",
+    "status": "approved",
+    "age": 38,
+    "qualification": "M.Tech Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Networking Essentials",
+      "Leadership Training",
+      "Web Development"
+    ],
+    "skills": [
+      "Machine Learning",
+      "Communication",
+      "Cloud (AWS/Azure)",
+      "React",
+      "Git",
+      "Data Analysis"
+    ],
+    "certificates": [
+      {
+        "title": "Python Programming Certification",
+        "year": 2024
+      },
+      {
+        "title": "Machine Learning Certification",
+        "year": 2020
+      },
+      {
+        "title": "SQL & Databases Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2026-06-15T03:59:28.866731"
+  },
+  {
+    "id": "trainee_027",
+    "role": "trainee",
+    "name": "Derek Green",
+    "email": "griffithamanda@example.org",
+    "status": "approved",
+    "age": 31,
+    "qualification": "Ph.D. Computer Science",
+    "work_experience": [
+      {
+        "company": "Parker-Smith",
+        "title": "Historic buildings inspector/conservation officer",
+        "years": 6
+      }
+    ],
+    "interests": [
+      "Machine Learning",
+      "Excel Advanced"
+    ],
+    "skills": [
+      "Java",
+      "Machine Learning",
+      "React",
+      "Cloud (AWS/Azure)"
+    ],
+    "certificates": [
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2020
+      },
+      {
+        "title": "Digital Marketing Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-02-18T03:59:28.866953"
+  },
+  {
+    "id": "trainee_028",
+    "role": "trainee",
+    "name": "Timothy Pacheco",
+    "email": "nmercer@example.net",
+    "status": "pending",
+    "age": 39,
+    "qualification": "B.Tech Electronics",
+    "work_experience": [
+      {
+        "company": "Parks, Sullivan and Brown",
+        "title": "Data processing manager",
+        "years": 3
+      },
+      {
+        "company": "Martinez-Clark",
+        "title": "Intelligence analyst",
+        "years": 8
+      }
+    ],
+    "interests": [
+      "Excel Advanced",
+      "UI/UX Design",
+      "Cybersecurity Basics"
+    ],
+    "skills": [
+      "Git",
+      "SQL",
+      "Networking",
+      "Data Analysis",
+      "Excel",
+      "Machine Learning"
+    ],
+    "certificates": [],
+    "joined_at": "2025-10-21T03:59:28.867332"
+  },
+  {
+    "id": "trainee_029",
+    "role": "trainee",
+    "name": "Candace Curtis",
+    "email": "vgutierrez@example.org",
+    "status": "pending",
+    "age": 30,
+    "qualification": "Diploma in IT",
+    "work_experience": [
+      {
+        "company": "Parker-Watkins",
+        "title": "Operational researcher",
+        "years": 4
+      },
+      {
+        "company": "Miller and Sons",
+        "title": "Music tutor",
+        "years": 5
+      }
+    ],
+    "interests": [
+      "Leadership Training",
+      "Web Development"
+    ],
+    "skills": [
+      "Leadership",
+      "Cloud (AWS/Azure)",
+      "Networking",
+      "SQL",
+      "Communication"
+    ],
+    "certificates": [
+      {
+        "title": "Networking Essentials Certification",
+        "year": 2023
+      },
+      {
+        "title": "Business Analytics Certification",
+        "year": 2024
+      },
+      {
+        "title": "DevOps Fundamentals Certification",
+        "year": 2023
+      }
+    ],
+    "joined_at": "2025-12-30T03:59:28.867585"
+  },
+  {
+    "id": "trainee_030",
+    "role": "trainee",
+    "name": "Natalie Cooke",
+    "email": "jwalsh@example.net",
+    "status": "pending",
+    "age": 39,
+    "qualification": "B.Sc IT",
+    "work_experience": [
+      {
+        "company": "Baker Inc",
+        "title": "Art gallery manager",
+        "years": 4
+      }
+    ],
+    "interests": [
+      "Communication Skills",
+      "Project Management",
+      "Networking Essentials",
+      "Python Programming",
+      "DevOps Fundamentals"
+    ],
+    "skills": [
+      "Python",
+      "Docker",
+      "SQL",
+      "Git",
+      "Project Management",
+      "Networking"
+    ],
+    "certificates": [
+      {
+        "title": "Business Analytics Certification",
+        "year": 2024
+      }
+    ],
+    "joined_at": "2026-04-10T03:59:28.867750"
+  },
+  {
+    "id": "trainee_031",
+    "role": "trainee",
+    "name": "Karina Marks",
+    "email": "dennis52@example.net",
+    "status": "approved",
+    "age": 36,
+    "qualification": "B.Com",
+    "work_experience": [
+      {
+        "company": "Lewis, Carroll and Yoder",
+        "title": "Surveyor, building",
+        "years": 6
+      },
+      {
+        "company": "Hamilton-French",
+        "title": "Psychiatric nurse",
+        "years": 8
+      }
+    ],
+    "interests": [
+      "SQL & Databases",
+      "Agile & Scrum",
+      "Cybersecurity Basics",
+      "Data Structures"
+    ],
+    "skills": [
+      "Networking",
+      "SQL",
+      "Git",
+      "Leadership",
+      "React"
+    ],
+    "certificates": [],
+    "joined_at": "2026-06-17T03:59:28.868054"
+  },
+  {
+    "id": "trainee_032",
+    "role": "trainee",
+    "name": "John Gilmore",
+    "email": "travis21@example.com",
+    "status": "approved",
+    "age": 28,
+    "qualification": "B.Com",
+    "work_experience": [],
+    "interests": [
+      "Cybersecurity Basics",
+      "Leadership Training",
+      "Cloud Computing (AWS)",
+      "Python Programming",
+      "Java Programming"
+    ],
+    "skills": [
+      "Cloud (AWS/Azure)",
+      "SQL",
+      "Python",
+      "Leadership",
+      "Machine Learning",
+      "Docker"
+    ],
+    "certificates": [
+      {
+        "title": "Leadership Training Certification",
+        "year": 2022
+      },
+      {
+        "title": "Data Structures Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2026-01-12T03:59:28.868178"
+  },
+  {
+    "id": "trainee_033",
+    "role": "trainee",
+    "name": "Kyle Davis",
+    "email": "jasongarcia@example.com",
+    "status": "approved",
+    "age": 20,
+    "qualification": "B.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Allen PLC",
+        "title": "Ship broker",
+        "years": 7
+      }
+    ],
+    "interests": [
+      "Python Programming",
+      "Web Development"
+    ],
+    "skills": [
+      "React",
+      "Docker",
+      "Git",
+      "Python",
+      "Communication"
+    ],
+    "certificates": [
+      {
+        "title": "Networking Essentials Certification",
+        "year": 2021
+      },
+      {
+        "title": "SQL & Databases Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-03-10T03:59:28.868389"
+  },
+  {
+    "id": "trainee_034",
+    "role": "trainee",
+    "name": "Kenneth Taylor",
+    "email": "michael67@example.org",
+    "status": "approved",
+    "age": 27,
+    "qualification": "BCA",
+    "work_experience": [],
+    "interests": [
+      "Leadership Training",
+      "Cybersecurity Basics",
+      "DevOps Fundamentals"
+    ],
+    "skills": [
+      "Java",
+      "Machine Learning",
+      "Cloud (AWS/Azure)"
+    ],
+    "certificates": [
+      {
+        "title": "Project Management Certification",
+        "year": 2019
+      }
+    ],
+    "joined_at": "2025-11-04T03:59:28.868499"
+  },
+  {
+    "id": "trainee_035",
+    "role": "trainee",
+    "name": "Victoria Richardson",
+    "email": "zwilliams@example.org",
+    "status": "pending",
+    "age": 33,
+    "qualification": "B.Tech Computer Science",
+    "work_experience": [
+      {
+        "company": "Estrada, Alvarez and Foster",
+        "title": "Restaurant manager, fast food",
+        "years": 5
+      },
+      {
+        "company": "Brooks LLC",
+        "title": "Exhibition designer",
+        "years": 4
+      }
+    ],
+    "interests": [
+      "Business Analytics",
+      "Excel Advanced",
+      "Project Management"
+    ],
+    "skills": [
+      "Data Analysis",
+      "Docker",
+      "React",
+      "Cloud (AWS/Azure)",
+      "Networking",
+      "Excel"
+    ],
+    "certificates": [
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2026
+      },
+      {
+        "title": "Web Development Certification",
+        "year": 2024
+      },
+      {
+        "title": "Excel Advanced Certification",
+        "year": 2024
+      }
+    ],
+    "joined_at": "2025-11-23T03:59:28.868776"
+  },
+  {
+    "id": "trainee_036",
+    "role": "trainee",
+    "name": "Annette Marshall",
+    "email": "danielpatrick@example.net",
+    "status": "approved",
+    "age": 26,
+    "qualification": "B.Com",
+    "work_experience": [],
+    "interests": [
+      "Data Structures",
+      "Java Programming",
+      "SQL & Databases",
+      "DevOps Fundamentals",
+      "Communication Skills"
+    ],
+    "skills": [
+      "Excel",
+      "React",
+      "SQL",
+      "Docker"
+    ],
+    "certificates": [
+      {
+        "title": "Java Programming Certification",
+        "year": 2025
+      },
+      {
+        "title": "UI/UX Design Certification",
+        "year": 2021
+      },
+      {
+        "title": "Cloud Computing (AWS) Certification",
+        "year": 2022
+      }
+    ],
+    "joined_at": "2025-08-07T03:59:28.868921"
+  },
+  {
+    "id": "trainee_037",
+    "role": "trainee",
+    "name": "Amy Rice MD",
+    "email": "matthew58@example.net",
+    "status": "approved",
+    "age": 42,
+    "qualification": "B.Tech Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Java Programming",
+      "Excel Advanced",
+      "Cloud Computing (AWS)"
+    ],
+    "skills": [
+      "SQL",
+      "React",
+      "Java",
+      "Git",
+      "Python",
+      "Public Speaking"
+    ],
+    "certificates": [
+      {
+        "title": "Java Programming Certification",
+        "year": 2024
+      }
+    ],
+    "joined_at": "2026-07-11T03:59:28.869035"
+  },
+  {
+    "id": "trainee_038",
+    "role": "trainee",
+    "name": "Dennis Mcclain",
+    "email": "paulcline@example.net",
+    "status": "approved",
+    "age": 40,
+    "qualification": "MBA",
+    "work_experience": [
+      {
+        "company": "Schmidt-Christensen",
+        "title": "Fine artist",
+        "years": 3
+      },
+      {
+        "company": "Davis LLC",
+        "title": "Field seismologist",
+        "years": 4
+      }
+    ],
+    "interests": [
+      "Business Analytics",
+      "Communication Skills",
+      "Agile & Scrum"
+    ],
+    "skills": [
+      "Public Speaking",
+      "Java",
+      "Excel"
+    ],
+    "certificates": [],
+    "joined_at": "2025-02-02T03:59:28.869323"
+  },
+  {
+    "id": "trainee_039",
+    "role": "trainee",
+    "name": "Casey Beard",
+    "email": "oford@example.org",
+    "status": "pending",
+    "age": 36,
+    "qualification": "MCA",
+    "work_experience": [
+      {
+        "company": "Walker Group",
+        "title": "Doctor, general practice",
+        "years": 2
+      },
+      {
+        "company": "Steele, Webb and Young",
+        "title": "Passenger transport manager",
+        "years": 3
+      }
+    ],
+    "interests": [
+      "Excel Advanced",
+      "Networking Essentials",
+      "Digital Marketing"
+    ],
+    "skills": [
+      "Data Analysis",
+      "SQL",
+      "React"
+    ],
+    "certificates": [
+      {
+        "title": "Excel Advanced Certification",
+        "year": 2021
+      },
+      {
+        "title": "Agile & Scrum Certification",
+        "year": 2026
+      }
+    ],
+    "joined_at": "2025-10-06T03:59:28.869612"
+  },
+  {
+    "id": "trainee_040",
+    "role": "trainee",
+    "name": "Todd Vaughn",
+    "email": "wendy78@example.com",
+    "status": "approved",
+    "age": 33,
+    "qualification": "B.Tech Computer Science",
+    "work_experience": [],
+    "interests": [
+      "Cybersecurity Basics",
+      "Web Development",
+      "Project Management",
+      "Java Programming"
+    ],
+    "skills": [
+      "SQL",
+      "Leadership",
+      "Python"
+    ],
+    "certificates": [
+      {
+        "title": "Cybersecurity Basics Certification",
+        "year": 2024
+      },
+      {
+        "title": "Web Development Certification",
+        "year": 2021
+      },
+      {
+        "title": "Machine Learning Certification",
+        "year": 2026
+      }
+    ],
+    "joined_at": "2025-02-19T03:59:28.869725"
+  }
+]

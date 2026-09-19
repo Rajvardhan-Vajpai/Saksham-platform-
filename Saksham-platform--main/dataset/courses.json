@@ -1,0 +1,442 @@
+[
+  {
+    "id": "course_001",
+    "title": "UI/UX Design: Masterclass",
+    "description": "Material food southern arm staff plan just teach. Yeah real read stay same wide bring. Cup choose pay brother leader dream region. Public catch on low note lot score.",
+    "category": "UI/UX Design",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_005",
+    "tags": [
+      "SQL",
+      "Excel",
+      "UI/UX Design"
+    ],
+    "target_qualification": [
+      "B.Sc IT",
+      "Ph.D. Computer Science",
+      "MCA"
+    ],
+    "target_age_min": 20,
+    "target_age_max": 60,
+    "duration_weeks": 6,
+    "created_at": "2025-11-12T03:59:28.869784"
+  },
+  {
+    "id": "course_002",
+    "title": "Excel Advanced: Foundations",
+    "description": "Himself write mission skill general fish sea there. Threat as garden behavior give debate rich. Now recently mention can sit. Summer wife avoid why get before else.",
+    "category": "Excel Advanced",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_001",
+    "tags": [
+      "Public Speaking",
+      "React",
+      "Java",
+      "Excel Advanced"
+    ],
+    "target_qualification": [
+      "B.Tech Electronics"
+    ],
+    "target_age_min": 20,
+    "target_age_max": 40,
+    "duration_weeks": 8,
+    "created_at": "2025-05-27T03:59:28.869826"
+  },
+  {
+    "id": "course_003",
+    "title": "Data Structures: Bootcamp",
+    "description": "Result figure weight benefit find local phone. Onto police finally kid growth some.",
+    "category": "Data Structures",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_004",
+    "tags": [
+      "React",
+      "Git",
+      "Data Structures"
+    ],
+    "target_qualification": [
+      "B.Tech Electronics",
+      "B.Com"
+    ],
+    "target_age_min": 18,
+    "target_age_max": 60,
+    "duration_weeks": 4,
+    "created_at": "2026-07-15T03:59:28.869852"
+  },
+  {
+    "id": "course_004",
+    "title": "Web Development: Essentials",
+    "description": "Doctor identify even anyone according as. Which only certain similar speak draw blood. Her take huge price message option. Thought consider TV specific thought research. Event news care first data attorney ground.",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_002",
+    "tags": [
+      "Public Speaking",
+      "Python",
+      "Docker",
+      "Git",
+      "Web Development"
+    ],
+    "target_qualification": [
+      "Ph.D. Computer Science",
+      "BCA",
+      "M.Tech Computer Science"
+    ],
+    "target_age_min": 18,
+    "target_age_max": 40,
+    "duration_weeks": 8,
+    "created_at": "2026-05-17T03:59:28.869900"
+  },
+  {
+    "id": "course_005",
+    "title": "Digital Marketing: Masterclass",
+    "description": "Time only after forget. Record wonder walk live line floor lay.",
+    "category": "Digital Marketing",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_008",
+    "tags": [
+      "SQL",
+      "Data Analysis",
+      "Machine Learning",
+      "Digital Marketing"
+    ],
+    "target_qualification": [
+      "Ph.D. Computer Science",
+      "MCA",
+      "B.Tech Electronics"
+    ],
+    "target_age_min": 22,
+    "target_age_max": 45,
+    "duration_weeks": 6,
+    "created_at": "2026-07-10T03:59:28.869924"
+  },
+  {
+    "id": "course_006",
+    "title": "Networking Essentials: Essentials",
+    "description": "Capital year increase thus yeah throughout through radio. Avoid century natural position check. First century resource.",
+    "category": "Networking Essentials",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_008",
+    "tags": [
+      "Data Analysis",
+      "Communication",
+      "React",
+      "Networking Essentials"
+    ],
+    "target_qualification": [
+      "B.Tech Computer Science",
+      "B.Tech Electronics"
+    ],
+    "target_age_min": 25,
+    "target_age_max": 40,
+    "duration_weeks": 4,
+    "created_at": "2026-04-14T03:59:28.869954"
+  },
+  {
+    "id": "course_007",
+    "title": "Project Management: Bootcamp",
+    "description": "Believe realize interest art. Single statement health no return might. Run anyone they tell art ever.",
+    "category": "Project Management",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_003",
+    "tags": [
+      "Cloud (AWS/Azure)",
+      "React",
+      "Public Speaking",
+      "Data Analysis",
+      "Project Management"
+    ],
+    "target_qualification": [
+      "M.Tech Computer Science"
+    ],
+    "target_age_min": 20,
+    "target_age_max": 60,
+    "duration_weeks": 2,
+    "created_at": "2026-05-10T03:59:28.869983"
+  },
+  {
+    "id": "course_008",
+    "title": "Python Programming: Essentials",
+    "description": "Place knowledge few film focus each because. Structure lead grow guess meet will. Cell quality personal someone talk fish number.",
+    "category": "Python Programming",
+    "difficulty": "Advanced",
+    "trainer_id": "trainer_004",
+    "tags": [
+      "SQL",
+      "Public Speaking",
+      "Python Programming"
+    ],
+    "target_qualification": [
+      "M.Tech Computer Science",
+      "MCA",
+      "Ph.D. Computer Science"
+    ],
+    "target_age_min": 22,
+    "target_age_max": 60,
+    "duration_weeks": 6,
+    "created_at": "2026-07-11T03:59:28.870013"
+  },
+  {
+    "id": "course_009",
+    "title": "Cybersecurity Basics: Masterclass",
+    "description": "Sense situation meeting affect think. Want fall ever about raise record from.",
+    "category": "Cybersecurity Basics",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_004",
+    "tags": [
+      "Machine Learning",
+      "SQL",
+      "Excel",
+      "Leadership",
+      "Cybersecurity Basics"
+    ],
+    "target_qualification": [
+      "B.Tech Computer Science",
+      "Ph.D. Computer Science"
+    ],
+    "target_age_min": 25,
+    "target_age_max": 60,
+    "duration_weeks": 4,
+    "created_at": "2026-01-27T03:59:28.870035"
+  },
+  {
+    "id": "course_010",
+    "title": "Business Analytics: Foundations",
+    "description": "Short base left. Job quite listen can answer water.",
+    "category": "Business Analytics",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_001",
+    "tags": [
+      "Cloud (AWS/Azure)",
+      "Git",
+      "Business Analytics"
+    ],
+    "target_qualification": [
+      "B.Tech Computer Science",
+      "BCA"
+    ],
+    "target_age_min": 22,
+    "target_age_max": 35,
+    "duration_weeks": 2,
+    "created_at": "2025-10-22T03:59:28.870059"
+  },
+  {
+    "id": "course_011",
+    "title": "SQL & Databases: Bootcamp",
+    "description": "City care take world control stop. Sing also last democratic detail. Government despite reality task old his.",
+    "category": "SQL & Databases",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_008",
+    "tags": [
+      "Public Speaking",
+      "React",
+      "Docker",
+      "SQL & Databases"
+    ],
+    "target_qualification": [
+      "B.Tech Computer Science"
+    ],
+    "target_age_min": 18,
+    "target_age_max": 60,
+    "duration_weeks": 2,
+    "created_at": "2025-05-07T03:59:28.870088"
+  },
+  {
+    "id": "course_012",
+    "title": "Data Structures: Masterclass",
+    "description": "Home over sometimes leader cut value bring. Order something walk meet.",
+    "category": "Data Structures",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_003",
+    "tags": [
+      "SQL",
+      "React",
+      "Cloud (AWS/Azure)",
+      "Project Management",
+      "Data Structures"
+    ],
+    "target_qualification": [
+      "B.Tech Electronics",
+      "B.Tech Computer Science"
+    ],
+    "target_age_min": 18,
+    "target_age_max": 60,
+    "duration_weeks": 4,
+    "created_at": "2025-07-22T03:59:28.870111"
+  },
+  {
+    "id": "course_013",
+    "title": "Web Development: Practical Guide",
+    "description": "Fill and family down page. Important figure director miss there. Measure policy rather thus shoulder under.",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "trainer_id": "trainer_005",
+    "tags": [
+      "Machine Learning",
+      "React",
+      "Web Development"
+    ],
+    "target_qualification": [
+      "Diploma in IT",
+      "Ph.D. Computer Science",
+      "MCA"
+    ],
+    "target_age_min": 25,
+    "target_age_max": 35,
+    "duration_weeks": 4,
+    "created_at": "2026-08-17T03:59:28.870140"
+  },
+  {
+    "id": "course_014",
+    "title": "Networking Essentials: Masterclass",
+    "description": "Act guess source air former later. Rest under indicate administration race together wide bank. Show tend pretty close. The nature to suggest college special. Draw concern soon eye difficult nor.",
+    "category": "Networking Essentials",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_002",
+    "tags": [
+      "Data Analysis",
+      "Java",
+      "Communication",
+      "Networking Essentials"
+    ],
+    "target_qualification": [
+      "MBA"
+    ],
+    "target_age_min": 20,
+    "target_age_max": 60,
+    "duration_weeks": 12,
+    "created_at": "2026-03-07T03:59:28.870212"
+  },
+  {
+    "id": "course_015",
+    "title": "Excel Advanced: Bootcamp",
+    "description": "Others pull hospital significant yourself. For three fish. Vote scene must try body him. Future account red quickly camera.",
+    "category": "Excel Advanced",
+    "difficulty": "Advanced",
+    "trainer_id": "trainer_004",
+    "tags": [
+      "Data Analysis",
+      "Excel",
+      "Excel Advanced"
+    ],
+    "target_qualification": [
+      "M.Tech Computer Science",
+      "MCA",
+      "B.Sc IT"
+    ],
+    "target_age_min": 25,
+    "target_age_max": 45,
+    "duration_weeks": 4,
+    "created_at": "2026-03-31T03:59:28.870257"
+  },
+  {
+    "id": "course_016",
+    "title": "Cloud Computing (AWS): Bootcamp",
+    "description": "Keep with ability seem feeling address. End government thus should line anyone student. Figure land answer only national claim.",
+    "category": "Cloud Computing (AWS)",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_005",
+    "tags": [
+      "Docker",
+      "React",
+      "Networking",
+      "Leadership",
+      "Cloud Computing (AWS)"
+    ],
+    "target_qualification": [
+      "Ph.D. Computer Science",
+      "MBA",
+      "Diploma in IT"
+    ],
+    "target_age_min": 22,
+    "target_age_max": 40,
+    "duration_weeks": 2,
+    "created_at": "2026-07-14T03:59:28.870289"
+  },
+  {
+    "id": "course_017",
+    "title": "Business Analytics: Essentials",
+    "description": "Hour themselves two both consider. Significant husband service will address. Describe tend short sit the.",
+    "category": "Business Analytics",
+    "difficulty": "Beginner",
+    "trainer_id": "trainer_006",
+    "tags": [
+      "SQL",
+      "Cloud (AWS/Azure)",
+      "Leadership",
+      "Business Analytics"
+    ],
+    "target_qualification": [
+      "B.Sc IT",
+      "Ph.D. Computer Science",
+      "B.Tech Electronics"
+    ],
+    "target_age_min": 18,
+    "target_age_max": 60,
+    "duration_weeks": 4,
+    "created_at": "2025-10-14T03:59:28.870320"
+  },
+  {
+    "id": "course_018",
+    "title": "Python Programming: Practical Guide",
+    "description": "Newspaper drive stand have. Care much artist season degree more term. He area teacher.",
+    "category": "Python Programming",
+    "difficulty": "Advanced",
+    "trainer_id": "trainer_008",
+    "tags": [
+      "Python",
+      "Project Management",
+      "Python Programming"
+    ],
+    "target_qualification": [
+      "Ph.D. Computer Science",
+      "Diploma in IT"
+    ],
+    "target_age_min": 25,
+    "target_age_max": 35,
+    "duration_weeks": 4,
+    "created_at": "2026-07-18T03:59:28.870352"
+  },
+  {
+    "id": "course_019",
+    "title": "Cybersecurity Basics: Practical Guide",
+    "description": "Girl whose appear strong act specific picture. Official father other order. Statement front race order address main look.",
+    "category": "Cybersecurity Basics",
+    "difficulty": "Advanced",
+    "trainer_id": "trainer_005",
+    "tags": [
+      "Machine Learning",
+      "Communication",
+      "Cybersecurity Basics"
+    ],
+    "target_qualification": [
+      "MCA",
+      "BCA",
+      "MBA"
+    ],
+    "target_age_min": 22,
+    "target_age_max": 45,
+    "duration_weeks": 2,
+    "created_at": "2026-03-04T03:59:28.870390"
+  },
+  {
+    "id": "course_020",
+    "title": "Web Development: Essentials",
+    "description": "Say begin population old. Care smile share fight pass program top. Opportunity drive walk dream.",
+    "category": "Web Development",
+    "difficulty": "Advanced",
+    "trainer_id": "trainer_004",
+    "tags": [
+      "Networking",
+      "Project Management",
+      "Web Development"
+    ],
+    "target_qualification": [
+      "B.Tech Computer Science"
+    ],
+    "target_age_min": 20,
+    "target_age_max": 40,
+    "duration_weeks": 12,
+    "created_at": "2025-09-02T03:59:28.870420"
+  }
+]

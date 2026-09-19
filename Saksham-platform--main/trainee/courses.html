@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="card card-pad" style="margin-bottom:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+        <input type="search" id="searchBox" placeholder="Search courses by title or subject" style="max-width:320px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <select id="categoryFilter">
+            <option value="">All categories</option>
+            <option>Governance</option>
+            <option>Digital Skills</option>
+            <option>Policy</option>
+            <option>Emergency Response</option>
+          </select>
+          <select id="statusFilter">
+            <option value="">All courses</option>
+            <option value="enrolled">My enrollments</option>
+            <option value="available">Not yet enrolled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-3" id="courseGrid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="courseModal">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle" style="margin:0;">Course</h3><button id="closeModal">×</button></div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/trainee-courses.js"></script>
+</body>
+</html>

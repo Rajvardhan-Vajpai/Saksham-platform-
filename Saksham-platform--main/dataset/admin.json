@@ -1,0 +1,9 @@
+[
+  {
+    "id": "admin_001",
+    "role": "admin",
+    "name": "Site Admin",
+    "email": "admin@platform.test",
+    "status": "approved"
+  }
+]

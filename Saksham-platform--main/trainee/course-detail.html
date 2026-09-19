@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Detail — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="card card-pad" style="background:var(--navy-800);border:none;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
+        <div>
+          <h2 id="courseTitle" style="color:#fff;font-size:19px;">Public Financial Management</h2>
+          <p style="color:#C9D6E7;margin:0;">Trainer: <span id="courseTrainer">R. Mehta</span> · <span id="courseCat">Governance</span></p>
+        </div>
+        <div style="min-width:180px;">
+          <div class="progress" style="background:rgba(255,255,255,.2);"><span id="courseProgress" style="width:40%;background:var(--saffron);"></span></div>
+          <p style="color:#C9D6E7;font-size:12px;margin:6px 0 0;">40% complete</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns:1.4fr 1fr;align-items:start;">
+        <div>
+          <div class="section-head"><h2 style="font-size:16px;">Learning resources</h2></div>
+          <ul class="list-plain" id="resourceList" style="margin-bottom:28px;"></ul>
+
+          <div class="section-head"><h2 style="font-size:16px;">Attempt assessment</h2></div>
+          <div class="card card-pad" style="margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <h4 style="margin:0 0 4px;color:var(--navy-800);font-size:14.5px;">Module 3 Quiz — 10 questions</h4>
+              <span style="font-size:12.5px;color:var(--ink-soft);">Deadline: 18 Sep 2026</span>
+            </div>
+            <a href="assessment.html" class="btn btn-primary btn-sm">Start assessment</a>
+          </div>
+
+          <div class="section-head"><h2 style="font-size:16px;">Your feedback</h2></div>
+          <form class="card card-pad" id="feedbackForm">
+            <div class="field">
+              <label>Rate this course</label>
+              <div class="stars" id="starRow">★★★★★</div>
+            </div>
+            <div class="field"><label>Comments</label><textarea placeholder="What worked well? What could improve?"></textarea></div>
+            <button class="btn btn-outline btn-sm" type="submit">Submit feedback</button>
+          </form>
+        </div>
+
+        <div>
+          <div class="section-head"><h2 style="font-size:16px;">Course info</h2></div>
+          <div class="card card-pad">
+            <ul class="list-plain">
+              <li><strong style="color:var(--navy-800);">Duration:</strong> 6 modules, ~8 hours</li>
+              <li><strong style="color:var(--navy-800);">Level:</strong> Intermediate</li>
+              <li><strong style="color:var(--navy-800);">Language:</strong> English, Hindi</li>
+              <li><strong style="color:var(--navy-800);">Certificate:</strong> On completing all modules + assessment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/trainee-course-detail.js"></script>
+</body>
+</html>

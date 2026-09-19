@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trainer Library — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="section-head">
+        <div><h2 style="font-size:18px;">Your library</h2><p style="margin:0;font-size:13.5px;">Materials here are visible to enrolled trainees.</p></div>
+        <button class="btn btn-primary" id="openUpload">+ Upload material</button>
+      </div>
+
+      <ul class="list-plain" id="libraryList"></ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="uploadModal">
+  <div class="modal">
+    <div class="modal-head"><h3 style="margin:0;">Upload material</h3><button id="closeUpload">×</button></div>
+    <form id="uploadForm">
+      <div class="field"><label>Title</label><input type="text" id="u_title" placeholder="e.g. Budget Cycle — Recorded Lecture" required></div>
+      <div class="row-2">
+        <div class="field"><label>Type</label>
+          <select id="u_type">
+            <option value="video">Recorded lecture (video)</option>
+            <option value="ppt">Presentation (PPT)</option>
+            <option value="pdf">Reading material (PDF)</option>
+            <option value="doc">Document</option>
+          </select>
+        </div>
+        <div class="field"><label>Associated course</label>
+          <select id="u_course">
+            <option>Public Financial Management</option>
+            <option>Cyber Hygiene Foundation</option>
+            <option>Advanced MS Excel</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>File</label><input type="file" id="u_file"></div>
+      <div class="check-row" style="margin-bottom:18px;">
+        <input type="checkbox" id="visibleCheck" checked><label for="visibleCheck">Make visible to trainees immediately</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Upload to library</button>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/trainer-library.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competency Mapping — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="alert alert-info" style="max-width:760px;">Coverage is calculated from trainer self-assessments, past ratings and assessment authorship. Subjects below 50% coverage need an additional trainer.</div>
+
+      <div class="table-wrap" style="margin-top:18px;margin-bottom:28px;">
+        <table>
+          <thead><tr><th>Subject</th><th>Matched trainers</th><th>Coverage</th><th>Action</th></tr></thead>
+          <tbody id="mapTable"></tbody>
+        </table>
+      </div>
+
+      <div class="section-head"><h2 style="font-size:18px;">Assign a trainer to a subject</h2></div>
+      <div class="card card-pad" style="max-width:640px;">
+        <div class="row-2">
+          <div class="field"><label>Subject</label>
+            <select id="assignSubject">
+              <option>Public Financial Management</option>
+              <option>Digital Skills / Cyber Hygiene</option>
+              <option>Policy & RTI</option>
+              <option>Disaster Management</option>
+              <option>Office Procedure</option>
+            </select>
+          </div>
+          <div class="field"><label>Suggested trainer</label>
+            <select id="assignTrainer">
+              <option>R. Mehta — 98% match (Governance background)</option>
+              <option>A. Bose — 74% match (Prior module authorship)</option>
+              <option>S. Iyer — 61% match (Adjacent domain)</option>
+            </select>
+          </div>
+        </div>
+        <p class="hint" style="margin-bottom:14px;">Suggestions are ranked by subject-matter certifications, prior questionnaire authorship, and trainee feedback ratings on related courses.</p>
+        <button class="btn btn-primary" id="assignBtn">Assign trainer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+
+<script src="../assets/js/admin-competency-mapping.js"></script>
+</body>
+</html>

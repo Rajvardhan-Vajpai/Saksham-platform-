@@ -1,0 +1,35 @@
+﻿initDashboardShell({ role: "trainee", active: "courses.html", title: "Course details", crumb: "Trainee workspace / Courses" });
+
+  const iconFor = (type) => ({
+    video: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H14a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 14 20H5.5A1.5 1.5 0 0 1 4 18.5v-13Z"/><path d="M15.5 10l4.5-3v10l-4.5-3Z"/>',
+    ppt: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h5a2.5 2.5 0 0 1 0 5H8v4"/>',
+    pdf: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M7.5 8h2a1.7 1.7 0 0 1 0 3.4h-2V16M13 8v8M13 8h2a2 2 0 0 1 0 8h-2M17 8h2"/>',
+    doc: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/>'
+  }[type] || "");
+
+  (async function () {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const course = await loadWithFallback(
+      () => id ? Api.getCourseDetail(id) : Promise.reject(new Error("no id in URL")),
+      (MockDB.courses.find(c => c.id === id)) || MockDB.courses[0]
+    );
+    document.getElementById("courseTitle").textContent = course.title;
+    document.getElementById("courseTrainer").textContent = course.trainer;
+    document.getElementById("courseCat").textContent = course.category;
+    document.getElementById("courseProgress").style.width = course.progress + "%";
+
+    document.getElementById("resourceList").innerHTML = MockDB.resources.map(r => `
+      <li class="resource-row">
+        <div class="r-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${iconFor(r.type)}</svg></div>
+        <div class="r-body"><h4>${r.title}</h4><span>${r.meta}</span></div>
+        <a href="#" class="btn btn-ghost btn-sm">Open</a>
+      </li>`).join("");
+  })();
+
+  document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await loadWithFallback(() => Api.submitFeedback("C101", {}), null);
+    toast("Thanks for your feedback!");
+    e.target.reset();
+  });
