@@ -6,11 +6,26 @@
 <title>Saksham — National Training &amp; Competency Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 
+<div class="util-bar">
+  <div class="container">
+    <div>
+      <a href="#main">Skip to Main Content</a>
+      <!-- <a href="#">Screen Reader Access</a> -->
+      <a href="#" id="langToggle">हिंदी</a>
+    </div>
+    <div>
+      <a href="#" id="fontMinus">A-</a>
+      <a href="#" id="fontReset">A</a>
+      <a href="#" id="fontPlus">A+</a>
+      <a href="#" id="contrastToggle">High Contrast</a>
+    </div>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container">
@@ -28,7 +43,6 @@
       <a href="support.html">Help</a>
     </nav>
     <div class="header-actions">
-      <a href="#" id="langToggle" class="btn btn-outline btn-sm" style="border: none; margin-right: 8px;">हिंदी</a>
       <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
       <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
     </div>
@@ -171,162 +185,12 @@
   </div>
 </footer>
 
-<script src="../js/mock-data.js"></script>
-<script src="../js/api.js"></script>
-<script src="../js/layout.js"></script>
-<script>
-  // Render the news ticker at the top of the page using fallback data
-  renderTicker("ticker", MockDB.ticker);
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/layout.js"></script>
 
-  // An asynchronous function that runs immediately to load dynamic page content
-  (async function () {
-    
-    // 1. Load Statistics
-    // Attempt to get live stats from the API, otherwise use our mock data
-    const stats = await loadWithFallback(Api.getStats, MockDB.stats);
-    document.getElementById("statGrid").innerHTML = `
-      <div class="stat-item"><div class="stat-num">${stats.learners}</div><div class="stat-label">Registered learners</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.courses}</div><div class="stat-label">Courses available</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.trainers}</div><div class="stat-label">Active trainers</div></div>
-      <div class="stat-item"><div class="stat-num">${stats.certificates}</div><div class="stat-label">Certificates issued</div></div>`;
 
-    // 2. Load Announcements
-    // Fetch announcements, applying specific CSS classes based on the announcement type
-    const items = await loadWithFallback(Api.getAnnouncements, MockDB.announcements);
-    const getTagClass = (tagType) => tagType === "Achievement" ? "tag-achieve" : (tagType === "New content" ? "tag-new" : "tag-info");
-    
-    document.getElementById("noticeGrid").innerHTML = items.map(notice => `
-      <div class="notice-card">
-        <div class="notice-date"><div class="d">${notice.date.split(" ")[0]}</div><div class="m">${notice.date.split(" ")[1]}</div></div>
-        <div class="notice-body">
-          <span class="tag ${getTagClass(notice.tag)}">${notice.tag}</span>
-          <h4 style="margin-top:6px;">${notice.title}</h4>
-          <p>${notice.body}</p>
-        </div>
-      </div>`).join("");
 
-    // 3. Load Courses
-    try {
-      // We append a timestamp to the URL to prevent the browser from caching old course data
-      const courseRes = await fetch("../dataset/courses.json?t=" + new Date().getTime());
-      
-      if (courseRes.ok) {
-        const allCourses = await courseRes.json();
-        // For the homepage, we only want to display a preview of the first 6 courses
-        const coursesToShow = allCourses.slice(0, 6);
-        
-        document.getElementById("courseGrid").innerHTML = coursesToShow.map(course => `
-          <div class="role-card" style="display:flex; flex-direction:column;">
-            <h4 style="margin:0 0 10px 0;">${course.title}</h4>
-            <div style="margin-bottom:10px;"><span class="tag tag-info">${course.category}</span></div>
-            <p style="font-size:13.5px; flex-grow:1; color:#555;">${course.description.substring(0, 100)}...</p>
-            <div style="font-size:12px; color:#888; margin-top:15px; border-top:1px solid #eee; padding-top:10px;">
-              <strong>Difficulty:</strong> ${course.difficulty} &nbsp;|&nbsp; <strong>Duration:</strong> ${course.duration_weeks} weeks
-            </div>
-          </div>
-        `).join("");
-      }
-    } catch (err) {
-      console.error("Error loading courses:", err);
-      // Display a friendly fallback message if the courses fail to load (e.g. if the user opens the file directly without a server)
-      document.getElementById("courseGrid").innerHTML = `
-        <div style="grid-column: 1 / -1; padding: 20px; background: #fff3f3; color: #d32f2f; border: 1px solid #ffcdd2; border-radius: 8px; text-align: center;">
-          <h4 style="margin-top: 0;">Unable to load courses</h4>
-          <p style="margin-bottom: 0;">Error details: ${err.message}. If this says "Failed to fetch", ensure you are running a local server (e.g. <code>python -m http.server 8080</code>) and accessing it via <code>http://localhost:8080</code>, not <code>file:///</code>.</p>
-        </div>
-      `;
-    }
-  })();
-</script>
-<!--chatbot-->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://wnyraj.app.n8n.cloud/webhook/3dd76b11-b8b6-40e3-a926-76040b0887f4/chat'
-	});
-</script>
-<script>
-
-/* ---- Utility Bar: Hindi / English Language Toggle ---- */
-(function () {
-  const btn = document.getElementById("langToggle");
-  let isHindi = false;
-
-  const translations = {
-    "Skip to Main Content": "मुख्य सामग्री पर जाएं",
-    "Screen Reader Access": "स्क्रीन रीडर",
-    "Home": "होम",
-    "Courses": "पाठ्यक्रम",
-    "About": "हमारे बारे में",
-    "Help": "सहायता",
-    "Log in": "लॉग इन",
-    "Sign up": "साइन अप",
-    "High Contrast": "उच्च कंट्रास्ट",
-    "Normal View": "सामान्य दृश्य",
-    "MISSION SAKSHAM · CAPACITY BUILDING PROGRAMME": "मिशन सक्षम · क्षमता निर्माण कार्यक्रम",
-    "Learn, get certified, and grow with your department.": "सीखें, प्रमाणित हों, और अपने विभाग के साथ आगे बढ़ें।",
-    "One platform for course enrollment, competency-based assessments, and shared learning resources — built for trainees, trainers and administrators alike.": "पाठ्यक्रम नामांकन, योग्यता-आधारित मूल्यांकन और साझा शिक्षण संसाधनों के लिए एक मंच — प्रशिक्षुओं, प्रशिक्षकों और प्रशासकों के लिए।",
-    "Create your account": "अपना खाता बनाएं",
-    "Browse courses": "पाठ्यक्रम देखें",
-    "Three roles, one platform": "तीन भूमिकाएं, एक मंच",
-    "Built around three roles": "तीन भूमिकाओं पर आधारित",
-    "Every account is approved before it becomes active, and each role sees a workspace shaped for its work.": "हर खाता सक्रिय होने से पहले स्वीकृत किया जाता है, और हर भूमिका को अपने कार्य के अनुसार कार्यक्षेत्र मिलता है।",
-    "Trainee": "प्रशिक्षु",
-    "Trainer": "प्रशिक्षक",
-    "Admin": "व्यवस्थापक",
-    "Announcements & achievements": "घोषणाएं और उपलब्धियां",
-    "Published by the programme administrator.": "कार्यक्रम प्रशासक द्वारा प्रकाशित।",
-    "Platform": "प्लेटफ़ॉर्म",
-    "Register": "पंजीकरण",
-    "Support": "सहायता",
-    "Help centre": "सहायता केंद्र",
-    "Accessibility statement": "सुगम्यता विवरण",
-    "Contact us": "संपर्क करें",
-    "Policies": "नीतियां",
-    "Terms of use": "उपयोग की शर्तें",
-    "Privacy policy": "गोपनीयता नीति",
-    "Copyright policy": "कॉपीराइट नीति",
-    "Registered learners": "पंजीकृत शिक्षार्थी",
-    "Courses available": "उपलब्ध पाठ्यक्रम",
-    "Active trainers": "सक्रिय प्रशिक्षक",
-    "Certificates issued": "प्रमाणपत्र जारी",
-    "Saksham": "सक्षम",
-    "National Training & Competency Platform": "राष्ट्रीय प्रशिक्षण एवं योग्यता मंच"
-  };
-
-  // Build reverse map
-  const reverseMap = {};
-  for (const [en, hi] of Object.entries(translations)) {
-    reverseMap[hi] = en;
-  }
-
-  function swapText(root, map) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    while ((node = walker.nextNode())) {
-      const trimmed = node.textContent.trim();
-      if (trimmed && map[trimmed]) {
-        node.textContent = node.textContent.replace(trimmed, map[trimmed]);
-      }
-    }
-  }
-
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (isHindi) {
-      swapText(document.body, reverseMap);
-      btn.textContent = "हिंदी";
-      document.title = "Saksham — National Training & Competency Platform";
-    } else {
-      swapText(document.body, translations);
-      btn.textContent = "English";
-      document.title = "सक्षम — राष्ट्रीय प्रशिक्षण एवं योग्यता मंच";
-    }
-    isHindi = !isHindi;
-  });
-})();
-</script>
+<script type="module" src="assets/js/index.js"></script>
 </body>
 </html>

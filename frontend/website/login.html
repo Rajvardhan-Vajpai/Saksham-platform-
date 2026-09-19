@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,7 @@
 <title>Log in — Saksham</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header class="site-header"><div class="container">
@@ -28,72 +28,9 @@
   </div>
 </div>
 
-<script src="../js/clerk-auth.js"></script>
-<script src="../js/api.js"></script>
-<script>
-  // Map user roles to their respective dashboards
-  const dashboardRoutes = { 
-    trainee: "../trainee/dashboard.html", 
-    trainer: "../trainer/dashboard.html", 
-    admin: "../admin/dashboard.html" 
-  };
-  const loginStatusBox = document.getElementById("statusBox");
+<script src="assets/js/clerk-auth.js"></script>
+<script src="assets/js/api.js"></script>
 
-  /**
-   * This function runs after the user successfully logs in via Clerk.
-   * It checks our backend for their profile to know which dashboard to send them to.
-   */
-  async function redirectSignedInUser() {
-    loginStatusBox.innerHTML = `<div class="alert alert-info">Signing you in…</div>`;
-    
-    try {
-      // Try to fetch the user's profile from our backend
-      // This will fail if it's their first time logging in and their account isn't synced yet
-      const userProfile = await Api.getProfile(); 
-      window.location.href = dashboardRoutes[userProfile.role] || "trainee/dashboard.html";
-      
-    } catch (profileError) {
-      // If we couldn't get their profile, it's either their first login or the backend is down.
-      // We'll try to sync their new account to the backend and default them to the "trainee" role.
-      try {
-        await Api.syncUser({
-          name: window.Clerk.user.fullName || window.Clerk.user.username || "User",
-          email: window.Clerk.user.primaryEmailAddress?.emailAddress,
-          role: "trainee"
-        });
-        window.location.href = dashboardRoutes.trainee;
-        
-      } catch (syncError) {
-        // If syncing also fails, the backend is likely offline.
-        // We'll show a friendly message and redirect them to a demo version of the dashboard.
-        loginStatusBox.innerHTML = `<div class="alert alert-info">Backend not reachable at the moment — opening the trainee workspace with sample data. Start your backend (see README) to log in for real.</div>`;
-        setTimeout(() => window.location.href = dashboardRoutes.trainee, 1400);
-      }
-    }
-  }
-
-  // Initialize the Clerk authentication widget when the page loads
-  (async function initAuth() {
-    await AuthGuard.mountSignIn(document.getElementById("clerk-signin"), {
-      routing: "hash",
-      afterSignInUrl: window.location.href, // Reload this page after they sign in
-      signUpUrl: "signup.html"
-    });
-    
-    // If they are already signed in when they visit this page, redirect them immediately
-    if (window.Clerk.user) {
-      redirectSignedInUser();
-    }
-    
-    // Listen for sign-in events (e.g., they just filled out the login form)
-    AuthGuard.addListener(({ user }) => { 
-      if (user) redirectSignedInUser(); 
-    });
-    
-  })().catch((authError) => {
-    // If the widget fails to load entirely (maybe they are offline)
-    loginStatusBox.innerHTML = `<div class="alert alert-error">Couldn't load the sign-in widget (offline, or Clerk isn't reachable). <a href="../trainee/dashboard.html">Continue in demo mode →</a></div>`;
-  });
-</script>
+<script src="assets/js/login.js"></script>
 </body>
 </html>

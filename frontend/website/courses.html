@@ -6,11 +6,26 @@
 <title>Saksham — National Training &amp; Competency Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 
+<div class="util-bar">
+  <div class="container">
+    <div>
+      <a href="#main">Skip to Main Content</a>
+      <!-- <a href="#">Screen Reader Access</a> -->
+      <a href="#" id="langToggle">हिंदी</a>
+    </div>
+    <div>
+      <a href="#" id="fontMinus">A-</a>
+      <a href="#" id="fontReset">A</a>
+      <a href="#" id="fontPlus">A+</a>
+      <a href="#" id="contrastToggle">High Contrast</a>
+    </div>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="container">
@@ -28,7 +43,6 @@
       <a href="support.html">Help</a>
     </nav>
     <div class="header-actions">
-      <a href="#" id="langToggle" class="btn btn-outline btn-sm" style="border: none; margin-right: 8px;">हिंदी</a>
       <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
       <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
     </div>
@@ -97,48 +111,15 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>Browse Courses & Find Trainers</h2>
-          <p>Explore our wide range of training courses or find the best trainer for your needs using AI.</p>
+          <h2>Browse Courses</h2>
+          <p>Explore our wide range of training courses.</p>
         </div>
-      </div>
-      
-      <!-- AI Trainer Search Section -->
-      <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 24px; margin-bottom: 40px; box-shadow: var(--shadow-1);">
-        <h3 style="margin-top:0; font-size: 18px;">✨ AI Trainer Match</h3>
-        <p style="font-size: 14px; color: var(--ink-soft); margin-bottom: 16px;">Type what you want to learn, and our AI will recommend the top 3 best trainers for you based on their competencies.</p>
-        <div style="display: flex; gap: 12px; margin-bottom: 20px;">
-          <input type="text" id="aiSearchInput" placeholder="e.g. Python, Data Analysis, and Pandas training" style="flex-grow: 1; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit;">
-          <button id="aiSearchBtn" class="btn btn-primary">Find Best Trainers</button>
-        </div>
-        <div id="aiResults" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-          <!-- Results will appear here -->
-        </div>
-      </div>
-
-      <div style="display: flex; gap: 12px; margin-bottom: 20px;">
-        <input type="text" id="courseSearchInput" placeholder="Search courses by title or category..." style="flex-grow: 1; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit;">
-        <button id="courseSearchBtn" class="btn btn-primary">Search Courses</button>
       </div>
       <div class="grid-3" id="courseGrid" style="margin-bottom:30px;"></div>
+      
     </div>
   </section>
 
-  <!-- Meet Our Trainers Section -->
-  <section class="section" id="trainers" style="background: var(--surface);">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Meet Our Trainers</h2>
-          <p>Learn from industry experts with years of experience.</p>
-        </div>
-      </div>
-      <div class="grid-3" id="trainersGrid" style="margin-bottom:30px;">
-        <div style="grid-column: 1 / -1; padding: 20px; text-align: center; color: var(--ink-soft);">
-          Loading trainers from database...
-        </div>
-      </div>
-    </div>
-  </section>
   
 </main>
 
@@ -172,328 +153,12 @@
   </div>
 </footer>
 
-<script src="../js/mock-data.js"></script>
-<script src="../js/api.js"></script>
-<script src="../js/layout.js"></script>
-<script>
-  // This main function handles loading trainers and courses asynchronously when the page loads
-  (async function loadPageData() {
-    let allCourses = [];
-    let allTrainers = [];
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/layout.js"></script>
 
-    // 1. Fetch Trainers
-    // We load trainers first because we want to auto-recommend a trainer for each course
-    try {
-      // Append a timestamp to prevent the browser from caching old data
-      const trainersResponse = await fetch("../dataset/trainers.json?t=" + new Date().getTime());
-      
-      if (trainersResponse.ok) {
-        allTrainers = await trainersResponse.json();
-        const trainersGrid = document.getElementById("trainersGrid");
-        
-        if (allTrainers && allTrainers.length > 0) {
-          // Map over each trainer and create their HTML card
-          trainersGrid.innerHTML = allTrainers.map(trainer => `
-            <div class="role-card" style="display:flex; flex-direction:column; text-align: center;">
-              <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--teal-light); color: var(--teal-dark); font-size: 24px; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto;">
-                ${trainer.name.charAt(0)}
-              </div>
-              <h4 style="margin:0 0 8px 0; color: var(--navy-900);">${trainer.name}</h4>
-              <p style="font-size: 13px; color: var(--ink-soft); margin-bottom: 12px; font-style: italic;">
-                ${trainer.years_experience} years experience
-              </p>
-              <div style="display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: auto;">
-                ${trainer.expertise_areas.slice(0, 3).map((skill) => `<span class="tag tag-success" style="font-size: 11px;">${skill}</span>`).join('')}
-              </div>
-            </div>
-          `).join("");
-        } else {
-          trainersGrid.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>No trainers available yet.</p>";
-        }
-      }
-    } catch (trainerError) {
-      console.error("Error loading trainers:", trainerError);
-      document.getElementById("trainersGrid").innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: red;'>Failed to load trainers from dataset.</p>";
-    }
 
-    // 2. Helper function to display a list of courses
-    function renderCourses(coursesToDisplay) {
-      const courseGrid = document.getElementById("courseGrid");
-      
-      // If there are no courses to show (e.g. after a bad search), show a message
-      if (coursesToDisplay.length === 0) {
-        courseGrid.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>No courses found matching your criteria.</p>";
-        return;
-      }
-      
-      // Create HTML for each course
-      courseGrid.innerHTML = coursesToDisplay.map(course => {
-        // Try to find a trainer whose expertise matches this course's category. If none matches, pick the first trainer.
-        const recommendedTrainer = allTrainers.find(trainer => trainer.expertise_areas.includes(course.category)) || allTrainers[0];
-        const trainerHtml = recommendedTrainer ? `<div style="font-size:12px; color:var(--navy-700); margin-top: 10px; background: #e0f2f1; padding: 8px; border-radius: 6px;">💡 <strong>Recommended Trainer:</strong> ${recommendedTrainer.name}</div>` : '';
-        const placeholderImageUrl = "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80";
 
-        return `
-        <div class="role-card" style="display:flex; flex-direction:column; position: relative; padding: 0; overflow: hidden;">
-          <img src="${placeholderImageUrl}" style="width: 100%; height: 140px; object-fit: cover;" alt="Course visual">
-          <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
-            <h4 style="margin:0 0 10px 0;">${course.title}</h4>
-            <div style="margin-bottom:10px;"><span class="tag tag-info">${course.category}</span></div>
-            <p style="font-size:13.5px; flex-grow:1; color:#555;">${course.description.substring(0, 100)}...</p>
-            ${trainerHtml}
-            <div style="font-size:12px; color:#888; margin-top:15px; margin-bottom: 15px; border-top:1px solid #eee; padding-top:10px;">
-              <strong>Difficulty:</strong> ${course.difficulty} &nbsp;|&nbsp; <strong>Duration:</strong> ${course.duration_weeks} weeks
-            </div>
-            <button class="btn btn-primary btn-sm enroll-btn" data-title="${course.title}" data-category="${course.category}" data-desc="${course.description}" data-duration="${course.duration_weeks}" style="width: 100%;">Enroll Course</button>
-          </div>
-        </div>
-      `}).join("");
-      
-      // Attach click listeners to all the newly created "Enroll" buttons
-      document.querySelectorAll('.enroll-btn').forEach(button => {
-        button.addEventListener('click', function() {
-          // Open the modal passing the data embedded in the button
-          openEnrollModal(this.dataset);
-        });
-      });
-    }
-
-    // 3. Fetch Courses
-    try {
-      const courseResponse = await fetch("../dataset/courses.json?t=" + new Date().getTime());
-      if (courseResponse.ok) {
-        allCourses = await courseResponse.json();
-        // Initially show all courses
-        renderCourses(allCourses);
-      }
-    } catch (courseError) {
-      console.error("Error loading courses:", courseError);
-      document.getElementById("courseGrid").innerHTML = `
-        <div style="grid-column: 1 / -1; padding: 20px; background: #fff3f3; color: #d32f2f; border: 1px solid #ffcdd2; border-radius: 8px; text-align: center;">
-          <h4 style="margin-top: 0;">Unable to load courses</h4>
-          <p style="margin-bottom: 0;">Error details: ${courseError.message}.</p>
-        </div>
-      `;
-    }
-
-    // 4. Set up the Course Search functionality
-    const searchInput = document.getElementById("courseSearchInput");
-    const searchButton = document.getElementById("courseSearchBtn");
-
-    // Perform search when button is clicked
-    searchButton.addEventListener("click", () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      // Filter courses where the title or category includes the search term
-      const filteredCourses = allCourses.filter(course => 
-        course.title.toLowerCase().includes(searchTerm) || 
-        course.category.toLowerCase().includes(searchTerm)
-      );
-      renderCourses(filteredCourses);
-    });
-    
-    // Also perform search when user presses Enter in the input field
-    searchInput.addEventListener("keyup", (event) => {
-      if (event.key === 'Enter') {
-        searchButton.click();
-      }
-    });
-
-  })();
-
-  /* ==========================================================================
-     AI Trainer Search Feature
-     ========================================================================== */
-  document.getElementById("aiSearchBtn").addEventListener("click", async function() {
-    const searchInput = document.getElementById("aiSearchInput").value.trim();
-    const resultsContainer = document.getElementById("aiResults");
-    
-    // Do nothing if input is empty
-    if (!searchInput) return;
-    
-    // Provide visual feedback while searching
-    this.disabled = true;
-    this.textContent = "Searching...";
-    resultsContainer.innerHTML = "<p style='grid-column: 1/-1; color: #555;'>AI is analyzing competencies and matching trainers...</p>";
-    
-    try {
-      // Send the query to our FastAPI backend
-      const response = await fetch("http://127.0.0.1:8000/match-trainers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ description: searchInput })
-      });
-      
-      if (!response.ok) throw new Error("Server error");
-      const data = await response.json();
-      
-      // If we got matches, render them
-      if (data.top_trainers && data.top_trainers.length > 0) {
-        resultsContainer.innerHTML = data.top_trainers.map(trainer => `
-          <div style="border: 1px solid var(--line); border-radius: 8px; padding: 16px; background: #f8fafc;">
-            <h4 style="margin: 0 0 8px 0; color: var(--navy-900);">${trainer.name}</h4>
-            <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); margin-bottom: 8px;">
-              <span>Match: <strong style="color: var(--teal-dark);">${trainer.skill_match}%</strong></span>
-              <span>Overall Score: <strong>${trainer.score}</strong></span>
-            </div>
-            <div style="font-size: 12px; color: #666; background: #e2e8f0; padding: 4px 8px; border-radius: 4px; display: inline-block;">
-              Recommended by AI
-            </div>
-          </div>
-        `).join("");
-      } else {
-         resultsContainer.innerHTML = "<p style='grid-column: 1/-1; color: #d32f2f;'>No trainers found for this requirement.</p>";
-      }
-    } catch (aiError) {
-       // Display an error if the FastAPI server is down
-       resultsContainer.innerHTML = `<p style='grid-column: 1/-1; color: #d32f2f;'>Failed to reach AI Server. Make sure FastAPI is running. Error: ${aiError.message}</p>`;
-    } finally {
-       // Reset button state
-       this.disabled = false;
-       this.textContent = "Find Best Trainers";
-    }
-  });
-
-  /* ==========================================================================
-     Enrollment Modal Logic
-     ========================================================================== */
-  
-  // Opens the modal and populates it with the selected course's details
-  function openEnrollModal(courseData) {
-    document.getElementById("modalCourseTitle").textContent = courseData.title;
-    document.getElementById("modalCourseCat").textContent = courseData.category;
-    document.getElementById("modalCourseDesc").textContent = courseData.desc;
-    document.getElementById("modalCourseDuration").textContent = "Duration: " + courseData.duration + " weeks";
-    document.getElementById("enrollModal").style.display = "flex";
-  }
-
-  // Closes the modal and resets its state
-  function closeEnrollModal() {
-    document.getElementById("enrollModal").style.display = "none";
-    document.getElementById("enrollSuccessMsg").style.display = "none";
-    document.getElementById("enrollConfirmBtn").style.display = "block";
-  }
-
-  document.getElementById("closeModalBtn").addEventListener("click", closeEnrollModal);
-  
-  // Handle the confirm enrollment button click
-  document.getElementById("enrollConfirmBtn").addEventListener("click", function() {
-    this.style.display = "none"; // Hide the button to prevent multiple clicks
-    const successMessage = document.getElementById("enrollSuccessMsg");
-    
-    successMessage.style.display = "block";
-    successMessage.textContent = "Processing enrollment...";
-    
-    // Simulate a brief delay before showing success
-    setTimeout(() => {
-      successMessage.innerHTML = "✅ Successfully enrolled! (Mocked since DB is not fully integrated here yet)";
-      successMessage.style.color = "green";
-    }, 1500);
-  });
-</script>
-
-<!-- Enrollment Modal Overlay -->
-<div id="enrollModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
-  <div style="background:white; padding:30px; border-radius:12px; max-width:500px; width:90%; position:relative;">
-    <button id="closeModalBtn" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:20px; cursor:pointer;">&times;</button>
-    <h2 id="modalCourseTitle" style="margin-top:0; margin-bottom:10px;">Course Title</h2>
-    <span id="modalCourseCat" class="tag tag-info" style="display:inline-block; margin-bottom:15px;">Category</span>
-    <p id="modalCourseDesc" style="font-size:14px; color:#555; line-height:1.6; margin-bottom:15px;">Description...</p>
-    <p id="modalCourseDuration" style="font-weight:bold; font-size:14px; margin-bottom:25px;">Duration: </p>
-    
-    <button id="enrollConfirmBtn" class="btn btn-primary" style="width:100%;">Confirm Enrollment</button>
-    <div id="enrollSuccessMsg" style="display:none; margin-top:15px; font-weight:bold; text-align:center;"></div>
-  </div>
-</div>
-
-<!--chatbot-->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://wnyraj.app.n8n.cloud/webhook/3dd76b11-b8b6-40e3-a926-76040b0887f4/chat'
-	});
-</script>
-<script>
-
-/* ---- Utility Bar: Hindi / English Language Toggle ---- */
-(function () {
-  const btn = document.getElementById("langToggle");
-  let isHindi = false;
-
-  const translations = {
-    "Skip to Main Content": "मुख्य सामग्री पर जाएं",
-    "Screen Reader Access": "स्क्रीन रीडर",
-    "Home": "होम",
-    "Courses": "पाठ्यक्रम",
-    "About": "हमारे बारे में",
-    "Help": "सहायता",
-    "Log in": "लॉग इन",
-    "Sign up": "साइन अप",
-    "High Contrast": "उच्च कंट्रास्ट",
-    "Normal View": "सामान्य दृश्य",
-    "MISSION SAKSHAM · CAPACITY BUILDING PROGRAMME": "मिशन सक्षम · क्षमता निर्माण कार्यक्रम",
-    "Learn, get certified, and grow with your department.": "सीखें, प्रमाणित हों, और अपने विभाग के साथ आगे बढ़ें।",
-    "One platform for course enrollment, competency-based assessments, and shared learning resources — built for trainees, trainers and administrators alike.": "पाठ्यक्रम नामांकन, योग्यता-आधारित मूल्यांकन और साझा शिक्षण संसाधनों के लिए एक मंच — प्रशिक्षुओं, प्रशिक्षकों और प्रशासकों के लिए।",
-    "Create your account": "अपना खाता बनाएं",
-    "Browse courses": "पाठ्यक्रम देखें",
-    "Three roles, one platform": "तीन भूमिकाएं, एक मंच",
-    "Built around three roles": "तीन भूमिकाओं पर आधारित",
-    "Every account is approved before it becomes active, and each role sees a workspace shaped for its work.": "हर खाता सक्रिय होने से पहले स्वीकृत किया जाता है, और हर भूमिका को अपने कार्य के अनुसार कार्यक्षेत्र मिलता है।",
-    "Trainee": "प्रशिक्षु",
-    "Trainer": "प्रशिक्षक",
-    "Admin": "व्यवस्थापक",
-    "Announcements & achievements": "घोषणाएं और उपलब्धियां",
-    "Published by the programme administrator.": "कार्यक्रम प्रशासक द्वारा प्रकाशित।",
-    "Platform": "प्लेटफ़ॉर्म",
-    "Register": "पंजीकरण",
-    "Support": "सहायता",
-    "Help centre": "सहायता केंद्र",
-    "Accessibility statement": "सुगम्यता विवरण",
-    "Contact us": "संपर्क करें",
-    "Policies": "नीतियां",
-    "Terms of use": "उपयोग की शर्तें",
-    "Privacy policy": "गोपनीयता नीति",
-    "Copyright policy": "कॉपीराइट नीति",
-    "Registered learners": "पंजीकृत शिक्षार्थी",
-    "Courses available": "उपलब्ध पाठ्यक्रम",
-    "Active trainers": "सक्रिय प्रशिक्षक",
-    "Certificates issued": "प्रमाणपत्र जारी",
-    "Saksham": "सक्षम",
-    "National Training & Competency Platform": "राष्ट्रीय प्रशिक्षण एवं योग्यता मंच"
-  };
-
-  // Build reverse map
-  const reverseMap = {};
-  for (const [en, hi] of Object.entries(translations)) {
-    reverseMap[hi] = en;
-  }
-
-  function swapText(root, map) {
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    while ((node = walker.nextNode())) {
-      const trimmed = node.textContent.trim();
-      if (trimmed && map[trimmed]) {
-        node.textContent = node.textContent.replace(trimmed, map[trimmed]);
-      }
-    }
-  }
-
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (isHindi) {
-      swapText(document.body, reverseMap);
-      btn.textContent = "हिंदी";
-      document.title = "Saksham — National Training & Competency Platform";
-    } else {
-      swapText(document.body, translations);
-      btn.textContent = "English";
-      document.title = "सक्षम — राष्ट्रीय प्रशिक्षण एवं योग्यता मंच";
-    }
-    isHindi = !isHindi;
-  });
-})();
-</script>
+<script type="module" src="assets/js/courses-page.js"></script>
 </body>
 </html>
