@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a href="index.html" class="brand" style="text-decoration:none;">
+    <div class="brand-emblem">
+      <img src="assets/images/saksham-bharat-logo.png" alt="Saksham Bharat Logo" class="brand-logo-img">
+    </div>
+    <div class="brand-text"><div class="brand-name">Saksham Bharat</div><div class="brand-sub">National Training &amp; Competency Platform</div></div>
+  </a>
+  <a href="index.html" class="btn btn-ghost btn-sm">← Back to home</a>
+</div></header>
+<div class="tricolor-rule"></div>
+
+<div class="auth-shell">
+  <div class="auth-card" style="max-width:420px;">
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to continue your training journey.</p>
+    <div id="statusBox"></div>
+    <div id="clerk-signin"></div>
+    <p class="auth-foot">New here? <a href="signup.html">Create an account</a></p>
+  </div>
+</div>
+
+<script src="assets/js/clerk-auth.js"></script>
+<script src="assets/js/api.js"></script>
+<script>
+  const routes = { trainee: "trainee/dashboard.html", trainer: "trainer/dashboard.html", admin: "admin/dashboard.html" };
+  const statusBox = document.getElementById("statusBox");
+
+  async function redirectSignedInUser() {
+    statusBox.innerHTML = `<div class="alert alert-info">Signing you in…</div>`;
+    try {
+      const profile = await Api.getProfile(); // fails if this Clerk user hasn't been synced yet
+      window.location.href = routes[profile.role] || "trainee/dashboard.html";
+    } catch (e) {
+      // Not synced yet (first login) or backend unreachable — default new sign-ins to trainee.
+      try {
+        await Api.syncUser({
+          name: window.Clerk.user.fullName || window.Clerk.user.username || "User",
+          email: window.Clerk.user.primaryEmailAddress?.emailAddress,
+          role: "trainee"
+        });
+        window.location.href = routes.trainee;
+      } catch (e2) {
+        statusBox.innerHTML = `<div class="alert alert-info">Backend not reachable at the moment — opening the trainee workspace with sample data. Start your backend (see README) to log in for real.</div>`;
+        setTimeout(() => window.location.href = routes.trainee, 1400);
+      }
+    }
+  }
+
+  (async function () {
+    await AuthGuard.mountSignIn(document.getElementById("clerk-signin"), {
+      afterSignInUrl: window.location.href,
+      signUpUrl: "signup.html"
+    });
+    if (window.Clerk.user) redirectSignedInUser();
+    AuthGuard.addListener(({ user }) => { if (user) redirectSignedInUser(); });
+  })().catch(() => {
+    statusBox.innerHTML = `<div class="alert alert-error">Couldn't load the sign-in widget (offline, or Clerk isn't reachable). <a href="trainee/dashboard.html">Continue in demo mode →</a></div>`;
+  });
+</script>
+</body>
+</html>

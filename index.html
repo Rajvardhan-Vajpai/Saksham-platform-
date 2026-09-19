@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saksham — National Training &amp; Competency Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/chat.css">
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-emblem">
+        <img src="assets/images/saksham-bharat-logo.png" alt="Saksham Bharat Logo" class="brand-logo-img">
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Saksham Bharat</div>
+        <div class="brand-sub">National Training &amp; Competency Platform</div>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#courses">Courses</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Help</a>
+    </nav>
+    <div class="header-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
+    </div>
+  </div>
+</header>
+<div class="tricolor-rule"></div>
+
+<!-- Live Notification Ticker -->
+<div class="ticker-wrap" id="ticker"></div>
+
+<!-- Main Content -->
+<main id="main">
+  <!-- Fixed Hero Section with Vertical Text Rotator -->
+  <section class="hero-fixed-section" id="heroSection" aria-label="Saksham Bharat Capacity Building Portal">
+    <!-- Ambient Floating Blurred Gradient Blobs (Tricolor + Subtle Blue) -->
+    <div class="hero-bg-blobs" aria-hidden="true">
+      <div class="hero-blob blob-saffron"></div>
+      <div class="hero-blob blob-green"></div>
+      <div class="hero-blob blob-blue"></div>
+    </div>
+
+    <!-- Subtle Hand-Drawn Educational Doodles Background -->
+    <div class="hero-doodle-bg" aria-hidden="true"></div>
+
+    <div class="container hero-fixed-grid">
+      
+      <!-- Left Column: Auto-Updating Vertical Rotator -->
+      <div class="rotator-wrapper" id="rotatorCol">
+        <div class="rotator-container" id="rotatorContainer">
+
+          <!-- Set 1: Portal Launch & National Trust -->
+          <div class="rotator-panel active" data-index="0">
+            <div class="hero-pill-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Saksham Bharat Initiative
+            </div>
+            <h1 class="slide-headline">Start Learning Today.</h1>
+            <p class="slide-subtitle">India’s most trusted and accessible capacity building platform.</p>
+            
+            <div class="slide-metrics">
+              <div class="metric-pill">
+                <span class="metric-icon">📚</span>
+                <span><span class="metric-val">500+</span> Certified Courses</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">🏛️</span>
+                <span><span class="metric-val">100%</span> Government Recognized</span>
+              </div>
+            </div>
+
+            <div class="slide-actions">
+              <a href="#courses" class="btn btn-primary btn-hero">Explore Courses &rarr;</a>
+              <a href="signup.html" class="btn btn-ghost-hero">Create Free Account</a>
+            </div>
+          </div>
+
+          <!-- Set 2: Faculty & Mentorship -->
+          <div class="rotator-panel" data-index="1">
+            <div class="hero-pill-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              Expert Mentorship
+            </div>
+            <h1 class="slide-headline">Learn from Top Domain Experts.</h1>
+            <p class="slide-subtitle">Vetted curriculum designed by certified public sector mentors.</p>
+            
+            <div class="slide-metrics">
+              <div class="metric-pill">
+                <span class="metric-icon">👨‍🏫</span>
+                <span><span class="metric-val">1,200+</span> Empaneled Trainers</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">🤝</span>
+                <span><span class="metric-val">50+</span> Partner Departments</span>
+              </div>
+            </div>
+
+            <div class="slide-actions">
+              <a href="signup.html" class="btn btn-primary btn-hero">Join as Trainer &rarr;</a>
+              <a href="courses.html" class="btn btn-ghost-hero">Browse Mentors</a>
+            </div>
+          </div>
+
+          <!-- Set 3: Special Milestone Badge & Gamification -->
+          <div class="rotator-panel" data-index="2">
+            <div class="hero-pill-badge gold-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              Mastery Milestone
+            </div>
+            <h1 class="slide-headline">Earn Your Master Credential Badge.</h1>
+            <p class="slide-subtitle">Complete 4 to 5 core certifications to unlock the official National Competency Gold Medal &amp; verified digital credential.</p>
+            
+            <div class="slide-metrics">
+              <div class="metric-pill">
+                <span class="metric-icon">🎖️</span>
+                <span><span class="metric-val">85,000+</span> Badges Issued</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">🛡️</span>
+                <span><span class="metric-val">Verifiable</span> QR Credentials</span>
+              </div>
+            </div>
+
+            <div class="slide-actions">
+              <a href="courses.html" class="btn btn-primary btn-hero">View Milestone Criteria &rarr;</a>
+              <a href="signup.html" class="btn btn-ghost-hero">Track Progress</a>
+            </div>
+          </div>
+
+          <!-- Set 4: National Reach & Special Modules -->
+          <div class="rotator-panel" data-index="3">
+            <div class="hero-pill-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Pan-India Impact
+            </div>
+            <h1 class="slide-headline">Mission-Ready Skills for Bharat.</h1>
+            <p class="slide-subtitle">Fast-track training in Disaster Preparedness, Digital Governance, and Crisis Management.</p>
+            
+            <div class="slide-metrics">
+              <div class="metric-pill">
+                <span class="metric-icon">🇮🇳</span>
+                <span><span class="metric-val">2.5 Lakh+</span> Active Learners</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">⭐</span>
+                <span><span class="metric-val">4.8 / 5</span> Officer Rating</span>
+              </div>
+            </div>
+
+            <div class="slide-actions">
+              <a href="courses.html" class="btn btn-primary btn-hero">Enroll in Special Missions &rarr;</a>
+              <a href="#courses" class="btn btn-ghost-hero">Browse Modules</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination Indicators (Dots) Synchronized with Active Text Index -->
+        <div class="rotator-dots" id="rotatorDots" aria-label="Select Hero Message">
+          <button class="rotator-dot active" data-index="0" aria-label="Go to message 1"></button>
+          <button class="rotator-dot" data-index="1" aria-label="Go to message 2"></button>
+          <button class="rotator-dot" data-index="2" aria-label="Go to message 3"></button>
+          <button class="rotator-dot" data-index="3" aria-label="Go to message 4"></button>
+        </div>
+      </div>
+
+      <!-- Right Column: Persistent Official Portal Visual -->
+      <div class="hero-fixed-visual">
+        <div class="hero-visual-card">
+          <div class="slide-banner-frame" style="margin-bottom: 16px;">
+            <img src="assets/images/saksham-bharat-banner.jpg" alt="Saksham Bharat National Capacity Building Platform" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' fill=\'%230A2647\'><rect width=\'100%25\' height=\'100%25\' fill=\'%230A2647\'/><text x=\'50%25\' y=\'50%25\' fill=\'%23fff\' text-anchor=\'middle\' font-family=\'sans-serif\'>Saksham Bharat</text></svg>'">
+            <div class="banner-overlay-badge">
+              🇮🇳 Viksit Bharat Ki Ore &middot; National Capacity Platform
+            </div>
+          </div>
+          
+          <div class="hero-mini-badges">
+            <div class="hero-mini-badge">
+              <span class="mini-badge-icon">🎖️</span>
+              <div>
+                <div class="hero-mini-badge-title">Master Credential</div>
+                <div class="hero-mini-badge-sub">National Gold Badge</div>
+              </div>
+            </div>
+            <div class="hero-mini-badge">
+              <span class="mini-badge-icon">🛡️</span>
+              <div>
+                <div class="hero-mini-badge-title">Verified QR Code</div>
+                <div class="hero-mini-badge-sub">Tamper-Proof Credential</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Integrated Hero Quick Search Bar -->
+    <div class="container hero-search-strip">
+      <div class="hero-search-bar-unified">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="heroSearchInput" placeholder="Search courses, skills (e.g. Python, UI/UX, Cyber, Disaster Management)..." aria-label="Search courses">
+        <button class="btn btn-primary btn-sm" id="heroSearchBtn">Search Courses</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Live Stats Strip -->
+  <div class="stat-strip">
+    <div class="container">
+      <div class="stat-grid" id="statGrid"></div>
+    </div>
+  </div>
+
+  <!-- How It Works / 4-Step Learning Journey -->
+  <section class="section" id="how-it-works" style="background:#fff;border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>How Saksham Works</h2>
+          <p>A structured, 4-step pathway from onboarding to verifiable competency accreditation.</p>
+        </div>
+      </div>
+      <div class="feature-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Register Account</h4>
+          <p>Sign up in under a minute as a Trainee or Trainer with your official credentials.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Explore Courses</h4>
+          <p>Choose from curated modules in Technology, Governance, Policy, and Data Analytics.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Assess Competency</h4>
+          <p>Complete module-based questionnaires and interactive MCQs to validate your mastery.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Get Certified</h4>
+          <p>Earn verifiable digital certificates to advance your official career records.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- From Learning to Mission-Ready Section -->
+  <section class="section mission-ready-section" id="about">
+    <span id="mission-ready" class="section-hash-anchor" aria-hidden="true"></span>
+    <div class="container">
+      <div class="mission-section-header">
+        <div class="mission-header-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>National Capacity Building Pathway</span>
+        </div>
+        <h2 class="mission-header-title">From Learning to Mission-Ready</h2>
+        <p class="mission-header-subtitle">A structured 3-step competency journey designed for government officers, emergency responders, and community leaders across Bharat.</p>
+      </div>
+
+      <div class="mission-journey-container">
+        <!-- Connecting Progress Line (Desktop) -->
+        <div class="mission-progress-track" aria-hidden="true">
+          <div class="mission-progress-bar"></div>
+        </div>
+
+        <div class="mission-cards-grid">
+          <!-- Step 01: Choose Your Mission -->
+          <div class="mission-step-card step-card-saffron">
+            <div class="mission-card-top">
+              <div class="mission-step-badge badge-saffron">
+                <span class="step-num">01</span>
+                <span class="step-lbl">Stage</span>
+              </div>
+              <div class="mission-icon-circle saffron-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+              </div>
+            </div>
+            <div class="mission-card-body">
+              <div class="step-subtext">Orientation &amp; Discovery</div>
+              <h3 class="mission-card-heading">01 — Choose Your Mission</h3>
+              <p class="mission-card-text">Explore focused learning paths in Disaster Preparedness, Digital Governance, and Crisis Management.</p>
+              
+              <div class="mission-tags-list">
+                <span class="mission-tag">Disaster Preparedness</span>
+                <span class="mission-tag">Digital Governance</span>
+                <span class="mission-tag">Crisis Management</span>
+              </div>
+            </div>
+            <div class="mission-card-footer">
+              <a href="#courses" class="mission-action-btn btn-saffron-action" aria-label="Explore learning paths for Step 1 Choose Your Mission">
+                <span>Explore Paths</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Step 02: Learn & Practice -->
+          <div class="mission-step-card step-card-blue">
+            <div class="mission-card-top">
+              <div class="mission-step-badge badge-blue">
+                <span class="step-num">02</span>
+                <span class="step-lbl">Stage</span>
+              </div>
+              <div class="mission-icon-circle blue-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="mission-card-body">
+              <div class="step-subtext">Applied Skill Building</div>
+              <h3 class="mission-card-heading">02 — Learn &amp; Practice</h3>
+              <p class="mission-card-text">Learn through expert content, assessments, simulations, and practical activities designed for real-world readiness.</p>
+              
+              <div class="mission-tags-list">
+                <span class="mission-tag">Expert Content</span>
+                <span class="mission-tag">Field Simulations</span>
+                <span class="mission-tag">Practical Drills</span>
+              </div>
+            </div>
+            <div class="mission-card-footer">
+              <a href="courses.html" class="mission-action-btn btn-blue-action" aria-label="Open course catalog for Step 2 Learn and Practice">
+                <span>Access Course Catalog</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Step 03: Get Certified & Contribute -->
+          <div class="mission-step-card step-card-green">
+            <div class="mission-card-top">
+              <div class="mission-step-badge badge-green">
+                <span class="step-num">03</span>
+                <span class="step-lbl">Stage</span>
+              </div>
+              <div class="mission-icon-circle green-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+            </div>
+            <div class="mission-card-body">
+              <div class="step-subtext">Validation &amp; Impact</div>
+              <h3 class="mission-card-heading">03 — Get Certified &amp; Contribute</h3>
+              <p class="mission-card-text">Complete assessments, earn verified credentials, and apply your skills to contribute to a stronger Bharat.</p>
+              
+              <div class="mission-tags-list">
+                <span class="mission-tag">Verified Credential</span>
+                <span class="mission-tag">Skill Evaluation</span>
+                <span class="mission-tag">Nation Building</span>
+              </div>
+            </div>
+            <div class="mission-card-footer">
+              <a href="trainee/assessment.html" class="mission-action-btn btn-green-action" aria-label="Go to assessment for Step 3 Get Certified and Contribute">
+                <span>Start Assessment</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dedicated Center CTA -->
+        <div class="mission-bottom-cta-wrap">
+          <a href="#courses" class="btn mission-explore-cta" aria-label="Explore all learning paths in the courses section">
+            <span>Explore Learning Paths</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <p class="mission-cta-caption">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#138808" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Aligned with National Competency Guidelines &middot; Open to all departmental cadres &amp; volunteers
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Courses Showcase with Search & Filters -->
+  <section class="section" id="courses">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:6px; background:#FEF3C7; color:#92400E; border:1px solid #FCD34D; padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700; margin-bottom:8px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#D97706" stroke="#D97706"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Curated Recommendations
+          </div>
+          <h2>Recommended Courses</h2>
+          <p>Hand-picked, high-impact capacity building courses recommended for public sector officers and learners.</p>
+        </div>
+        <div>
+          <span id="courseCountBadge" class="tag tag-info" style="font-size:12px;padding:5px 14px;">3 Recommended &middot; 350 in Catalog</span>
+        </div>
+      </div>
+
+      <!-- Filter and Search Controls -->
+      <div class="course-filter-wrapper">
+        <div class="course-search-bar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="courseSearchInput" placeholder="Filter courses by title, topic, or competency..." aria-label="Filter courses">
+          <button id="courseSearchClear" class="btn btn-ghost btn-sm" style="display:none;padding:4px 8px;" title="Clear search">&times;</button>
+        </div>
+        
+        <div class="course-tabs" id="categoryTabs" role="tablist" aria-label="Course Category Tabs">
+          <!-- Dynamically populated from real dataset categories -->
+        </div>
+      </div>
+
+      <!-- Responsive 3-Card Recommended Courses Grid -->
+      <div class="grid-3" id="courseGrid" style="margin-bottom:28px;">
+        <!-- Dynamically populated from verified dataset -->
+      </div>
+
+      <!-- Centered View All Courses CTA Button directly beneath the 3-course grid -->
+      <div style="text-align:center; margin-top:32px;">
+        <a href="courses.html" class="btn btn-primary" id="viewAllCoursesBtn" style="padding: 13px 34px; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 9px; border-radius: 8px; box-shadow: 0 4px 14px rgba(10, 38, 71, 0.18);">
+          <span id="viewAllBtnText">View All Courses in Catalog (350)</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Announcements & Achievements -->
+  <section class="section" style="background:#F3EFE6;" id="announcements">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Announcements &amp; achievements</h2>
+          <p>Official updates published by the programme administrator.</p>
+        </div>
+      </div>
+      <div class="grid-3" id="noticeGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px;">
+          <div class="brand-emblem" style="background:#fff;">
+            <img src="assets/images/saksham-bharat-logo.png" alt="Saksham Bharat Logo" class="brand-logo-img">
+          </div>
+          <div class="brand-text">
+            <div class="brand-name" style="color:#fff;">Saksham Bharat</div>
+            <div class="brand-sub">National Training &amp; Competency Platform</div>
+          </div>
+        </div>
+        <p style="color:#8FA3C2;font-size:12.5px;max-width:34ch;">A Digital India initiative for organizational training, competency development and knowledge sharing.</p>
+      </div>
+      <div>
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="signup.html">Register</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="#courses">Courses</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html#faq">Help centre</a></li>
+          <li><a href="support.html#accessibility">Accessibility statement</a></li>
+          <li><a href="support.html#contactForm">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Policies</h5>
+        <ul>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Copyright policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Saksham Platform. Content owned by the implementing department.</span>
+      <span>Best viewed in latest browsers &middot; Last updated 11 Sep 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts: Dynamic Data Rendering & Interactions -->
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/courses-service.js"></script>
+<script>
+  renderTicker("ticker", MockDB.ticker);
+
+  let allCoursesList = [];
+  let currentCategory = "all";
+  let currentSearchQuery = "";
+
+  // Helper escape
+  function escapeHtml(str) {
+    if (!str) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  // Animated Counter Function
+  function animateNumber(element, targetStr) {
+    if (!element) return;
+    const rawNumber = parseInt(targetStr.replace(/[^0-9]/g, ""), 10);
+    if (isNaN(rawNumber)) {
+      element.textContent = targetStr;
+      return;
+    }
+    const hasPlus = targetStr.includes("+");
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(ease * rawNumber);
+      element.textContent = current.toLocaleString("en-IN") + (hasPlus ? "+" : "");
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = targetStr;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Render Recommended Courses on Homepage from Real Dataset
+  function renderHomeCourses() {
+    const container = document.getElementById("courseGrid");
+    const countBadge = document.getElementById("courseCountBadge");
+    const viewAllBtn = document.getElementById("viewAllCoursesBtn");
+    const viewAllText = document.getElementById("viewAllBtnText");
+    if (!container) return;
+
+    const totalDataset = allCoursesList.length;
+
+    // Filter courses if search query is active
+    let matchingCourses = allCoursesList;
+    const q = (currentSearchQuery || "").toLowerCase().trim();
+
+    if (currentCategory !== "all") {
+      matchingCourses = matchingCourses.filter(c => (c.category || "").toLowerCase() === currentCategory.toLowerCase());
+    }
+
+    if (q) {
+      matchingCourses = matchingCourses.filter(c => {
+        const titleMatch = (c.course_name || "").toLowerCase().includes(q);
+        const descMatch = (c.description || "").toLowerCase().includes(q);
+        const catMatch = (c.category || "").toLowerCase().includes(q);
+        const compMatch = (c.competency || "").toLowerCase().includes(q);
+        const idMatch = (c.course_id || "").toLowerCase().includes(q);
+        return titleMatch || descMatch || catMatch || compMatch || idMatch;
+      });
+    }
+
+    // Update count badge & view all button
+    if (countBadge) {
+      if (currentCategory === "all" && !q) {
+        countBadge.textContent = `3 Recommended · ${totalDataset} in Catalog`;
+      } else {
+        countBadge.textContent = `Showing top 3 of ${matchingCourses.length} courses`;
+      }
+    }
+
+    if (viewAllText) {
+      if (currentCategory !== "all") {
+        viewAllText.textContent = `View All ${currentCategory} Courses (${matchingCourses.length})`;
+      } else {
+        viewAllText.textContent = `View All Courses in Catalog (${totalDataset})`;
+      }
+    }
+    if (viewAllBtn) {
+      if (currentCategory !== "all") {
+        viewAllBtn.href = `courses.html?category=${encodeURIComponent(currentCategory)}`;
+      } else if (q) {
+        viewAllBtn.href = `courses.html?search=${encodeURIComponent(q)}`;
+      } else {
+        viewAllBtn.href = "courses.html";
+      }
+    }
+
+    // Zero matching courses
+    if (!matchingCourses.length) {
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; padding: 40px 20px; background:#fff; border:1px solid var(--line); border-radius:10px; text-align:center;">
+          <div style="font-size:36px; margin-bottom:10px;">🔍</div>
+          <h4 style="margin:0 0 6px; font-size:17px; color:var(--navy-800);">No matching courses found</h4>
+          <p style="color:var(--ink-soft); margin-bottom:16px; font-size:13.5px;">Try adjusting your search query or reset filters.</p>
+          <button class="btn btn-navy btn-sm" onclick="resetHomeFilters()">Reset Filters</button>
+        </div>
+      `;
+      return;
+    }
+
+    // Select 3 courses to display
+    let displayCourses;
+    if (currentCategory === "all" && !q) {
+      displayCourses = CoursesService.getRecommendations(allCoursesList, 3);
+    } else {
+      displayCourses = matchingCourses.slice(0, 3);
+    }
+
+    container.innerHTML = displayCourses.map(c => {
+      const level = c.level || "Beginner";
+      const diffClass = `diff-${level.toLowerCase()}`;
+      const mode = c.delivery_mode || "Online";
+      const modeClass = mode.toLowerCase();
+      const durationWeeks = c.duration_weeks ? `${c.duration_weeks} Weeks` : `${c.duration_hours || 10} hrs`;
+      const durationHours = c.duration_hours ? ` (${c.duration_hours} hrs)` : '';
+      const durationStr = `${durationWeeks}${durationHours}`;
+
+      const ratingVal = c.average_course_rating ? c.average_course_rating.toFixed(1) : "4.8";
+      const enrolledStr = c.total_enrolled ? `${c.total_enrolled} Learners` : "Open Enrollment";
+
+      const certTag = c.certification_offered ? `
+        <span class="tag tag-info" style="font-size:10.5px;padding:2px 6px; background:#ECFDF5; color:#047857; border:1px solid #A7F3D0;">✓ Govt Certified</span>
+      ` : '';
+
+      return `
+        <div class="course-card-enhanced is-recommended" data-course-id="${escapeHtml(c.course_id)}">
+          <div class="course-card-header">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+              <span class="tag-recommended">⭐ Recommended</span>
+              <a href="courses.html?category=${encodeURIComponent(c.category)}" class="tag tag-new badge-cyber" style="text-decoration:none;" title="Browse ${escapeHtml(c.category)} courses in Catalog">
+                ${escapeHtml(c.category)}
+              </a>
+            </div>
+            <span class="difficulty-pill ${diffClass}">${escapeHtml(level)}</span>
+          </div>
+          <div class="course-card-body">
+            <h4 style="cursor:pointer;" onclick="window.location.href='courses.html?course=${encodeURIComponent(c.course_id)}'">${escapeHtml(c.course_name)}</h4>
+            <p>${escapeHtml((c.description || '').substring(0, 130))}...</p>
+            
+            <!-- Metadata Row -->
+            <div class="course-meta-row">
+              <span class="course-meta-item" title="Duration">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ${durationStr}
+              </span>
+              <span class="course-meta-item course-rating" title="Average Rating">
+                ★ ${ratingVal} <span style="font-weight:400;color:var(--ink-soft);font-size:11px;">(${enrolledStr})</span>
+              </span>
+            </div>
+
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:auto;">
+              <span class="tag tag-info" style="font-size:10.5px;padding:2px 6px;">🎯 ${escapeHtml(c.competency)}</span>
+              <span class="delivery-badge ${modeClass}" style="font-size:10.5px;padding:2px 6px;">${escapeHtml(mode)}</span>
+              ${certTag}
+            </div>
+          </div>
+          <div class="course-card-footer">
+            <span style="font-size:11.5px; color:#15803d; font-weight:600; display:flex; align-items:center; gap:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Verified Competency
+            </span>
+            <div style="display:flex; gap:8px;">
+              <a href="courses.html?course=${encodeURIComponent(c.course_id)}" class="btn btn-outline btn-sm" style="padding:4px 10px; font-size:12px;">View Details</a>
+              <a href="signup.html?course=${encodeURIComponent(c.course_id)}" class="btn btn-primary btn-sm">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // Dynamically generate Category Tabs from real dataset
+  function setupCategoryTabs() {
+    const tabsContainer = document.getElementById("categoryTabs");
+    if (!tabsContainer) return;
+
+    const categoryCounts = CoursesService.getCategoryCounts(allCoursesList);
+    // Sort by count descending to show the top prominent disciplines
+    const sortedCats = Object.entries(categoryCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 7)
+      .map(entry => entry[0]);
+
+    tabsContainer.innerHTML = `
+      <a href="courses.html" class="course-tab ${currentCategory === 'all' ? 'active' : ''}" data-cat="all">All Courses (${allCoursesList.length})</a>
+      ${sortedCats.map(cat => `
+        <a href="courses.html?category=${encodeURIComponent(cat)}" class="course-tab ${currentCategory === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
+          ${escapeHtml(cat)} (${categoryCounts[cat]})
+        </a>
+      `).join("")}
+    `;
+  }
+
+  window.resetHomeFilters = function() {
+    currentCategory = "all";
+    currentSearchQuery = "";
+    const searchInput = document.getElementById("courseSearchInput");
+    const heroInput = document.getElementById("heroSearchInput");
+    const clearBtn = document.getElementById("courseSearchClear");
+    if (searchInput) searchInput.value = "";
+    if (heroInput) heroInput.value = "";
+    if (clearBtn) clearBtn.style.display = "none";
+    setupCategoryTabs();
+    renderHomeCourses();
+  };
+
+  (async function () {
+    // 1. Stats with Animated Count-Up
+    const stats = await loadWithFallback(Api.getStats, MockDB.stats);
+    document.getElementById("statGrid").innerHTML = `
+      <div class="stat-item"><div class="stat-num" id="statLearners">0</div><div class="stat-label">Registered learners</div></div>
+      <div class="stat-item"><div class="stat-num" id="statCourses">0</div><div class="stat-label">Courses available</div></div>
+      <div class="stat-item"><div class="stat-num" id="statTrainers">0</div><div class="stat-label">Active trainers</div></div>
+      <div class="stat-item"><div class="stat-num" id="statCerts">0</div><div class="stat-label">Certificates issued</div></div>`;
+
+    setTimeout(() => {
+      animateNumber(document.getElementById("statLearners"), stats.learners || "18,420");
+      animateNumber(document.getElementById("statCourses"), String(allCoursesList.length || 350));
+      animateNumber(document.getElementById("statTrainers"), stats.trainers || "640");
+      animateNumber(document.getElementById("statCerts"), stats.certificates || "9,860");
+    }, 150);
+
+    // 2. Announcements
+    const items = await loadWithFallback(Api.getAnnouncements, MockDB.announcements);
+    const tagClass = t => t === "Achievement" ? "tag-achieve" : (t === "New content" ? "tag-new" : "tag-info");
+    document.getElementById("noticeGrid").innerHTML = items.map(n => `
+      <div class="notice-card">
+        <div class="notice-date"><div class="d">${n.date.split(" ")[0]}</div><div class="m">${n.date.split(" ")[1]}</div></div>
+        <div class="notice-body">
+          <span class="tag ${tagClass(n.tag)}">${n.tag}</span>
+          <h4 style="margin-top:6px;">${n.title}</h4>
+          <p>${n.body}</p>
+        </div>
+      </div>`).join("");
+
+    // 3. Courses Dataset from Single Source of Truth
+    try {
+      allCoursesList = await CoursesService.loadCourses();
+      setupCategoryTabs();
+      renderHomeCourses();
+      // Update stats count accurately from verified dataset
+      const statCoursesEl = document.getElementById("statCourses");
+      if (statCoursesEl) {
+        statCoursesEl.textContent = allCoursesList.length.toLocaleString("en-IN");
+      }
+    } catch (err) {
+      console.error("Error loading courses:", err);
+      const container = document.getElementById("courseGrid");
+      if (container) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 44px 20px; background:#FEF2F2; border:1px solid #FCA5A5; border-radius:10px; text-align:center; color:#991B1B;">
+            <div style="font-size:32px; margin-bottom:10px;">⚠️</div>
+            <h4 style="margin:0 0 8px; font-size:18px; color:#991B1B;">Courses are currently unavailable. Please try again.</h4>
+            <p style="margin:0; font-size:13.5px; color:#7F1D1D;">The official course dataset could not be retrieved at this time.</p>
+          </div>
+        `;
+      }
+      const countBadge = document.getElementById("courseCountBadge");
+      if (countBadge) countBadge.textContent = "Courses unavailable";
+      return;
+    }
+
+    // 4. Hook Course Search Input
+    const courseSearchInput = document.getElementById("courseSearchInput");
+    const courseSearchClear = document.getElementById("courseSearchClear");
+    if (courseSearchInput) {
+      courseSearchInput.addEventListener("input", (e) => {
+        currentSearchQuery = e.target.value;
+        if (courseSearchClear) {
+          courseSearchClear.style.display = currentSearchQuery ? "inline-block" : "none";
+        }
+        renderHomeCourses();
+      });
+      courseSearchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const val = courseSearchInput.value.trim();
+          if (val) {
+            window.location.href = `courses.html?search=${encodeURIComponent(val)}`;
+          }
+        }
+      });
+    }
+    if (courseSearchClear) {
+      courseSearchClear.addEventListener("click", () => {
+        courseSearchInput.value = "";
+        currentSearchQuery = "";
+        courseSearchClear.style.display = "none";
+        renderHomeCourses();
+      });
+    }
+
+    // 5. Hook Hero Search Bar
+    const heroInput = document.getElementById("heroSearchInput");
+    const heroBtn = document.getElementById("heroSearchBtn");
+    function triggerHeroSearch() {
+      const val = heroInput ? heroInput.value.trim() : "";
+      if (val) {
+        window.location.href = `courses.html?search=${encodeURIComponent(val)}`;
+      }
+    }
+    if (heroBtn) heroBtn.addEventListener("click", triggerHeroSearch);
+    if (heroInput) {
+      heroInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          triggerHeroSearch();
+        }
+      });
+    }
+  })();
+</script>
+
+<!-- Hero Vertical Text Rotator Controller -->
+<script>
+(function initVerticalRotator() {
+  const container = document.getElementById("rotatorContainer");
+  const dotsWrap = document.getElementById("rotatorDots");
+  const rotatorWrapper = document.getElementById("rotatorCol") || document.getElementById("heroSection");
+  if (!container || !dotsWrap) return;
+
+  const panels = Array.from(container.querySelectorAll(".rotator-panel"));
+  const dots = Array.from(dotsWrap.querySelectorAll(".rotator-dot"));
+  const count = panels.length;
+  if (count <= 1) return;
+
+  let currentIndex = 0;
+  let isTransitioning = false;
+  let rotationTimer = null;
+  const ROTATE_INTERVAL = 4000; // 4s visible display time
+  const TRANSITION_DURATION = 500; // ~500ms ease-in-out animation matching CSS
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function updateDots(index) {
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle("active", idx === index);
+      dot.setAttribute("aria-current", idx === index ? "true" : "false");
+    });
+  }
+
+  function goToIndex(targetIndex) {
+    if (targetIndex === currentIndex || isTransitioning) return;
+    isTransitioning = true;
+
+    const currentPanel = panels[currentIndex];
+    const nextPanel = panels[targetIndex];
+
+    // Outgoing panel exits upward with fade-out (translateY(-15px), opacity: 0)
+    currentPanel.classList.remove("active");
+    currentPanel.classList.add("exiting");
+
+    // Prepare incoming panel from bottom (translateY(15px), opacity: 0)
+    nextPanel.classList.remove("exiting");
+    if (!prefersReducedMotion) {
+      nextPanel.style.transform = "translateY(15px)";
+      nextPanel.style.opacity = "0";
+    }
+
+    // Force browser reflow
+    void nextPanel.offsetWidth;
+
+    // Activate incoming panel to position (translateY(0), opacity: 1)
+    nextPanel.style.transform = "";
+    nextPanel.style.opacity = "";
+    nextPanel.classList.add("active");
+
+    // Update pagination indicators
+    updateDots(targetIndex);
+
+    // Clean up outgoing panel after transition completes
+    setTimeout(() => {
+      currentPanel.classList.remove("exiting");
+      currentPanel.style.transform = "";
+      currentPanel.style.opacity = "";
+      isTransitioning = false;
+    }, TRANSITION_DURATION);
+
+    currentIndex = targetIndex;
+  }
+
+  function nextSlide() {
+    const nextIdx = (currentIndex + 1) % count;
+    goToIndex(nextIdx);
+  }
+
+  function startRotation() {
+    if (rotationTimer) clearInterval(rotationTimer);
+    rotationTimer = setInterval(nextSlide, ROTATE_INTERVAL);
+  }
+
+  function stopRotation() {
+    if (rotationTimer) {
+      clearInterval(rotationTimer);
+      rotationTimer = null;
+    }
+  }
+
+  function restartRotation() {
+    stopRotation();
+    startRotation();
+  }
+
+  // Hook pagination dots
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const idx = parseInt(dot.getAttribute("data-index"), 10);
+      if (!isNaN(idx)) {
+        goToIndex(idx);
+        restartRotation();
+      }
+    });
+  });
+
+  // Pause on mouse hover, resume on mouse leave
+  if (rotatorWrapper) {
+    rotatorWrapper.addEventListener("mouseenter", stopRotation);
+    rotatorWrapper.addEventListener("mouseleave", startRotation);
+  }
+
+  // Keyboard navigation support for accessibility
+  container.setAttribute("tabindex", "0");
+  container.setAttribute("role", "region");
+  container.setAttribute("aria-live", "polite");
+  container.setAttribute("aria-label", "Saksham Bharat Highlights");
+  container.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      e.preventDefault();
+      nextSlide();
+      restartRotation();
+    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      const prevIdx = (currentIndex - 1 + count) % count;
+      goToIndex(prevIdx);
+      restartRotation();
+    }
+  });
+
+  // Initialize
+  updateDots(0);
+  startRotation();
+})();
+</script>
+<!-- Scripts: Accessibility (Font Size, Contrast, Hindi Toggle) -->
+<script>
+/* ---- Utility Bar: Font Size Controls ---- */
+(function () {
+  const sizes = [14, 16, 18];
+  let sizeIdx = 1;
+
+  function applySize() {
+    document.documentElement.style.fontSize = sizes[sizeIdx] + "px";
+  }
+
+  const btnMinus = document.getElementById("fontMinus");
+  const btnReset = document.getElementById("fontReset");
+  const btnPlus = document.getElementById("fontPlus");
+
+  if (btnMinus) {
+    btnMinus.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (sizeIdx > 0) sizeIdx--;
+      applySize();
+    });
+  }
+  if (btnReset) {
+    btnReset.addEventListener("click", function (e) {
+      e.preventDefault();
+      sizeIdx = 1;
+      applySize();
+    });
+  }
+  if (btnPlus) {
+    btnPlus.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (sizeIdx < sizes.length - 1) sizeIdx++;
+      applySize();
+    });
+  }
+})();
+
+/* ---- Utility Bar: High Contrast Toggle ---- */
+(function () {
+  const btn = document.getElementById("contrastToggle");
+  if (!btn) return;
+  let active = false;
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    active = !active;
+    document.body.classList.toggle("high-contrast", active);
+    btn.textContent = active ? "Normal View" : "High Contrast";
+  });
+})();
+
+/* ---- Utility Bar: Hindi / English Language Toggle ---- */
+(function () {
+  const btn = document.getElementById("langToggle");
+  if (!btn) return;
+  let isHindi = false;
+
+  const translations = {
+    "Skip to Main Content": "मुख्य सामग्री पर जाएं",
+    "Home": "होम",
+    "How It Works": "कार्यप्रणाली",
+    "Courses": "पाठ्यक्रम",
+    "About": "हमारे बारे में",
+    "Help": "सहायता",
+    "Log in": "लॉग इन",
+    "Sign up": "साइन अप",
+    "High Contrast": "उच्च कंट्रास्ट",
+    "Normal View": "सामान्य दृश्य",
+    "Digital India Initiative": "डिजिटल इंडिया पहल",
+    "Government Recognized Certifications": "सरकार द्वारा मान्यता प्राप्त प्रमाणपत्र",
+    "MISSION SAKSHAM · CAPACITY BUILDING PROGRAMME": "मिशन सक्षम · क्षमता निर्माण कार्यक्रम",
+    "Learn, get certified, and grow with your department.": "सीखें, प्रमाणित हों, और अपने विभाग के साथ आगे बढ़ें।",
+    "One unified platform for course enrollment, competency-based assessments, and shared learning resources — built for trainees, trainers, and administrators alike.": "पाठ्यक्रम नामांकन, योग्यता-आधारित मूल्यांकन और साझा शिक्षण संसाधनों के लिए एक मंच — प्रशिक्षुओं, प्रशिक्षकों और प्रशासकों के लिए।",
+    "Search courses, skills (e.g. Python, UI/UX, Cyber)...": "पाठ्यक्रम, कौशल खोजें (उदा. पायथन, साइबर)...",
+    "Search": "खोजें",
+    "Create your account": "अपना खाता बनाएं",
+    "Browse courses": "पाठ्यक्रम देखें",
+    "Three roles, one platform": "तीन भूमिकाएं, एक मंच",
+    "How Saksham Works": "सक्षम कैसे काम करता है",
+    "A structured, 4-step pathway from onboarding to verifiable competency accreditation.": "पंजीकरण से लेकर प्रमाणित योग्यता तक 4 आसान चरण।",
+    "Register Account": "खाता पंजीकृत करें",
+    "Explore Courses": "पाठ्यक्रम खोजें",
+    "Assess Competency": "योग्यता का मूल्यांकन करें",
+    "Get Certified": "प्रमाणपत्र प्राप्त करें",
+    "Built around three roles": "तीन भूमिकाओं पर आधारित",
+    "Every account is approved before it becomes active, and each role sees a workspace shaped for its work.": "हर खाता सक्रिय होने से पहले स्वीकृत किया जाता है, और हर भूमिका को अपने कार्य के अनुसार कार्यक्षेत्र मिलता है।",
+    "Trainee": "प्रशिक्षु",
+    "Trainer": "प्रशिक्षक",
+    "Admin": "व्यवस्थापक",
+    "Explore Trainee Path →": "प्रशिक्षु मार्ग देखें →",
+    "Trainer Library & Tools →": "प्रशिक्षक लाइब्रेरी और टूल्स →",
+    "Admin Governance →": "व्यवस्थापक नियंत्रण →",
+    "Explore Courses": "पाठ्यक्रम देखें",
+    "Browse official competency training courses with real-time assessments.": "वास्तविक समय के मूल्यांकन के साथ आधिकारिक योग्यता प्रशिक्षण पाठ्यक्रम ब्राउज़ करें।",
+    "All Courses": "सभी पाठ्यक्रम",
+    "Enroll Now": "अभी नामांकन करें",
+    "View complete course directory →": "संपूर्ण पाठ्यक्रम निर्देशिका देखें →",
+    "Announcements & achievements": "घोषणाएं और उपलब्धियां",
+    "Official updates published by the programme administrator.": "कार्यक्रम प्रशासक द्वारा प्रकाशित आधिकारिक अपडेट।",
+    "Platform": "प्लेटफ़ॉर्म",
+    "Register": "पंजीकरण",
+    "Support": "सहायता",
+    "Help centre": "सहायता केंद्र",
+    "Accessibility statement": "सुगम्यता विवरण",
+    "Contact us": "संपर्क करें",
+    "Policies": "नीतियां",
+    "Terms of use": "उपयोग की शर्तें",
+    "Privacy policy": "गोपनीयता नीति",
+    "Copyright policy": "कॉपीराइट नीति",
+    "Registered learners": "पंजीकृत शिक्षार्थी",
+    "Courses available": "उपलब्ध पाठ्यक्रम",
+    "Active trainers": "सक्रिय प्रशिक्षक",
+    "Certificates issued": "प्रमाणपत्र जारी",
+    "Saksham": "सक्षम",
+    "National Training & Competency Platform": "राष्ट्रीय प्रशिक्षण एवं योग्यता मंच",
+    "Start Learning Today.": "आज ही सीखना शुरू करें।",
+    "India’s most trusted and accessible capacity building platform.": "भारत का सबसे भरोसेमंद और सुलभ क्षमता निर्माण मंच।",
+    "Learn from Top Domain Experts.": "शीर्ष क्षेत्र विशेषज्ञों से सीखें।",
+    "Vetted curriculum designed by certified public sector mentors.": "प्रमाणित सार्वजनिक क्षेत्र के आकाओं द्वारा तैयार पाठ्यक्रम।",
+    "Earn Your Master Credential Badge.": "अपना मास्टर क्रेडेंशियल बैज अर्जित करें।",
+    "Complete 4 to 5 core certifications to unlock the official National Competency Gold Medal & verified digital credential.": "आधिकारिक राष्ट्रीय योग्यता स्वर्ण पदक और सत्यापित डिजिटल क्रेडेंशियल अनलॉक करने के लिए 4 से 5 मुख्य प्रमाणपत्र पूरे करें।",
+    "Mission-Ready Skills for Bharat.": "भारत के लिए मिशन-तैयार कौशल।",
+    "Fast-track training in Disaster Preparedness, Digital Governance, and Crisis Management.": "आपदा प्रबंधन, डिजिटल शासन और संकट प्रबंधन में त्वरित प्रशिक्षण।",
+    "Saksham Bharat Initiative": "सक्षम भारत पहल",
+    "Expert Mentorship": "विशेषज्ञ मार्गदर्शन",
+    "Mastery Milestone": "दक्षता मील का पत्थर",
+    "Pan-India Impact": "अखिल भारतीय प्रभाव",
+    "Explore Courses →": "पाठ्यक्रम देखें →",
+    "Create Free Account": "मुफ़्त खाता बनाएं",
+    "Join as Trainer →": "प्रशिक्षक के रूप में जुड़ें →",
+    "Browse Mentors": "आकाओं को ब्राउज़ करें",
+    "View Milestone Criteria →": "मील का पत्थर मानदंड देखें →",
+    "Track Progress": "प्रगति ट्रैक करें",
+    "Enroll in Special Missions →": "विशेष मिशनों में नामांकन करें →",
+    "Browse Modules": "मॉड्यूल ब्राउज़ करें",
+    "Search Courses": "पाठ्यक्रम खोजें"
+  };
+
+  const reverseMap = {};
+  for (const [en, hi] of Object.entries(translations)) {
+    reverseMap[hi] = en;
+  }
+
+  function swapText(root, map) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    let node;
+    while ((node = walker.nextNode())) {
+      const trimmed = node.textContent.trim();
+      if (trimmed && map[trimmed]) {
+        node.textContent = node.textContent.replace(trimmed, map[trimmed]);
+      }
+    }
+  }
+
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (isHindi) {
+      swapText(document.body, reverseMap);
+      btn.textContent = "हिंदी";
+      document.title = "Saksham — National Training & Competency Platform";
+    } else {
+      swapText(document.body, translations);
+      btn.textContent = "English";
+      document.title = "सक्षम — राष्ट्रीय प्रशिक्षण एवं योग्यता मंच";
+    }
+    isHindi = !isHindi;
+  });
+})();
+</script>
+<script type="module" src="assets/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saksham AI Chatbot — Assistant</title>
+  <meta name="description" content="Saksham National Training & Competency Platform AI Support Assistant">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Platform Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Dedicated Chatbot Stylesheet (External CSS) -->
+  <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand" style="text-decoration:none;">
+        <div class="brand-emblem">
+          <img src="assets/images/saksham-bharat-logo.png" alt="Saksham Bharat Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">Saksham Bharat</div>
+          <div class="brand-sub">National Training &amp; Competency Platform</div>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="support.html">Help &amp; Support</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign up</a>
+      </div>
+    </div>
+  </header>
+  <div class="tricolor-rule"></div>
+
+  <!-- Main Content Shell -->
+  <main class="section">
+    <div class="container" style="max-width: 800px; text-align: center; padding: 40px 20px;">
+      <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 40px 30px; box-shadow: var(--shadow-2);">
+        <div style="width: 64px; height: 64px; background: #FDECE0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--saffron);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        
+        <h2>Saksham AI Assistant</h2>
+        <p style="margin: 0 auto 24px;">The AI chatbot widget is embedded cleanly at the bottom right corner of this page. Click the floating orange button to begin chatting.</p>
+        
+        <div style="background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 20px; text-align: left; margin-bottom: 24px;">
+          <h4 style="margin-bottom: 8px;">How to embed this chat on any page:</h4>
+          <p style="font-size: 13.5px; margin-bottom: 12px;">Add these two lines without writing any internal CSS or JavaScript:</p>
+          <pre style="background: var(--navy-900); color: #C9D6E7; padding: 14px; border-radius: 6px; overflow-x: auto; font-size: 13px; margin: 0;"><code>&lt;!-- 1. In &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="assets/css/chat.css"&gt;
+
+&lt;!-- 2. Before &lt;/body&gt; --&gt;
+&lt;script type="module" src="assets/js/chat.js"&gt;&lt;/script&gt;</code></pre>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-outline">← Back to Homepage</a>
+          <a href="support.html" class="btn btn-primary">Go to Help &amp; Support</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="text-align: center;">
+        <span>© 2026 Saksham Platform · Digital India Training Initiative</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dedicated Chatbot Script (External JS) -->
+  <script type="module" src="assets/js/chat.js"></script>
+</body>
+</html>

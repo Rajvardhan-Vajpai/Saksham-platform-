@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Saksham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar" id="sidebar"></aside>
+  <div class="app-main">
+    <div class="app-topbar" id="topbar"></div>
+    <div class="app-content">
+
+      <div class="grid-4" style="margin-bottom:28px;">
+        <div class="kpi"><div class="kpi-top"><span></span><span class="kpi-delta up">+2 today</span></div><div class="kpi-num">2</div><div class="kpi-label">Pending approvals</div></div>
+        <div class="kpi"><div class="kpi-top"><span></span><span class="kpi-delta up">+340 this month</span></div><div class="kpi-num">18,420</div><div class="kpi-label">Total registered users</div></div>
+        <div class="kpi"><div class="kpi-top"><span></span><span class="kpi-delta up">+8 this month</span></div><div class="kpi-num">312</div><div class="kpi-label">Active courses</div></div>
+        <div class="kpi"><div class="kpi-top"><span></span><span class="kpi-delta up">+1,240 this month</span></div><div class="kpi-num">9,860</div><div class="kpi-label">Certificates issued</div></div>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns:1.3fr 1fr;align-items:start;">
+        <div>
+          <div class="section-head"><h2 style="font-size:18px;">Enrollments by category</h2></div>
+          <div class="card card-pad" style="margin-bottom:28px;">
+            <div class="hbar-row"><div class="hbar-label">Governance</div><div class="hbar-track"><div class="hbar-fill" style="width:82%"></div></div><div class="hbar-val">82%</div></div>
+            <div class="hbar-row"><div class="hbar-label">Digital Skills</div><div class="hbar-track"><div class="hbar-fill" style="width:68%"></div></div><div class="hbar-val">68%</div></div>
+            <div class="hbar-row"><div class="hbar-label">Policy</div><div class="hbar-track"><div class="hbar-fill" style="width:54%"></div></div><div class="hbar-val">54%</div></div>
+            <div class="hbar-row"><div class="hbar-label">Emergency Response</div><div class="hbar-track"><div class="hbar-fill" style="width:31%"></div></div><div class="hbar-val">31%</div></div>
+          </div>
+
+          <div class="section-head"><h2 style="font-size:18px;">Assessment activity</h2></div>
+          <div class="card card-pad">
+            <div class="bar-chart">
+              <div class="bar-col"><div class="bar" style="height:40%;"></div><span>Mon</span></div>
+              <div class="bar-col"><div class="bar" style="height:55%;"></div><span>Tue</span></div>
+              <div class="bar-col"><div class="bar" style="height:35%;"></div><span>Wed</span></div>
+              <div class="bar-col"><div class="bar" style="height:70%;"></div><span>Thu</span></div>
+              <div class="bar-col"><div class="bar" style="height:90%;"></div><span>Fri</span></div>
+              <div class="bar-col"><div class="bar" style="height:25%;"></div><span>Sat</span></div>
+              <div class="bar-col"><div class="bar" style="height:15%;"></div><span>Sun</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head"><h2 style="font-size:18px;">Recent activity</h2></div>
+          <div class="card">
+            <ul class="list-plain" style="padding:16px;" id="activityList"></ul>
+          </div>
+          <a href="users.html" class="btn btn-navy btn-block" style="margin-top:18px;">Review pending approvals</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/clerk-auth.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/layout.js"></script>
+<script>
+  initDashboardShell({ role: "admin", active: "dashboard.html", title: "Dashboard", crumb: "Admin console", userName: "Programme Admin" });
+
+  (async function () {
+    const activity = await loadWithFallback(() => Api.getDashboardStats().then(d => d.activity), MockDB.adminActivity) || MockDB.adminActivity;
+    activityList.innerHTML = activity.map(a => `
+      <li class="resource-row"><div class="r-icon">${icon("bell",16)}</div><div class="r-body"><h4>${a.who}</h4><span>${a.action} · ${a.when}</span></div></li>`).join("");
+  })();
+</script>
+</body>
+</html>

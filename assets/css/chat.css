@@ -1,0 +1,77 @@
+/* =========================================================
+   Saksham Platform — Chatbot Stylesheet (chat.css)
+   Independent CSS file for chat widget branding and customization
+   ========================================================= */
+
+@import url("https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css");
+
+:root {
+  /* Brand Colors (Saksham Saffron & Navy) */
+  --chat--color-primary: #E8590C;
+  --chat--color-primary-shade-50: #C4470A;
+  --chat--color-primary-shade-100: #A33B08;
+  --chat--color-secondary: #0A2647;
+  --chat--color-white: #FFFFFF;
+  --chat--color-light: #FAF7F0;
+  --chat--color-light-shade-50: #F3EFE6;
+  --chat--color-light-shade-100: #E6ECF4;
+  --chat--color-dark: #0A2647;
+  --chat--color-muted: #5B6B82;
+
+  /* Typography & Geometry */
+  --chat--font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --chat--spacing: 16px;
+  --chat--border-radius: 12px;
+
+  /* Floating Chat Window Dimensions */
+  --chat--window--width: 400px;
+  --chat--window--height: 590px;
+  --chat--window--bottom: 24px;
+  --chat--window--right: 24px;
+  --chat--window--border-radius: 16px;
+
+  /* Floating Toggle Button */
+  --chat--toggle--size: 58px;
+  --chat--toggle--background: #E8590C;
+  --chat--toggle--hover-background: #C4470A;
+  --chat--toggle--active-background: #A33B08;
+  --chat--toggle--color: #FFFFFF;
+}
+
+/* Ensure chat widget elements sit on top of all headers, banners and modals */
+#n8n-chat,
+.chat-window,
+.chat-toggle,
+div[class*="chat-"] {
+  z-index: 99999 !important;
+}
+
+/* Custom shadow & polish for chat launcher button */
+.chat-toggle {
+  box-shadow: 0 6px 20px rgba(232, 89, 12, 0.35) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(232, 89, 12, 0.45) !important;
+}
+
+/* Custom header font for chatbot window */
+.chat-window .chat-header h1,
+.chat-window .chat-header h2,
+.chat-window .chat-header-title {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  :root {
+    --chat--window--width: calc(100vw - 28px);
+    --chat--window--height: calc(100vh - 100px);
+    --chat--window--bottom: 14px;
+    --chat--window--right: 14px;
+    --chat--toggle--size: 52px;
+  }
+}

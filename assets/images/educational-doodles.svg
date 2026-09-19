@@ -1,0 +1,538 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 640" fill="none" stroke="#1D4E38" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Enhanced Hand-Drawn Educational Doodles Background for Saksham Bharat -->
+  <!-- Crisp, refined Indian Government green-slate tint (#1D4E38) with soft 5% greenish fills -->
+
+  <!-- ================= TOP LEFT MARGIN ================= -->
+  <!-- Stack of 3 Books with bookmark (X: 45, Y: 35) -->
+  <g transform="translate(45, 30) rotate(-6)">
+    <!-- Bottom book -->
+    <path d="M4 42 C20 38, 45 38, 62 42 L62 54 C45 50, 20 50, 4 54 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <path d="M62 42 L115 30 L115 42 L62 54"/>
+    <path d="M4 54 L57 42"/>
+    <!-- Middle book -->
+    <path d="M8 26 C24 22, 49 22, 66 26 L66 38 C49 34, 24 34, 8 38 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <path d="M66 26 L119 14 L119 26 L66 38"/>
+    <path d="M8 38 L61 26"/>
+    <!-- Top book -->
+    <path d="M14 10 C30 6, 55 6, 72 10 L72 22 C55 18, 30 18, 14 22 Z" fill="rgba(240, 253, 244, 0.55)"/>
+    <path d="M72 10 L125 -2 L125 10 L72 22"/>
+    <path d="M14 22 L67 10"/>
+    <!-- Bookmark ribbon -->
+    <path d="M85 3 L85 18 L91 14 L97 18 L97 1"/>
+  </g>
+
+  <!-- Drafting Triangle / Set Square & Pencil (X: 180, Y: 35) -->
+  <g transform="translate(175, 35) rotate(22)">
+    <polygon points="0,50 65,50 0,0" fill="rgba(240, 253, 244, 0.4)"/>
+    <polygon points="12,42 42,42 12,18"/>
+    <line x1="6" y1="50" x2="6" y2="46"/>
+    <line x1="16" y1="50" x2="16" y2="44"/>
+    <line x1="26" y1="50" x2="26" y2="46"/>
+    <line x1="36" y1="50" x2="36" y2="44"/>
+    <line x1="46" y1="50" x2="46" y2="46"/>
+    <line x1="56" y1="50" x2="56" y2="44"/>
+  </g>
+  <!-- Pencil with Eraser -->
+  <g transform="translate(235, 60) rotate(48)">
+    <path d="M0 6 L44 6 L44 18 L0 18 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <path d="M44 6 L58 12 L44 18 Z"/>
+    <path d="M54 12 L58 12"/>
+    <path d="M-8 6 L0 6 L0 18 L-8 18 C-11 18, -12 16, -12 12 C-12 8, -11 6, -8 6 Z"/>
+    <line x1="-3" y1="6" x2="-3" y2="18"/>
+  </g>
+
+  <!-- DNA Double Helix (X: 300, Y: 30) -->
+  <g transform="translate(295, 25) rotate(-15)">
+    <path d="M0 10 Q15 0 30 10 T60 10 T90 10"/>
+    <path d="M0 25 Q15 35 30 25 T60 25 T90 25"/>
+    <line x1="10" y1="7" x2="10" y2="28"/>
+    <line x1="25" y1="9" x2="25" y2="26"/>
+    <line x1="40" y1="8" x2="40" y2="27"/>
+    <line x1="55" y1="10" x2="55" y2="25"/>
+    <line x1="70" y1="8" x2="70" y2="27"/>
+    <line x1="85" y1="9" x2="85" y2="26"/>
+  </g>
+
+  <!-- Sprouting Plant / Growth in Pot (X: 395, Y: 25) -->
+  <g transform="translate(395, 22)">
+    <!-- Pot -->
+    <path d="M6 34 L26 34 L23 48 L9 48 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="4" y1="34" x2="28" y2="34"/>
+    <!-- Stem -->
+    <path d="M16 34 Q16 20 18 14"/>
+    <!-- Leaves -->
+    <path d="M17 24 C10 22, 6 15, 10 11 C15 15, 17 19, 17 24 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <path d="M18 18 C25 16, 29 9, 25 5 C20 9, 18 13, 18 18 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <circle cx="18" cy="12" r="2" fill="#1D4E38"/>
+  </g>
+
+  <!-- Sparkle stars (Top Left) -->
+  <path d="M150 20 Q150 27 157 27 Q150 27 150 34 Q150 27 143 27 Q150 27 150 20 Z" fill="#1D4E38"/>
+  <circle cx="130" cy="18" r="1.5" fill="#1D4E38"/>
+  <circle cx="270" cy="15" r="1.5" fill="#1D4E38"/>
+
+  <!-- ================= TOP CENTER MARGIN ================= -->
+  <!-- Idea Lightbulb (X: 470, Y: 20) -->
+  <g transform="translate(470, 18)">
+    <path d="M22 6 C12 6, 6 13, 6 22 C6 28, 10 33, 14 38 L14 44 L30 44 L30 38 C34 33, 38 28, 38 22 C38 13, 32 6, 22 6 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="15" y1="47" x2="29" y2="47"/>
+    <line x1="17" y1="51" x2="27" y2="51"/>
+    <path d="M19 54 C19 56, 25 56, 25 54"/>
+    <path d="M18 30 L18 22 L22 25 L26 22 L26 30"/>
+    <line x1="22" y1="-2" x2="22" y2="2"/>
+    <line x1="42" y1="8" x2="38" y2="11"/>
+    <line x1="2" y1="8" x2="6" y2="11"/>
+    <line x1="46" y1="22" x2="42" y2="22"/>
+    <line x1="-2" y1="22" x2="2" y2="22"/>
+  </g>
+
+  <!-- Paper Airplane flying right with trail (X: 580, Y: 25) -->
+  <g transform="translate(570, 22) rotate(8)">
+    <path d="M0 16 L48 0 L20 32 L16 20 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <path d="M48 0 L16 20"/>
+    <path d="M-28 26 C-20 32, -10 24, 0 16" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- Atom with Electrons (X: 685, Y: 22) -->
+  <g transform="translate(680, 20)">
+    <ellipse cx="22" cy="22" rx="22" ry="8" transform="rotate(30 22 22)"/>
+    <ellipse cx="22" cy="22" rx="22" ry="8" transform="rotate(-30 22 22)"/>
+    <ellipse cx="22" cy="22" rx="22" ry="8" transform="rotate(90 22 22)"/>
+    <circle cx="22" cy="22" r="3.5" fill="#1D4E38"/>
+  </g>
+
+  <!-- Satellite Dish / Connectivity (X: 795, Y: 22) -->
+  <g transform="translate(795, 20)">
+    <path d="M10 28 C6 18, 14 6, 26 6 C30 6, 36 10, 38 16" fill="none"/>
+    <path d="M6 32 L20 18"/>
+    <line x1="20" y1="18" x2="26" y2="14"/>
+    <circle cx="28" cy="12" r="2" fill="#1D4E38"/>
+    <!-- Signal waves -->
+    <path d="M32 6 C36 8, 40 12, 42 16" stroke-dasharray="2 2"/>
+    <path d="M36 2 C42 5, 47 11, 49 17" stroke-dasharray="2 2"/>
+    <!-- Stand -->
+    <path d="M14 26 L12 42 L6 48"/>
+    <path d="M12 42 L18 48"/>
+  </g>
+
+  <!-- Star sparkle (Top Center) -->
+  <path d="M650 35 Q650 40 655 40 Q650 40 650 45 Q650 40 645 40 Q650 40 650 35 Z" fill="#1D4E38"/>
+  <circle cx="755" cy="55" r="1.5" fill="#1D4E38"/>
+
+  <!-- ================= TOP RIGHT ================= -->
+  <!-- Laptop with Code/Graph (X: 885, Y: 25) -->
+  <g transform="translate(885, 22) rotate(5)">
+    <rect x="8" y="4" width="70" height="46" rx="3" fill="rgba(240, 253, 244, 0.45)"/>
+    <rect x="13" y="9" width="60" height="36" rx="1"/>
+    <!-- Screen content: bar chart & lines -->
+    <line x1="18" y1="36" x2="24" y2="36"/>
+    <line x1="20" y1="36" x2="20" y2="26"/>
+    <line x1="28" y1="36" x2="34" y2="36"/>
+    <line x1="30" y1="36" x2="30" y2="20"/>
+    <line x1="38" y1="36" x2="44" y2="36"/>
+    <line x1="40" y1="36" x2="40" y2="15"/>
+    <line x1="48" y1="16" x2="66" y2="16"/>
+    <line x1="48" y1="22" x2="62" y2="22"/>
+    <line x1="48" y1="28" x2="64" y2="28"/>
+    <!-- Keyboard base -->
+    <path d="M0 50 L86 50 L80 57 L6 57 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <line x1="36" y1="52" x2="50" y2="52"/>
+  </g>
+
+  <!-- Certificate / Diploma with ribbon seal (X: 1010, Y: 28) -->
+  <g transform="translate(1010, 25) rotate(-4)">
+    <rect x="6" y="6" width="74" height="52" rx="3" fill="rgba(240, 253, 244, 0.4)"/>
+    <rect x="11" y="11" width="64" height="42" rx="1"/>
+    <line x1="24" y1="18" x2="52" y2="18" stroke-width="2"/>
+    <line x1="18" y1="26" x2="58" y2="26"/>
+    <line x1="18" y1="32" x2="54" y2="32"/>
+    <line x1="18" y1="38" x2="44" y2="38"/>
+    <!-- Ribbon badge -->
+    <circle cx="62" cy="40" r="7" fill="rgba(240, 253, 244, 0.8)"/>
+    <path d="M58 46 L56 56 L62 53 L68 56 L66 46"/>
+  </g>
+
+  <!-- Fountain Pen Nib (X: 1125, Y: 30) -->
+  <g transform="translate(1125, 30) rotate(-35)">
+    <path d="M4 0 L18 0 L18 36 L11 50 L4 36 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="11" y1="24" x2="11" y2="46"/>
+    <circle cx="11" cy="24" r="1.5" fill="#1D4E38"/>
+    <line x1="4" y1="14" x2="18" y2="14"/>
+    <!-- Ink droplet -->
+    <path d="M11 56 C9 59, 9 62, 11 64 C13 62, 13 59, 11 56 Z" fill="#1D4E38"/>
+  </g>
+
+  <!-- Microscope (X: 1220, Y: 22) -->
+  <g transform="translate(1220, 20)">
+    <!-- Base -->
+    <path d="M8 58 L46 58 L42 52 L12 52 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <!-- Arm -->
+    <path d="M38 52 C38 42, 42 28, 32 20 C26 14, 20 18, 20 24"/>
+    <!-- Stage -->
+    <rect x="14" y="38" width="22" height="4" rx="1" fill="rgba(240, 253, 244, 0.6)"/>
+    <!-- Optical tube / Objective -->
+    <rect x="12" y="12" width="10" height="20" rx="1" transform="rotate(-15 17 22)" fill="rgba(240, 253, 244, 0.4)"/>
+    <rect x="10" y="8" width="14" height="4" rx="1" transform="rotate(-15 17 10)"/>
+    <path d="M14 30 L18 30 L16 34 Z" transform="rotate(-15 16 32)"/>
+    <!-- Adjustment knob -->
+    <circle cx="34" cy="32" r="3.5" fill="#1D4E38"/>
+  </g>
+
+  <!-- Trophy Cup (X: 1335, Y: 28) -->
+  <g transform="translate(1335, 25) rotate(6)">
+    <!-- Cup body -->
+    <path d="M10 6 L38 6 C38 22, 32 30, 24 32 C16 30, 10 22, 10 6 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <!-- Handles -->
+    <path d="M10 10 C4 10, 4 22, 10 22"/>
+    <path d="M38 10 C44 10, 44 22, 38 22"/>
+    <!-- Stem & Base -->
+    <line x1="24" y1="32" x2="24" y2="42"/>
+    <path d="M14 42 L34 42 L36 48 L12 48 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <!-- Star on cup -->
+    <polygon points="24,14 26,19 30,19 27,22 28,26 24,24 20,26 21,22 18,19 22,19" fill="#1D4E38"/>
+  </g>
+
+  <!-- Star sparkle (Top Right) -->
+  <path d="M1400 30 Q1400 36 1406 36 Q1400 36 1400 42 Q1400 36 1394 36 Q1400 36 1400 30 Z" fill="#1D4E38"/>
+  <circle cx="1200" cy="65" r="1.5" fill="#1D4E38"/>
+
+  <!-- ================= FAR LEFT MARGIN ================= -->
+  <!-- Globe on Stand (X: 30, Y: 130) -->
+  <g transform="translate(30, 125)">
+    <!-- Sphere -->
+    <circle cx="28" cy="28" r="20" fill="rgba(240, 253, 244, 0.45)"/>
+    <!-- Meridian arc & equator -->
+    <ellipse cx="28" cy="28" rx="20" ry="8"/>
+    <ellipse cx="28" cy="28" rx="8" ry="20"/>
+    <!-- Stand bracket -->
+    <path d="M8 28 C8 40, 18 50, 28 50 C38 50, 48 40, 48 28"/>
+    <line x1="28" y1="50" x2="28" y2="58"/>
+    <path d="M18 58 L38 58"/>
+    <circle cx="28" cy="8" r="2" fill="#1D4E38"/>
+  </g>
+
+  <!-- Target Bullseye with Arrow (X: 130, Y: 155) -->
+  <g transform="translate(130, 150) rotate(8)">
+    <circle cx="26" cy="26" r="24" fill="rgba(240, 253, 244, 0.35)"/>
+    <circle cx="26" cy="26" r="16"/>
+    <circle cx="26" cy="26" r="8" fill="rgba(240, 253, 244, 0.6)"/>
+    <circle cx="26" cy="26" r="2.5" fill="#1D4E38"/>
+    <!-- Arrow hitting bullseye -->
+    <line x1="26" y1="26" x2="48" y2="6" stroke-width="2"/>
+    <path d="M42 6 L48 6 L48 12"/>
+    <line x1="44" y1="10" x2="48" y2="6"/>
+  </g>
+
+  <!-- Open Spiral Notebook (X: 35, Y: 220) -->
+  <g transform="translate(35, 215) rotate(4)">
+    <path d="M12 8 L82 8 C86 8, 90 12, 90 16 L90 104 C90 108, 86 112, 82 112 L12 112" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="24" y1="24" x2="78" y2="24"/>
+    <line x1="24" y1="38" x2="74" y2="38"/>
+    <line x1="24" y1="52" x2="76" y2="52"/>
+    <line x1="24" y1="66" x2="68" y2="66"/>
+    <line x1="24" y1="80" x2="72" y2="80"/>
+    <line x1="24" y1="94" x2="58" y2="94"/>
+    <!-- Spiral loops -->
+    <path d="M8 16 C4 16, 2 20, 8 22 C14 24, 16 20, 10 18"/>
+    <path d="M8 34 C4 34, 2 38, 8 40 C14 42, 16 38, 10 36"/>
+    <path d="M8 52 C4 52, 2 56, 8 58 C14 60, 16 56, 10 54"/>
+    <path d="M8 70 C4 70, 2 74, 8 76 C14 78, 16 74, 10 72"/>
+    <path d="M8 88 C4 88, 2 92, 8 94 C14 96, 16 92, 10 90"/>
+    <path d="M8 104 C4 104, 2 108, 8 110 C14 112, 16 108, 10 106"/>
+  </g>
+
+  <!-- Pocket Calculator (X: 145, Y: 250) -->
+  <g transform="translate(145, 245) rotate(-6)">
+    <rect x="4" y="4" width="50" height="74" rx="4" fill="rgba(240, 253, 244, 0.5)"/>
+    <!-- Screen -->
+    <rect x="10" y="10" width="38" height="16" rx="2" fill="rgba(240, 253, 244, 0.8)"/>
+    <line x1="38" y1="20" x2="44" y2="20" stroke-width="2"/>
+    <line x1="32" y1="20" x2="34" y2="20"/>
+    <!-- Button grid -->
+    <circle cx="16" cy="36" r="3" fill="#1D4E38"/>
+    <circle cx="29" cy="36" r="3"/>
+    <circle cx="42" cy="36" r="3"/>
+    <circle cx="16" cy="48" r="3"/>
+    <circle cx="29" cy="48" r="3" fill="#1D4E38"/>
+    <circle cx="42" cy="48" r="3"/>
+    <circle cx="16" cy="60" r="3"/>
+    <circle cx="29" cy="60" r="3"/>
+    <circle cx="42" cy="60" r="3" fill="#1D4E38"/>
+  </g>
+
+  <!-- Drafting Ruler (X: 45, Y: 350) -->
+  <g transform="translate(40, 350) rotate(-16)">
+    <rect x="0" y="0" width="112" height="22" rx="3" fill="rgba(240, 253, 244, 0.45)"/>
+    <line x1="12" y1="0" x2="12" y2="8"/>
+    <line x1="24" y1="0" x2="24" y2="12"/>
+    <line x1="36" y1="0" x2="36" y2="8"/>
+    <line x1="48" y1="0" x2="48" y2="12"/>
+    <line x1="60" y1="0" x2="60" y2="8"/>
+    <line x1="72" y1="0" x2="72" y2="12"/>
+    <line x1="84" y1="0" x2="84" y2="8"/>
+    <line x1="96" y1="0" x2="96" y2="12"/>
+  </g>
+
+  <!-- Brain & Cognitive Neural Nodes (X: 145, Y: 350) -->
+  <g transform="translate(145, 345)">
+    <!-- Left hemisphere lobes -->
+    <path d="M24 10 C18 10, 14 14, 14 18 C10 19, 8 24, 10 29 C8 34, 10 40, 14 42 C15 46, 20 48, 24 46" fill="rgba(240, 253, 244, 0.4)"/>
+    <!-- Right hemisphere lobes -->
+    <path d="M26 10 C32 10, 36 14, 36 18 C40 19, 42 24, 40 29 C42 34, 40 40, 36 42 C35 46, 30 48, 26 46" fill="rgba(240, 253, 244, 0.4)"/>
+    <line x1="25" y1="10" x2="25" y2="46"/>
+    <!-- Synapse dots -->
+    <circle cx="20" cy="22" r="2" fill="#1D4E38"/>
+    <circle cx="30" cy="24" r="2" fill="#1D4E38"/>
+    <circle cx="22" cy="36" r="2" fill="#1D4E38"/>
+    <circle cx="28" cy="34" r="2" fill="#1D4E38"/>
+    <line x1="20" y1="22" x2="30" y2="24" stroke-dasharray="1 2"/>
+    <line x1="20" y1="22" x2="22" y2="36" stroke-dasharray="1 2"/>
+    <line x1="30" y1="24" x2="28" y2="34" stroke-dasharray="1 2"/>
+  </g>
+
+  <!-- Curved hand-drawn trajectory arrow -->
+  <path d="M125 435 C150 420, 165 400, 155 375" stroke-dasharray="3 3"/>
+  <path d="M162 376 L155 375 L156 383"/>
+
+  <!-- ================= BOTTOM LEFT ================= -->
+  <!-- Graduation Cap / Mortarboard (X: 50, Y: 460) -->
+  <g transform="translate(50, 455) rotate(-6)">
+    <polygon points="46,6 90,26 46,46 2,26" fill="rgba(240, 253, 244, 0.55)"/>
+    <path d="M22 36 L22 54 C22 64, 70 64, 70 54 L70 36" fill="rgba(240, 253, 244, 0.4)"/>
+    <circle cx="46" cy="26" r="2.5" fill="#1D4E38"/>
+    <path d="M46 26 C58 28, 76 34, 82 46"/>
+    <polygon points="80,46 85,47 84,58 79,58" fill="#1D4E38"/>
+  </g>
+
+  <!-- Sticky Note with Checkmarks (X: 175, Y: 440) -->
+  <g transform="translate(175, 435) rotate(6)">
+    <path d="M6 6 L60 6 L72 18 L72 68 L6 68 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <path d="M60 6 L60 18 L72 18"/>
+    <path d="M16 26 L20 30 L28 22"/>
+    <line x1="33" y1="26" x2="60" y2="26"/>
+    <path d="M16 40 L20 44 L28 36"/>
+    <line x1="33" y1="40" x2="56" y2="40"/>
+    <path d="M16 54 L20 58 L28 50"/>
+    <line x1="33" y1="54" x2="50" y2="54"/>
+  </g>
+
+  <!-- Pair of Interlocking Gears (X: 55, Y: 545) -->
+  <g transform="translate(55, 540)">
+    <!-- Gear 1 -->
+    <circle cx="22" cy="22" r="14" fill="rgba(240, 253, 244, 0.5)"/>
+    <circle cx="22" cy="22" r="6" fill="#1D4E38"/>
+    <line x1="22" y1="4" x2="22" y2="8"/>
+    <line x1="22" y1="36" x2="22" y2="40"/>
+    <line x1="4" y1="22" x2="8" y2="22"/>
+    <line x1="36" y1="22" x2="40" y2="22"/>
+    <line x1="9" y1="9" x2="12" y2="12"/>
+    <line x1="32" y1="32" x2="35" y2="35"/>
+    <line x1="9" y1="35" x2="12" y2="32"/>
+    <line x1="32" y1="12" x2="35" y2="9"/>
+    <!-- Smaller gear 2 -->
+    <circle cx="44" cy="38" r="9" fill="rgba(240, 253, 244, 0.5)"/>
+    <circle cx="44" cy="38" r="3.5" fill="#1D4E38"/>
+    <line x1="44" y1="26" x2="44" y2="29"/>
+    <line x1="44" y1="47" x2="44" y2="50"/>
+    <line x1="32" y1="38" x2="35" y2="38"/>
+    <line x1="53" y1="38" x2="56" y2="38"/>
+  </g>
+
+  <!-- Math & Knowledge formulas (Bottom-Left margin) -->
+  <g transform="translate(150, 545)">
+    <text x="0" y="16" font-family="sans-serif" font-size="15" font-style="italic" fill="#1D4E38" stroke="none">∫ f(x)dx</text>
+    <text x="70" y="16" font-family="sans-serif" font-size="14" fill="#1D4E38" stroke="none">∑</text>
+    <text x="88" y="16" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1D4E38" stroke="none">√x²</text>
+    <text x="0" y="38" font-family="sans-serif" font-size="13" fill="#1D4E38" stroke="none">π ≈ 3.14</text>
+    <text x="75" y="38" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1D4E38" stroke="none">∞</text>
+  </g>
+
+  <!-- ================= BOTTOM CENTER MARGIN ================= -->
+  <!-- Geometrical Compass Divider (X: 320, Y: 550) -->
+  <g transform="translate(320, 545) rotate(12)">
+    <circle cx="16" cy="6" r="4" fill="#1D4E38"/>
+    <path d="M14 10 L4 54"/>
+    <path d="M18 10 L28 54"/>
+    <path d="M8 36 C14 34, 20 34, 24 36"/>
+    <circle cx="4" cy="54" r="1.5" fill="#1D4E38"/>
+  </g>
+
+  <!-- Chalkboard with E = mc² (X: 420, Y: 545) -->
+  <g transform="translate(420, 540)">
+    <rect x="4" y="4" width="90" height="52" rx="3" fill="rgba(240, 253, 244, 0.6)"/>
+    <rect x="8" y="8" width="82" height="44" rx="1"/>
+    <text x="18" y="35" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1D4E38" stroke="none">E = mc²</text>
+    <!-- Chalk stick & eraser -->
+    <rect x="70" y="44" width="12" height="4" rx="1" fill="#1D4E38" stroke="none"/>
+  </g>
+
+  <!-- Open Book with Reading Glasses (X: 570, Y: 545) -->
+  <g transform="translate(570, 540)">
+    <path d="M4 14 C18 8, 36 10, 45 15 C54 10, 72 8, 86 14 L86 50 C72 44, 54 46, 45 51 C36 46, 18 44, 4 50 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="45" y1="15" x2="45" y2="51"/>
+    <!-- Glasses on top -->
+    <circle cx="34" cy="28" r="8" fill="rgba(240, 253, 244, 0.7)"/>
+    <circle cx="56" cy="28" r="8" fill="rgba(240, 253, 244, 0.7)"/>
+    <path d="M42 28 C45 26, 48 26, 50 28"/>
+    <line x1="26" y1="28" x2="20" y2="24"/>
+    <line x1="64" y1="28" x2="70" y2="24"/>
+  </g>
+
+  <!-- Digital Learning Tablet with Stylus (X: 720, Y: 540) -->
+  <g transform="translate(720, 535) rotate(-5)">
+    <rect x="4" y="4" width="76" height="54" rx="4" fill="rgba(240, 253, 244, 0.5)"/>
+    <rect x="9" y="8" width="66" height="46" rx="2"/>
+    <circle cx="42" cy="51" r="1.5" fill="#1D4E38"/>
+    <!-- Stylus pen -->
+    <line x1="68" y1="12" x2="88" y2="-6" stroke-width="2.5"/>
+    <polygon points="68,12 65,15 70,14" fill="#1D4E38"/>
+    <!-- UI graphics on tablet screen -->
+    <path d="M16 22 L28 32 L44 18 L58 28"/>
+    <circle cx="44" cy="18" r="2" fill="#1D4E38"/>
+  </g>
+
+  <!-- Hourglass / Time Management (X: 865, Y: 545) -->
+  <g transform="translate(865, 540)">
+    <line x1="8" y1="6" x2="38" y2="6" stroke-width="2.2"/>
+    <line x1="8" y1="52" x2="38" y2="52" stroke-width="2.2"/>
+    <path d="M12 6 L23 28 L12 52 L34 52 L23 28 L34 6 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <!-- Sand -->
+    <polygon points="17,14 29,14 23,26" fill="#1D4E38"/>
+    <circle cx="23" cy="36" r="1" fill="#1D4E38"/>
+    <polygon points="16,48 30,48 23,40" fill="#1D4E38"/>
+  </g>
+
+  <!-- Chemistry Test Tube Rack (X: 975, Y: 540) -->
+  <g transform="translate(975, 535)">
+    <!-- Rack frame -->
+    <line x1="4" y1="20" x2="52" y2="20"/>
+    <line x1="4" y1="46" x2="52" y2="46"/>
+    <line x1="8" y1="20" x2="8" y2="50"/>
+    <line x1="48" y1="20" x2="48" y2="50"/>
+    <!-- Tube 1 -->
+    <path d="M14 10 L14 42 C14 46, 20 46, 20 42 L20 10 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <line x1="12" y1="10" x2="22" y2="10"/>
+    <path d="M14 28 C16 26, 18 28, 20 27"/>
+    <!-- Tube 2 -->
+    <path d="M26 14 L26 42 C26 46, 32 46, 32 42 L32 14 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <line x1="24" y1="14" x2="34" y2="14"/>
+    <path d="M26 34 C28 32, 30 34, 32 33"/>
+    <!-- Tube 3 -->
+    <path d="M38 8 L38 42 C38 46, 44 46, 44 42 L44 8 Z" fill="rgba(240, 253, 244, 0.6)"/>
+    <line x1="36" y1="8" x2="46" y2="8"/>
+    <circle cx="41" cy="30" r="1.5"/>
+  </g>
+
+  <!-- Rocket Ship Blasting Off (X: 1090, Y: 530) -->
+  <g transform="translate(1090, 520) rotate(-28)">
+    <!-- Rocket fuselage -->
+    <path d="M18 4 C28 14, 32 34, 30 52 L6 52 C4 34, 8 14, 18 4 Z" fill="rgba(240, 253, 244, 0.55)"/>
+    <!-- Porthole window -->
+    <circle cx="18" cy="24" r="5" fill="rgba(240, 253, 244, 0.85)"/>
+    <circle cx="18" cy="24" r="2.5" fill="#1D4E38"/>
+    <!-- Side fins -->
+    <path d="M6 38 L-2 48 L6 50 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <path d="M30 38 L38 48 L30 50 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <!-- Rocket engine & plume -->
+    <path d="M10 52 L26 52 L22 58 L14 58 Z"/>
+    <path d="M14 58 L18 70 L22 58" stroke-dasharray="2 2"/>
+  </g>
+
+  <!-- Rolled Diploma Scroll (X: 1220, Y: 540) -->
+  <g transform="translate(1220, 535) rotate(-10)">
+    <ellipse cx="12" cy="14" rx="8" ry="14" fill="rgba(240, 253, 244, 0.5)"/>
+    <path d="M12 0 L66 12 C72 13, 76 19, 76 26 C76 33, 72 38, 66 38 L12 28 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <!-- Tie string & seal -->
+    <path d="M36 6 L38 34"/>
+    <path d="M38 34 C36 38, 32 40, 34 44"/>
+    <path d="M38 34 C42 38, 44 42, 42 46"/>
+  </g>
+
+  <!-- ================= FAR RIGHT MARGIN ================= -->
+  <!-- Open Book with fluttering pages (X: 1290, Y: 130) -->
+  <g transform="translate(1290, 125) rotate(12)">
+    <path d="M8 12 C24 6, 44 8, 54 14 C64 8, 84 6, 100 12 L100 68 C84 62, 64 64, 54 70 C44 64, 24 62, 8 68 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <line x1="54" y1="14" x2="54" y2="70"/>
+    <line x1="18" y1="24" x2="46" y2="24"/>
+    <line x1="18" y1="34" x2="44" y2="34"/>
+    <line x1="18" y1="44" x2="42" y2="44"/>
+    <line x1="18" y1="54" x2="40" y2="54"/>
+    <line x1="62" y1="24" x2="90" y2="24"/>
+    <line x1="62" y1="34" x2="88" y2="34"/>
+    <line x1="62" y1="44" x2="86" y2="44"/>
+    <line x1="62" y1="54" x2="82" y2="54"/>
+  </g>
+
+  <!-- Magnifying Glass inspecting star (X: 1360, Y: 215) -->
+  <g transform="translate(1350, 210) rotate(-20)">
+    <circle cx="20" cy="20" r="16" fill="rgba(240, 253, 244, 0.5)"/>
+    <circle cx="20" cy="20" r="12"/>
+    <line x1="32" y1="32" x2="48" y2="48" stroke-width="3"/>
+    <!-- Small star inside lens -->
+    <path d="M20 14 L21 18 L25 18 L22 20 L23 24 L20 22 L17 24 L18 20 L15 18 L19 18 Z" fill="#1D4E38" stroke="none"/>
+  </g>
+
+  <!-- Chemistry Conical Beaker (X: 1260, Y: 240) -->
+  <g transform="translate(1260, 235) rotate(-6)">
+    <path d="M16 4 L28 4"/>
+    <path d="M18 4 L18 16 L4 46 C2 50, 4 54, 10 54 L34 54 C40 54, 42 50, 40 46 L26 16 L26 4 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <path d="M8 40 C14 38, 20 42, 26 39 C30 37, 34 38, 36 40"/>
+    <circle cx="16" cy="46" r="1.5" fill="#1D4E38"/>
+    <circle cx="24" cy="44" r="2" fill="#1D4E38"/>
+    <circle cx="28" cy="48" r="1.5"/>
+  </g>
+
+  <!-- Geometry Protractor 180° (X: 1350, Y: 310) -->
+  <g transform="translate(1345, 305) rotate(15)">
+    <path d="M6 34 L56 34 C56 18, 44 6, 31 6 C18 6, 6 18, 6 34 Z" fill="rgba(240, 253, 244, 0.45)"/>
+    <path d="M16 34 C16 24, 23 16, 31 16 C39 16, 46 24, 46 34 Z"/>
+    <line x1="31" y1="6" x2="31" y2="10"/>
+    <line x1="44" y1="12" x2="41" y2="15"/>
+    <line x1="52" y1="22" x2="48" y2="23"/>
+    <line x1="18" y1="12" x2="21" y2="15"/>
+    <line x1="10" y1="22" x2="14" y2="23"/>
+    <circle cx="31" cy="34" r="2" fill="#1D4E38"/>
+  </g>
+
+  <!-- Honor Medal / Badge (X: 1255, Y: 360) -->
+  <g transform="translate(1255, 355) rotate(8)">
+    <circle cx="24" cy="22" r="16" fill="rgba(240, 253, 244, 0.55)"/>
+    <circle cx="24" cy="22" r="11"/>
+    <path d="M24 14 L26 19 L31 19 L27 23 L29 28 L24 25 L19 28 L21 23 L17 19 L22 19 Z" fill="#1D4E38" stroke="none"/>
+    <path d="M14 36 L10 58 L20 53 L24 38"/>
+    <path d="M34 36 L38 58 L28 53 L24 38"/>
+  </g>
+
+  <!-- Paper Boat (X: 1345, Y: 410) -->
+  <g transform="translate(1345, 405) rotate(-5)">
+    <!-- Hull -->
+    <polygon points="6,30 18,44 46,44 58,30" fill="rgba(240, 253, 244, 0.55)"/>
+    <!-- Center Sail -->
+    <polygon points="32,8 44,30 20,30" fill="rgba(240, 253, 244, 0.7)"/>
+    <line x1="32" y1="8" x2="32" y2="30"/>
+    <!-- Water ripples -->
+    <path d="M2 48 C12 46, 22 50, 32 48 C42 46, 52 50, 62 48" stroke-dasharray="2 3"/>
+  </g>
+
+  <!-- Service / Reception Desk Bell (X: 1260, Y: 460) -->
+  <g transform="translate(1260, 455)">
+    <!-- Base -->
+    <line x1="6" y1="36" x2="44" y2="36" stroke-width="2"/>
+    <path d="M10 36 C10 20, 18 14, 25 14 C32 14, 40 20, 40 36 Z" fill="rgba(240, 253, 244, 0.5)"/>
+    <line x1="25" y1="14" x2="25" y2="8"/>
+    <rect x="22" y="6" width="6" height="3" rx="1" fill="#1D4E38"/>
+  </g>
+
+  <!-- Star sparkle bursts & micro-motifs (Bottom Right) -->
+  <path d="M1380 490 Q1380 496 1386 496 Q1380 496 1380 502 Q1380 496 1374 496 Q1380 496 1380 490 Z" fill="#1D4E38"/>
+  <circle cx="1190" cy="460" r="1.5" fill="#1D4E38"/>
+  <circle cx="1340" cy="510" r="1.5" fill="#1D4E38"/>
+  <circle cx="1385" cy="170" r="1.5" fill="#1D4E38"/>
+
+  <!-- Center-bottom grade badge -->
+  <g transform="translate(680, 600)">
+    <circle cx="10" cy="8" r="7" fill="rgba(240, 253, 244, 0.8)"/>
+    <path d="M6 8 L9 11 L14 5"/>
+    <text x="24" y="12" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1D4E38" stroke="none">A+ / 100%</text>
+  </g>
+</svg>
